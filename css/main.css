@@ -1,0 +1,153 @@
+form {
+  font-family: "Lucida Grande"; }
+  form textarea,
+  form input[type=text],
+  form input[type=password],
+  form input[type=submit] {
+    font-family: "Lucida Grande";
+    background-color: #fcfcfc;
+    border: 1px solid #dbdbdb;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    height: 20px;
+    padding: 4px 3px 3px 5px;
+    margin: 5px;
+    width: 450px;
+    font-size: 12px; }
+  form textarea {
+    height: 300px; }
+  form input[type=submit] {
+    height: 21px;
+    width: 80px;
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    color: white;
+    font-size: 9px; }
+  form input {
+    color: black; }
+  form label {
+    font: calibri;
+    font-size: 15px;
+    padding-top: 5px;
+    color: #c72427;
+    display: block; }
+  form .showdown_markdown label {
+    padding-bottom: 20px; }
+  form .controls {
+    height: 20px; }
+    form .controls a {
+      background-color: #f7f7f7;
+      line-height: 15px;
+      font-size: 15px;
+      padding: 10px;
+      font-weight: bold; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+*:focus {
+  outline: 10; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+/* math magic */
+/* create row div */
+/* create a column div */
+/* make an element span n columns */
+/* the last column in a row needs this */
+/* prepend n blank columns  */
+/* append n blank columns */
+.inline {
+  display: inline; }
+
+body {
+  font: 13px/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica;
+  background-color: #424242;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  width: 100%;
+  z-index: 99999; }
+
+.logo {
+  float: left; }
+
+.container {
+  float: left;
+  clear: both;
+  width: 960px; }
+
+h1 {
+  font-size: 55px;
+  color: white; }
+
+h2 {
+  font-size: 45px;
+  color: white; }
+
+h3 {
+  font-size: 35px;
+  color: white; }
+
+a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  border-position: -2px; }
+
+.red {
+  color: #c72427; }
+
+.translations {
+  border: 5px solid white;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 30px;
+  width: 300px;
+  background-color: #626262;
+  z-index: 5;
+  display: none; }
+  .translations ul .translation {
+    font-size: 45px; }
+
+.lyrics {
+  font-weight: normal;
+  font-size: 20px; }
+  .lyrics div {
+    height: 30px; }
+    .lyrics div p {
+      display: inline;
+      line-height: 40px;
+      padding-left: 5px; }
+      .lyrics div p:hover {
+        font-weight: bold;
+        font-size: 30px; }
