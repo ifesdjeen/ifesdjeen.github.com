@@ -1,17 +1,22 @@
 !!!
 %html
   %head
-    %title Learn language through youtube + lyrics!
+    %title
+      ifesdjeen's blog
+
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}
     %link{ :type => "text/css", :rel => "stylesheet", :media => "screen", :href => "/css/main.css" }
 
 
   %body
     .logo
-      %h1 
-        lang
-        %p.red
-          tube
-    .container
-      :preserve
+    .container.post
+      .column_left
+        .box
+          %h1
+            {{page.title}}
+      .column_center
+        %h1
+
         {{content}}
+

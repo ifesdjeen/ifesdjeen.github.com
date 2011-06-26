@@ -1,47 +1,3 @@
-form {
-  font-family: "Lucida Grande"; }
-  form textarea,
-  form input[type=text],
-  form input[type=password],
-  form input[type=submit] {
-    font-family: "Lucida Grande";
-    background-color: #fcfcfc;
-    border: 1px solid #dbdbdb;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    height: 20px;
-    padding: 4px 3px 3px 5px;
-    margin: 5px;
-    width: 450px;
-    font-size: 12px; }
-  form textarea {
-    height: 300px; }
-  form input[type=submit] {
-    height: 21px;
-    width: 80px;
-    -moz-border-radius: 11px;
-    -webkit-border-radius: 11px;
-    color: white;
-    font-size: 9px; }
-  form input {
-    color: black; }
-  form label {
-    font: calibri;
-    font-size: 15px;
-    padding-top: 5px;
-    color: #c72427;
-    display: block; }
-  form .showdown_markdown label {
-    padding-bottom: 20px; }
-  form .controls {
-    height: 20px; }
-    form .controls a {
-      background-color: #f7f7f7;
-      line-height: 15px;
-      font-size: 15px;
-      padding: 10px;
-      font-weight: bold; }
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   margin: 0;
   padding: 0;
@@ -85,69 +41,73 @@ blockquote, q {
 /* the last column in a row needs this */
 /* prepend n blank columns  */
 /* append n blank columns */
-.inline {
-  display: inline; }
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto; }
+  .container .column_left {
+    float: left;
+    width: 240px;
+    margin-right: 0; }
+  .container .column_center {
+    float: left;
+    width: 540px;
+    margin-right: 0; }
+  .container .column_right {
+    margin-right: 0;
+    float: left;
+    width: 180px;
+    margin-right: 0; }
 
 body {
-  font: 13px/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica;
-  background-color: #424242;
-  color: white;
-  font-weight: bold;
-  padding: 20px;
-  width: 100%;
-  z-index: 99999; }
+  border-top: #36393b solid 10px;
+  color: #333333;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font: 400 1em/1.5em Georgia, Palatino, "Palatino Linotype", Serif; }
 
-.logo {
-  float: left; }
-
-.container {
-  float: left;
-  clear: both;
-  width: 960px; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Crimson Text", Georgia, Palatino, "Palatino Linotype", serif; }
 
 h1 {
-  font-size: 55px;
-  color: white; }
+  font-size: 2.6em;
+  font-weight: normal;
+  line-height: 1.1em;
+  letter-spacing: -1px;
+  padding-top: 10px; }
+  h1:hover {
+    color: #888888; }
 
 h2 {
-  font-size: 45px;
-  color: white; }
+  font-size: 1.6em;
+  margin-bottom: 0.25em;
+  margin-top: 1.3em; }
 
-h3 {
-  font-size: 35px;
-  color: white; }
+blockquote {
+  color: #3e7d7d;
+  font-style: italic;
+  margin-bottom: 1.2em;
+  padding: 0.75em 0.75em 0.75em 10px; }
+
+.box {
+  font-weight: bold;
+  margin: 0px 10px;
+  padding: 10px;
+  height: 150px;
+  background-color: #36393b;
+  color: #dbddc9;
+  letter-spacing: -1px; }
 
 a {
-  color: white;
   text-decoration: none;
-  border-bottom: 2px solid white;
-  border-position: -2px; }
+  border-bottom: 1px dotted #333333;
+  color: #888888; }
 
-.red {
-  color: #c72427; }
-
-.translations {
-  border: 5px solid white;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  padding: 30px;
-  width: 300px;
-  background-color: #626262;
-  z-index: 5;
-  display: none; }
-  .translations ul .translation {
-    font-size: 45px; }
-
-.lyrics {
-  font-weight: normal;
-  font-size: 20px; }
-  .lyrics div {
-    height: 30px; }
-    .lyrics div p {
-      display: inline;
-      line-height: 40px;
-      padding-left: 5px; }
-      .lyrics div p:hover {
-        font-weight: bold;
-        font-size: 30px; }
+p {
+  margin: 0 0 1.5em; }
