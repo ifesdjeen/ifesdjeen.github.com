@@ -1,0 +1,12 @@
+---
+layout: default
+title: Dragon Curve
+---
+
+<p>Fun! Just found my 1yo <a href="http://en.wikipedia.org/wiki/Dragon_curve">Dragon Curve</a> implementation in JS on Canvas!</p>
+<p>Actually, these are 4 dragon curves being rendered simultaneously. Code is <a href="https://gist.github.com/1062567">available</a>.</p>
+<div onClick="reset()">Reset</div>
+<div onClick="if(boxSize <= 10) { boxSize++;reset(); }">Pixel Size +</div>
+<div onClick="if(boxSize > 1) { boxSize--;reset(); }">Pixel Size -</div>
+<div style="border: 1px solid black;"><canvas id="canvas_t" width="540" height="500" ></canvas></div>
+<script src="/javascripts/dragon_curve.js"></script>
