@@ -14,10 +14,10 @@ Guicheck.CheckView = Backbone.View.extend({
     this.box.css('left', e.layerX)
 
     this.box.find('.dragger_horizontal').mousedown(this.start_drag_horizontal)
-    this.box.find('.dragger_horizontal').mouseup(this.stop_drag_horizontal)
+    $(document).mouseup(this.stop_drag_horizontal)
 
     this.box.find('.dragger_vertical').mousedown(this.start_drag_vertical)
-    this.box.find('.dragger_vertical').mouseup(this.stop_drag_vertical)
+    $(document).mouseup(this.stop_drag_vertical)
 
     this.wrapper.append(this.box)
   },
