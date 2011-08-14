@@ -6,6 +6,7 @@ var drawnLinesLength = []
 var duplicates = []
 var colorSet = [200, 0, 0]
 var color = 150
+
 // Extending natives a bit
 // Ruby-style each functon. For those who don't like to write "for" cycle gazillion times
  Array.prototype.each = function(fn, bind) {
