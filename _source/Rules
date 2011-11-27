@@ -1,6 +1,6 @@
-#!/usr/bin/env ruby
 # -*- coding: utf-8 -*-
 require 'compass'
+
 Compass.add_project_configuration 'config/compass.config'
 
 compile '/assets/stylesheets/sass/partials/*/' do

@@ -1,6 +1,7 @@
 !!!
 %html<>
   %head
+    %meta{ "http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }
     %title
       Ruby amqp gem:
       = @item[:title]
@@ -13,16 +14,16 @@
   %link{ :rel => "stylesheet", :href => "/assets/stylesheets/codemirror.css" }
   %script{ :src => "/assets/javascripts/mode/ruby.js" }
   %link{ :rel => "stylesheet", :href => "/assets/stylesheets/theme/default.css" }
-  %script{:type => "text/javascript"}
+  :javascript
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-27153041-1']);
+    _gaq.push(['_setAccount', 'UA-12314275-7']);
     _gaq.push(['_trackPageview']);
-    (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
 
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
   %body<>
     .topbar
@@ -30,38 +31,8 @@
         .container
           %ul.nav
             %li
-              %a{:href => "/"}
-                Home
-
-            %li
-              %a{:href => "/articles/getting_started/"}
-                Getting Started
-
-            %li
-              %a{ :href => "/articles/amqp_9_1_model_explained/"}
-                AMQP 0.9.1 Model
-
-            %li
-              %a{ :href => "/articles/connecting_to_broker/"}
-                Connecting
-
-            %li
-              %a{ :href => "/articles/working_with_queues/"}
-                Queues
-
-            %li
-              %a{ :href => "/articles/working_with_exchanges/"}
-                Exchanges
-
-            %li
-              %a{ :href => "/articles/patterns_and_use_cases/"}
-                Patterns & Use Cases
-
-            %li
-              %a{ :href => "/articles/error_handling/"}
-                Error Handling
-
-
+              %a{ :href => "/"}
+                home
     %section.content<>
       %article<>
 
@@ -71,32 +42,17 @@
 
         = yield
 
-        %h2 Authors
+        %h2 Tell me what you think!
 
-        This guide was written by
-        %a{ :href => "http://twitter.com/michaelklishin" }
-          Michael Klishin
-        and edited by
-        %a{ :href => "https://twitter.com/celldee" }
-          Chris Duncan
+        Usually I'm open to a conversation. I don't like online flame, and discovered that people think tend to respond to emails more thoughtfully than when discussion is public. If you have something to tell me, use
 
-        %h2 Tell us what you think!
+        %a{ :href => "mailto:oleksandr.petrov@gmail.com" }
+          email
 
-        %p
-          Please take a moment to tell us what you think about this guide
-          %a{ :href => "http://twitter.com/rubyamqp" }
-            on Twitter
-          or the
-          %a{ :href => "http://groups.google.com/group/ruby-amqp." }
-            Ruby AMQP mailing list
+        if it's less than 140 symbols, you can also use
 
-        %p
-          Let us know what was unclear or what has not been covered. Maybe you do not like the guide style or grammar or discover spelling mistakes. Reader feedback is key to making the documentation better.
-
-        %p
-          If, for some reason, you cannot use the communication channels mentioned above, you can
-          %a{ :href => "mailto:michaelklishin@me.com?subject=amqp%20gem%20documentation" }
-            contact the author of the guides directly
+        %a{ :href => "http://twitter.com/ifesdjeen" }
+          twitter
 
         - if @item[:disqus_identifier] && @item[:disqus_url]
           #disqus_thread
