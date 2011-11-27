@@ -30,7 +30,7 @@ That was repeated half a million times, but let's recap. Time-sharing is related
 
 ### sleep(1)
 
-The simplest example ever is an eternal while loop. By no surprise, it eats up a complete processor core. Whenever you insert <span class="highlight">sleep</span> (or even <span class="highlight">nanosleep<span>) into that loop, load instantly drops. The thing is that load drops not just because your program "sleeps" or does nothing, that's just a tiny part of what's going on.
+The simplest example ever is an eternal while loop. By no surprise, it eats up a complete processor core. Whenever you insert <span class="highlight">sleep</span> (or even <span class="highlight">nanosleep</span>) into that loop, load instantly drops. The thing is that load drops not just because your program "sleeps" or does nothing, that's just a tiny part of what's going on.
 
 When there's no sleep in your main loop, it runs without any delays, thus using all the possible processor power, since it has nothing to block on. When kernel sees a sleep, it marks your process as sleeping and moved to sleeping queue. In a meanwhile freed processor time will be used for whatever stuff your kernel thinks is usable.
 
