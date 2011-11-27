@@ -24,7 +24,7 @@ If your piece of software is simply ready to serve another request in parallel, 
 
 It seems that many misunderstandings that evole around non-blocking I/O actually arise because of lack of understanding of Linux Scheduler.
 
-Everyone seems to be aware that there's some type of scheduler, but what exactly does it do? Sometimes people take an amount of cores on their machine as an opportunity for an immediate performance improvement, which is not always relevant. In order to utilize multicore systems, most of time you need to put some effort.
+Everyone seems to be aware that there's some type of scheduler, but what exactly does it do? Sometimes people take an number of cores on their machine as an opportunity for an immediate performance improvement, which is not always relevant. In order to utilize multicore systems, most of time you need to put some effort.
 
 That was repeated half a million times, but let's recap. Time-sharing is related to concurrency, not parallelism. Single core can run only one process at any given period of time. This is something that is completely transparent to the process, although you can help scheduler to know when to use processor time for other stuff.
 
@@ -38,7 +38,7 @@ According to man page, sleep command suspends execution for a minimum of seconds
 
 ### I/O actions
 
-To prevent tasks from taking over the CPU and making other tasks to wait for CPU access, scheduler also can change a task priority. If the task is CPU-bound, it gets lower priority than an I/O bound one. I/O-bound tasks use the CPU to start an I/O and then sleep, while waiting for the operation to comple. This allows other tasks access to the CPU.
+To prevent tasks from taking over the CPU and making other tasks waiting for CPU access, scheduler also can change a task priority. If the task is CPU-bound, it gets lower priority than an I/O bound one. I/O-bound tasks use the CPU to start an I/O and then sleep, while waiting for the operation to comple. This allows other tasks access to the CPU.
 
 When people say **blocking I/O** everyone shivers and starts pretending that it wasn't him who's done that. There's nothing wrong with blocking on I/O operations, really. Smart people have taken care about it for us.
 
