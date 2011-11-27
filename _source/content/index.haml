@@ -1,0 +1,125 @@
+.hero-unit
+  %h1 Ruby AMQP
+  %p
+    Ruby amqp gem is a widely used, feature-rich, well-maintained, fast asynchronous AMQP 0.9.1 Ruby client with batteries included.
+
+    %a{ :href => "/articles/getting_started/" }
+      Get started in an instant
+    , read our guides, see our
+    %a{ :href => "http://bit.ly/mDm1JE" }
+      API reference
+    , we do care about the docs!
+  %p
+    %a.btn.primary.large{ :href => "/articles/getting_started/"}
+      Get Started!
+.row
+  .span6
+    %h2 About
+    %p
+      Advanced Message Queuing Protocol is a standard wire-level protocol and semantic framework for high performance enterprise messaging.
+
+    %h3
+      From the AMQP website:
+    %p
+      AMQP is an Open Standard for Messaging Middleware.
+
+    %p
+      By complying to the AMQP standard, middleware products written for different platforms and in different languages can send messages to one another. AMQP addresses the problem of transporting value-bearing messages across and between organisations in a timely manner.
+
+    %h3
+      Tell us what you think!
+    %p
+      Please take a moment to tell us what you think about this guide
+      %a{ :href => "http://twitter.com/rubyamqp" }
+        on Twitter
+      or the
+      %a{ :href => "http://groups.google.com/group/ruby-amqp." }
+        Ruby AMQP mailing list.
+
+    %p
+      If you find bugs or inconsistencies in thid guide, please report them
+      %a{ :href => "https://github.com/ruby-amqp/ruby-amqp.github.com/issues" }
+        on GitHub issues page.
+
+    %p
+      AMQP enables complete interoperability for messaging middleware; both the networking protocol and the semantics of broker services are defined in AMQP.
+  .span8
+    %h2 Guides
+    %dl
+      %dt
+        %a{ :href => "/articles/amqp_9_1_model_explained/"}
+          AMQP 0.9.1 Model Explained.
+      %dd
+        A simple 2 page long introduction to the AMQP Model concepts and features. Understanding the AMQP Model will make a lot of other documentation, both for the Ruby amqp gem and RabbitMQ itself, easier to follow. With this guide, you don’t have to waste hours of time reading the whole specification.
+
+      %dt
+        %a{ :href => "/articles/getting_started/" }
+          Getting Started with Ruby amqp gem and RabbitMQ
+      %dd
+        Walks you through gem installation and 3 applications that demonstrate what AMQP has to offer. Explains how amqp gem should be integrated into rich object-oriented Ruby programs.
+
+      %dt
+        %a{ :href => "/articles/connecting_to_broker/"}
+          Connecting to the broker.
+      %dd
+        This guide explains how to connect to an AMQP broker and how to integrate the amqp gem into standalone and Web applications.
+
+      %dt
+        %a{ :href => "/articles/working_with_queues/"}
+          Working With Queues.
+      %dd
+        This guide focuses on features that consumer applications use heavily.
+
+      %dt
+        %a{ :href => "/articles/working_with_exchanges/"}
+          Working With Exchanges.
+      %dd
+        This guide focuses on features that producer applications use heavily.
+
+      %dt
+        %a{ :href => "/articles/bindings/"}
+          Working with bindings
+      %dd
+        This guide covers bindings, what they are, what role do they play and typical operations.
+
+      %dt
+        %a{ :href => "/articles/patterns_and_use_cases/"}
+          Patterns & Use Cases.
+      %dd
+        This guide focuses implementation of common messaging patterns using AMQP Model features as building blocks.
+
+      %dt
+        %a{ :href => "/articles/error_handling/"}
+          Error Handling & Recovery.
+      %dd
+        This guide explains how to handle protocol errors, network failures and other things that may go wrong in real world projects.
+
+      %dt
+        %a{ :href => "/articles/08_migration/"}
+          amqp gem 0.8 migration guide.
+      %dd
+        Learn how to migrate your amqp gem 0.6.x and 0.7.x applications to 0.8.0 and later and why you should do it.
+
+      %dt
+        %a{ :href => "/articles/durability/"}
+          Durability & Related Matters.
+      %dd
+        Learn about queue & exchange durability, publishing messages as persistent and how they are related.
+
+      %dt
+        %a{ :href => "/articles/connection_encryption_with_tls/"}
+          Using TLS (SSL) connections
+      %dd
+        Describes how to connect to RabbitMQ using TLS (SSL)-encrypted connections
+
+      %dt
+        %a{ :href => "/articles/broker_specific_extensions/"}
+          RabbitMQ and other vendor specific AMQP extensions
+      %dd
+        This guide describes using RabbitMQ and other vendor specific AMQP extensions with Ruby amqp gem
+
+      %dt
+        %a{ :href => "/articles/troubleshooting/"}
+          Troubleshooting your AMQP applications
+      %dd
+        Explains what to do when your AMQP applications using Ruby amqp gem and RabbitMQ misbehave
