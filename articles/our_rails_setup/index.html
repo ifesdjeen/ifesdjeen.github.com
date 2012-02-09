@@ -21,23 +21,33 @@
   <body>
     <div class='container'>
       
-      <p>It’s amazing how differently people are using Rails. Wide variety of tasks is covered, and many people start saying stuff like “it would be ridiculous overkill for most apps starting out” when they here about the setup we’re using. </p>
+      <p>It’s amazing how differently people are using Rails. Wide variety of tasks is covered, and many people start saying stuff like “it would be ridiculous overkill for most apps starting out” when they here about the setup we’re using.</p>
       
       <p>I’m here to bust that myth. And yes, I’m going to be talking about Nginx, AMQP, ElasticSearch, application modulariy, heavy usage of partials, traits and many other things. Every single one of them takes about 5 minutes to start with, and scales amazingly well for application of any size.</p>
       
       <h1 id="sti-models">STI models</h1>
       
-      <p>Actually, here you should be really careful. If you see that entites are very similar from the first glance, but are logically distinguished, try to use modules and include required blocks into each of the given models separately. If you see that entites represent different aspects of one, more generic entity, use STI. </p>
+      <p>Actually, here you should be really careful. If you see that entites are very similar from the first glance, but are logically distinguished, try to use modules and include required blocks into each of the given models separately. If you see that entites represent different aspects of one, more generic entity, use STI.</p>
       
       <p>If you use an STI models with a complex form, it could become very handy. Imagine, you have 2 types of customers: suppliers and buyers. Creation process allows to select between 2 types.</p>
       
       <p>(give an example about validation)</p>
+      
+      <p>STI models</p>
       
       <p>Nginx upload module + progress reporting</p>
       
       <p>No nested attributes</p>
       
       <p>Search modularity</p>
+      
+      <p>Backend calculations &amp; AMQP</p>
+      
+      <p>No JS approach</p>
+      
+      <p>Clear Partials</p>
+      
+      <p>Conditional rendering</p>
     </div>
   </body>
 </html>
