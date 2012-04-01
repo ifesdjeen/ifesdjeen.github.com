@@ -7,24 +7,24 @@ disqus_url: "http://coffeenco.de/articles/ruby_is_not_the_best_choice_for_upload
 
 ## The problem
 
-Your application will grow faster than you will know. Scalability and extendability should be built into your architecture from day one.
+Your application will grow faster than you can say Jack Robinson. Scalability and extendability should be built into architecture from day one.
 Often people are taking shortcuts for sakes of simplicity, but many 'simpler' solutions get deeper and deeper into system's core and after
 some time it's quite difficult to get them out of there.
 
 *Modularity* often helps to build systems with interchangable and disposable parts. Back in Java days it was cool to use those IoC (Inversion
-of Controls) and Dependency Injection things. In Ruby world these are not applicable. It's all solved by Duck Typing. Although, it's important
-to bring the modularity to the next level, and start separating not only low-level-compontnt-related functionality, but also more high-scale
-stuff.
+of Controls) and Dependency Injection things. In Ruby world everything is much easier. It's all solved by Duck Typing. Although, it's important
+to bring the modularity to the next level, and start separating not only low-level-component-related functionality, but also more higher-order
+concepts: functionality and features.
 
-For example, if you use ElasticSearch or Solr for model indexing, it's good to have functionality related to indexing in a separate module,
+For example, if you use ElasticSearch for model indexing, it's good to have functionality related to indexing in a separate module,
 or sometimes, even in a complete new library. Same goes for denormalization. If you want keep your data denormalized in some common
-manner, it would be good to keep denormalizing functionality separate. That way extending, replacing or even throwing these parts away
-will become quite easy.
+manner, it would be good to keep related functionality separate. If you do so, extending, replacing or even throwing these parts away
+becomes easier.
 
-After some time, you start noticing that denormalizing data in your models starts toucing hundreds of records, indexing starts taking a bit
-longer than you intially expected, converting 250Mb video from avi to 3gp forces users to wait in front of screen and wonder why the heck
-page load takes so much time. Having functionality already separated, it's enough to move everything you had to a different app, and
-launch callbacks whenever that functionality required.
+After some time, you start noticing that denormalizing data in your models touces hundreds of records, indexing takes a bit
+longer than intially expected, converting 250Mb video from avi to 3gp forces users to wait in front of screen and wonder why the heck
+page load takes so much time. Having functionality already separated, it's enough to move everything you had to a different app,
+launch callbacks whenever that functionality required, and handle processing offline, without keeping the user waiting.
 
 Before I even start my long story, I'd recommend you to bookmark and add to your reading list 2 things: [http://rubyamqp.info/](http://rubyamqp.info/) (which I'm proud
 to help maintaining to [Michael Klishin](http://twitter.com/michaelklishin) and a book [RabbitMQ in Action](http://manning.com/videla/) by
@@ -39,11 +39,11 @@ and [paperclip](https://github.com/thoughtbot/paperclip). They both are popular,
 think that it's completely unacceptable to let them handle your uploads and processing in production.
 
 Just recently, while discussing a problem with Bundler requiring to fetch gem index from rubygems.org, someone said "Network transfers in
-ruby are not exactly known for their speed". Besides that, handling uploads in your main app occupies at least one of your workers
-(in case you use unicorns) for the time of upload.
+ruby are not exactly known for their speed". Besides that, handling uploads in your main app occupies at least one of your web workers
+for the time of upload.
 
-If you only handle uploads in Ruby, I would probably keep silence at least for a little bit of time. But people also resize their images,
-change their format, and do  all kinds of stuff. That's already way too much.
+If people'd only handle uploads in Ruby, I'd probably keep silence at least for a little bit of time. But image resize, format changes
+and all other kinds of stuff are handled in a similar manner. That's a bit too much.
 
 The solution I'm going to talk about here was considered to be sic. "a ridiculous overkill for most apps starting out", by Chad Pytel
 (one of creators of paperclip) [here](https://twitter.com/#!/cpytel/status/151436050814865411). Let's see the downsides of a paperclip
