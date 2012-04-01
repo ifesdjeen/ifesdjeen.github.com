@@ -1,9 +1,8 @@
------
+---
 title: "The Importance of Being Idle"
 layout: article
------
+---
 
-<a href="here_is_a_weird_link.html">CLICK HERE</a>
 Recently I've spoken with half a dozen people about non-blocking I/O. Most of the arguments they could come up with was "that it is freaking faster", other ones asked me to give them some benchmarks. I'm not here to give those, since I'm not a fan of ballpark estimates, and these arguments won't change anyting, really. It seems that new fancy non-blocking implementations somehow work/act as follows…
 
 Let's imagine we have a web-application. Simplifying it's flows, it basically:

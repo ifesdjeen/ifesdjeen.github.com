@@ -15,9 +15,6 @@ layout: default
     %a{ :href => "http://github.com/ifesdjeen" }
       github
 
-  %p
-    %a.btn.primary.large{ :href => "/articles/getting_started/"}
-      Get Started!
 .row
   .span4
     %h2
@@ -46,7 +43,13 @@ layout: default
     %h2 Stuff that bothered me lately
     %dl
       %dt
-        %a{ :href => "/articles/linux_scheduler/"}
+        %a{ :href => "/articles/linux_scheduler.html"}
           The Importance of Being Idle
       %dd
         Everyone's talking about Evented I/O. Even though I exploit it a lot, I tend to believe that some information about Linux Scheduler is sometimes more helpful.
+
+      %dt
+        %a{ :href => "/articles/ruby_is_not_the_best_choice_for_uploads.html"}
+          Ruby is not the best way to handle your uploads
+      %dd
+        Actually, it's more than that. Besides the fact that Ruby is not the best way to handle uploads, your web application is the worst place to transform them.

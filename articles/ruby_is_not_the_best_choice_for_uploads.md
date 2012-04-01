@@ -108,7 +108,7 @@ After setting up Nginx, set up your rails application.
 
 ### Rails application
 
-#### models/upload.rb
+### models/upload.rb
 
     require 'fileutils'
 
@@ -169,13 +169,13 @@ After setting up Nginx, set up your rails application.
 
     end
 
-#### routes.rb:
+### routes.rb:
 
     resources :uploads
 
 Controller is as small as you usually have it. Upload itself was already handled by Nginx, here you only create a model instance out of whatever it have sent you. It's also trivial to test it now.
 
-#### uploads_controller.rb
+### uploads_controller.rb
 
     def create
       @upload = Upload.create(params[:upload])
@@ -194,7 +194,7 @@ Let's convert these words to some Ruby code. I'll be using [ruby-amqp gem](https
 
 We'll have two parts of the application: producer and consumer. Producer will generate and "push" messages to the queue, notifying backend about the incoming upload, and the fact that it should start handling it. Consumer will receive the message, convert it, resize it, send email to the user etc.
 
-#### Consumer
+### Consumer
 
     #!/usr/bin/env ruby
     # encoding: utf-8
@@ -229,7 +229,7 @@ For each action you want to be triggered on the event, you have to bind to fanou
 _that_ much anymore. It's complicated to make it less performing than it was before. Use image-magick directly, use any gem that you feel comfortable with.
 that functionality is very easy to change afterwards, and you have a complete control over it, too.
 
-#### Producer
+### Producer
 
 So, the producer:
 
@@ -264,7 +264,7 @@ There's nothing scary in AMQP. Installing broker is really easy, writing Quickst
 take some time, but you'll discover a feature-rich protocol and will see how easy it is to solve even the most copmlex task using it. The rest of things
 for solving this particular task are already at your disposal.
 
-If you want some 'takeaway', I'd want it to be "write modular applications" and "do not couple your functionality". Both statements are
+If you want some 'takeaway', I'd want it to be **"write modular applications"** and **"do not couple your functionality"**. Both statements are
 to be older than I am, and you have already heard a lot about that. But apps become so much easier to develop, maintain and scale by just following these two.
 There are many ways of doing so, of course, but the concept remains the same: use right tools for right job, and if a little new concept will in the end
 simplify your solution and bring benefits, you'll have to step over the semblant complexity.
