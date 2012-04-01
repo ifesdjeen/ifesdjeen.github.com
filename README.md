@@ -1,6 +1,6 @@
 # About that repository #
 
-That's my blog
+This is the documentation site for Ruby-AMQP
 
 # How to contribute
 
