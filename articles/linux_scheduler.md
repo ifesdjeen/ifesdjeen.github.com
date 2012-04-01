@@ -1,6 +1,8 @@
 ---
 title: "The Importance of Being Idle"
 layout: article
+disqus_identifier: "linux_scheduler"
+disqus_url: "http://coffeenco.de/articles/linux_scheduler.html"
 ---
 
 Recently I've spoken with half a dozen people about non-blocking I/O. Most of the arguments they could come up with was "that it is freaking faster", other ones asked me to give them some benchmarks. I'm not here to give those, since I'm not a fan of ballpark estimates, and these arguments won't change anyting, really. It seems that new fancy non-blocking implementations somehow work/act as follows…
