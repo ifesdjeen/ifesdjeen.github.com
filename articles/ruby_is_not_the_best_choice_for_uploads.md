@@ -22,7 +22,7 @@ manner, it would be good to keep related functionality separate. If you do so, e
 becomes easier.
 
 After some time, you start noticing that denormalizing data in your models touces hundreds of records, indexing takes a bit
-longer than intially expected, converting 250Mb video from avi to 3gp forces users to wait in front of screen and wonder why the heck
+longer than initially expected, converting 250Mb video from avi to 3gp forces users to wait in front of screen and wonder why the heck
 page load takes so much time. Having functionality already separated, it's enough to move everything you had to a different app,
 launch callbacks whenever that functionality required, and handle processing offline, without keeping the user waiting.
 
@@ -126,7 +126,7 @@ After setting up Nginx, set up your rails application.
 
       before_save :move_file
 
-      # That one will ble covered in AMQP & Processing
+      # That one will be covered in AMQP & Processing
       before_save :dispatch_messages
 
       field :file_size,    :type => Integer
