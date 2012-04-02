@@ -27,7 +27,7 @@ page load takes so much time. Having functionality already separated, it's enoug
 launch callbacks whenever that functionality required, and handle processing offline, without keeping the user waiting.
 
 Before I even start my long story, I'd recommend you to bookmark and add to your reading list 2 things: [http://rubyamqp.info/](http://rubyamqp.info/) (which I'm proud
-to help maintaining to [Michael Klishin](http://twitter.com/michaelklishin) and a book [RabbitMQ in Action](http://manning.com/videla/) by
+to help maintaining to [Michael Klishin](http://twitter.com/michaelklishin)) and a book [RabbitMQ in Action](http://manning.com/videla/) by
 [Alvaro Videla](http://twitter.com/old_sound). You'll see here why I consider these things important. There's no better source of clear and
 elborate AMQP info than these two.
 
