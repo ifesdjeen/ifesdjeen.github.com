@@ -77,7 +77,7 @@ so let's skip that and jump right into the configuration.
 
 Here's some sample nginx configuration:
 
-{% gist 45370349c955411f3600 %}
+<script src="http://gist.github.com/45370349c955411f3600.js"></script>
 
 After setting up Nginx, set up your rails application.
 
@@ -85,7 +85,7 @@ After setting up Nginx, set up your rails application.
 
 ### models/upload.rb
 
-{% gist 2593486 %}
+<script src="http://gist.github.com/2593486.js"></script>
 
 ### routes.rb:
 
@@ -93,7 +93,7 @@ After setting up Nginx, set up your rails application.
 
 Controller is as small as you usually have it. Upload itself was already handled by Nginx, here you only create a model instance out of whatever it have sent you. It's also trivial to test it now.
 
-{% gist 820ba955569433236610 %}
+<script src="http://gist.github.com/820ba955569433236610.js"></script>
 
 ### uploads_controller.rb
 
@@ -111,7 +111,8 @@ We'll have two parts of the application: producer and consumer. Producer will ge
 
 ### Consumer
 
-{% gist 8599e49b5cdee0e949b4 %}
+<script src="http://gist.github.com/8599e49b5cdee0e949b4.js"></script>
+
 For each action you want to be triggered on the event, you have to bind to fanout exchange, declare a queue, giving it a descriptive name, like "images.resize",
 "images.crop" etc. You will receive payload and metadata published by producer, and run an according action. Here, the performance of your service doesn't matter
 _that_ much anymore. It's complicated to make it less performing than it was before. Use image-magick directly, use any gem that you feel comfortable with.
@@ -121,7 +122,8 @@ that functionality is very easy to change afterwards, and you have a complete co
 
 So, the producer:
 
-{% gist 557d40a994c504e1bb29 %}
+<script src="http://gist.github.com/557d40a994c504e1bb29.js"></script>
+
 Here you see that we connect to our AMQP server, create a fanout exchange and pubish you message to that exchange, not much more. It's just as easy as it is!
 
 ### Wrapping up
