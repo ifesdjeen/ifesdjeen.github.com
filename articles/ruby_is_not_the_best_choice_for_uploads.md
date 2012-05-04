@@ -77,32 +77,7 @@ so let's skip that and jump right into the configuration.
 
 Here's some sample nginx configuration:
 
-    location ~ ^/uploads(\.json)?$ {
-      # Where uploads should be passed
-      upload_pass  @uploads_handler;
-
-      # Temporary directory for your uploads
-      upload_store /tmp;
-
-      # Regex for names of fields which will be passed to backend from original request.
-      upload_pass_form_field "_my_app_session";
-
-      # Set form fields, that should be set by nginx and passed further to uploads handler
-      upload_set_form_field         upload[filename]      "$upload_file_name";
-      upload_set_form_field         upload[content_type]  "$upload_content_type";
-      upload_set_form_field         upload[source_path]   "$upload_tmp_path";
-
-      upload_aggregate_form_field   upload[id]            "$upload_file_sha1";
-      upload_aggregate_form_field   upload[file_size]     "$upload_file_size";
-    }
-
-    location @uploads_handler {
-      proxy_pass http://my_app; # your upstream name
-    }
-
-    upstream my_app {
-      server 127.0.0.1:7000; # I
-    }
+{% gist 45370349c955411f3600 %}
 
 After setting up Nginx, set up your rails application.
 
@@ -110,64 +85,7 @@ After setting up Nginx, set up your rails application.
 
 ### models/upload.rb
 
-    require 'fileutils'
-
-    class Upload
-
-      #
-      # Behaviors
-      #
-
-      include Mongoid::Document
-
-      #
-      # Callbacks
-      #
-
-      before_save :move_file
-
-      # That one will be covered in AMQP & Processing
-      before_save :dispatch_messages
-
-      field :file_size,    :type => Integer
-      field :content_type, :type => String, :default => "application/octet-stream"
-
-      attr_accessor :source_path
-      attr_accessor :filename
-
-      #
-      # Validations
-      #
-
-      validates_presence_of     :file_size
-      validates_numericality_of :file_size, :only_integer => true, :greater_than => 0
-
-      #
-      # API
-      #
-
-      def self.local_storage_root
-        Application.config.upload_storage_root
-      end
-
-      def location
-        File.join(self.class.local_storage_root, id)
-      end
-
-      #
-      # Implementation
-      #
-
-      protected
-
-      def move_file
-        # Actually, even that part may be moved to the backend, for best performance
-        if @source_path && !self.persisted?
-          FileUtils.mv(@source_path, location)
-        end
-      end
-
-    end
+{% gist 2593486 %}
 
 ### routes.rb:
 
@@ -175,12 +93,9 @@ After setting up Nginx, set up your rails application.
 
 Controller is as small as you usually have it. Upload itself was already handled by Nginx, here you only create a model instance out of whatever it have sent you. It's also trivial to test it now.
 
-### uploads_controller.rb
+{% gist 820ba955569433236610 %}
 
-    def create
-      @upload = Upload.create(params[:upload])
-      respond_with @upload
-    end
+### uploads_controller.rb
 
 We've been handling uploads separately from a main form post. There are many plugins for any front-end framework you may possibly use that help you to achieve that.
 
@@ -196,34 +111,7 @@ We'll have two parts of the application: producer and consumer. Producer will ge
 
 ### Consumer
 
-    #!/usr/bin/env ruby
-    # encoding: utf-8
-
-    require "rubygems"
-    require "amqp"
-
-    AMQP.start(:vhost => "uploads.development", :username => "uploads", :password => "uploads_password") do |connection|
-      puts "Connected to broker..."
-
-      # Open up a new channel
-      channel  = AMQP::Channel.new(connection)
-
-      # Declare an exchange
-      exchange = channel.fanout("amq.fanout")
-
-      # Declare a new queue, and bind it to our fanout exchange
-      q = channel.queue("images.resize", :auto_delete => true, :exclusive => true).bind(exchange)
-      q.subscribe do |metadata, payload|
-        puts "images.resize received a message: #{payload.inspect}."
-      end
-
-      # Declare another queue, with handles a different type of functionality, and bind it to the same exchange
-      q = channel.queue("images.reward_user", :auto_delete => true, :exclusive => true).bind(exchange)
-      q.subscribe do |metadata, payload|
-        puts "images.reward_user received a message: #{payload.inspect}."
-      end
-    end
-
+{% gist 8599e49b5cdee0e949b4 %}
 For each action you want to be triggered on the event, you have to bind to fanout exchange, declare a queue, giving it a descriptive name, like "images.resize",
 "images.crop" etc. You will receive payload and metadata published by producer, and run an according action. Here, the performance of your service doesn't matter
 _that_ much anymore. It's complicated to make it less performing than it was before. Use image-magick directly, use any gem that you feel comfortable with.
@@ -233,29 +121,7 @@ that functionality is very easy to change afterwards, and you have a complete co
 
 So, the producer:
 
-    require "rubygems"
-
-    require "amqp"
-
-    AMQP.start(:vhost => "uploads.development", :username => "uploads", :password => "uploads_password") do |connection|
-      puts "Connected to broker..."
-
-      # Open up a new channel
-      channel  = AMQP::Channel.new(connection)
-
-      # Declare an exchange
-      exchange = channel.fanout("amq.fanout")
-
-      # Publish a message with uploaded file details, obtained from nginx, to an exchange.
-      exchange.publish({:filename => "uploaded_image.jpg", :content_type => "image/jpeg", :source_path => "/tmp/dir/", :sha => "as10l..."})
-
-      EventMachine.add_timer(0.5) do
-        connection.close do
-          EventMachine.stop
-        end
-      end
-    end
-
+{% gist 557d40a994c504e1bb29 %}
 Here you see that we connect to our AMQP server, create a fanout exchange and pubish you message to that exchange, not much more. It's just as easy as it is!
 
 ### Wrapping up
