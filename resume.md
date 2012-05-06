@@ -185,7 +185,7 @@ Besides commercial development, I've been involved into some Open Source Project
 
 ### Community Work
 
-  * Barcamps, workshops in [Munich](http://munich.rubyshift.org), [Kiev and Dnepropetrovsk](http://munich.rubyshift.org)
+  * Barcamps, workshops in [Munich](http://munich.rubyshift.org), [Kiev and Dnepropetrovsk](http://rubyshift.org)
 
 <br/>
 <br/>
