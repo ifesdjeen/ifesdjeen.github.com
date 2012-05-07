@@ -14,6 +14,12 @@ layout: resume
    Hey, my software is deployed in Düsseldorf Airport, what about yours?
 </p>
 
+## Get in touch!
+
+  * __E-mail / Jabber__ <a href="mailto:oleksandr.petrov@gmail.com">oleksandr.petrov@gmail.com</a>
+  * __Skype__: ifesdjeen
+  * __Tel.__: +49 173 310 94 96
+
 ## Manifesto
 
  * Work with real people, rather than just professionals
