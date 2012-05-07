@@ -46,7 +46,7 @@ layout: resume
   * Design Patterns, Framework Development, Infrastructure Development
   * Rich Internet Applications
   * Scalable backend development
-  * Machine Learning / Data Mining (primarily with Weka, Hadoop, Maui)
+  * Machine Learning / Data Mining (primarily with Weka, Mahout, Maui)
 
 ### Agile Practices
 
