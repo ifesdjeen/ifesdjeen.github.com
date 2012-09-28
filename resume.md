@@ -60,12 +60,13 @@ layout: resume
 
   * Relational: Postgre SQL, MySQL, MS SQL, Oracle
   * Graph: Neo4J (took part in writing 2 drivers, [Ruby](http://github.com/maxdemarzi/neography) and [Clojure](http://github.com/michaelklishin/neocons) ones)
-  * Key/value/document HBase (mostly for Hadoop infrastructure), Redis, MongoDB (took a part in [Clojure driver, Monger](http://github.com/michaelklishin/monger) development, write [Entrepot, DataMapper pattern implementation for MongoDB](http://github.com/ifesdjeen/entrepot)), Riak.
+  * Key/value/document HBase (mostly for Hadoop infrastructure), Redis, MongoDB (took a part in [Clojure driver, Monger](http://github.com/michaelklishin/monger) development, wrote [Entrepot, DataMapper pattern implementation for MongoDB](http://github.com/ifesdjeen/entrepot)), Riak, Cassandra.
 
 ### Good stuff that didn't get to the forementioned lists
 
   * AMQP, took a part in [jRuby Driver](http://github.com/ruby-amqp/hot_bunnies) and [Clojure Driver](http://github.com/michaelklishin/langohr)
   * ElasticSearch, wrote [Clojure Driver](http://github.com/clojurewerkz/elastisch) and [Ruby Driver](http://github.com/ifesdjeen/elastisch.rb), but latter one is not yet opensource).
+  * Cassandra, wrote [Clojure Driver](https://github.com/clojurewerkz/cassaforte) and [Cascading Tap (to work with Hadoop)](https://github.com/ifesdjeen/cascading-cassandra)
 
 ## Projects
 
@@ -76,8 +77,11 @@ Besides commercial development, I've been involved into some Open Source Project
   * [Travis-CI](http://travis-ci.org), was a core team member until November 2011, helped with SproutCore Migration, helped with Cookbooks, VM builds and maintenance.
   * [AMQP Guides](http://rubyamqp.info), helped to make a better website, and get AMQP Docs to [Beautiful Docs list](https://github.com/PharkMillups/beautiful-docs)
   * [Monger](http://github.com/michaelklishin/monger) and [Monger Docs](http://github.com/clojurewerkz/monger-docs)
+  * [Cassaforte](https://github.com/clojurewerkz/cassaforte)
+  * [Cascading Cassandra Tap](https://github.com/ifesdjeen/cascading-cassandra)
   * [Langohr](http://github.com/michaelklishin/langohr)
   * [Elastisch](http://github.com/clojurewerkz/elastisch)
+  * [Welle](https://github.com/michaelklishin/welle)
   * [Entrepot](http://github.com/ifesdjeen/entrepot)
   * [Neography](http://github.com/maxdemarzi/neography)
   * [Hot Bunnies](http://github.com/ruby-amqp/hot_bunnies)
@@ -201,5 +205,3 @@ Besides commercial development, I've been involved into some Open Source Project
 <br/>
 <br/>
 <br/>
-
-
