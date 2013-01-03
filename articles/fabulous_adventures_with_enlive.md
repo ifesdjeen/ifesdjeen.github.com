@@ -105,7 +105,7 @@ And a snippet that’s going to put username, profile link and avatar on their p
 
 Now, let’s say you had a redesign and username is now rendered not in a `span`, but in `div`. You have several possibilities, of course, one is to assign a class (or id) to the tag, and use more specific selector. But in any case, it’s a significant amount of an additional work to keep doing it all the time for all the things you need to inject anywhere on the website, and that can be quite unnerving.
 
-So let’s make it possible to interpolate our hash into html snippet  (boilerplate part of html was emmited for brewity):
+So let’s make it possible to interpolate our hash into html snippet  (boilerplate part of html was ommited for brewity):
 
 <script src="https://gist.github.com/f3efb8b520ffededae61.js?file=15.html"></script>
 
