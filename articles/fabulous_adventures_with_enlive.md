@@ -137,6 +137,8 @@ Now, our previous snippet, where we were manually putting each argument into the
 
 That enables you to add things to your hash, changing template, position of interpolation any time you want, and significantly reduces maintenance. When working with a designer, you may always render a pretty page with pre-set values for him, created by some convention, and after he’s done with his work, put interpolation placeholders back to your template for ease of your use.
 
+As a security fanatic and general paranoid, I was wondering: what if there's some user input that is written to the database not escaped? What if someone posts wicked XSS to the form, and it gets rendered? There's nothing to be scared about here. As we manipulate content and attributes, without parsing/converting them to Enlive tags, it's all safe. Any input given by the user will be rendered as an escaped string, not as HTML. So here you may not worry, Enlive got it covered for you.
+
 Enlive is a magical system, it allows you to do a lot of great stuff very easily. In the next episode, I’m going to tell more things about Enlive awesomeness and how to create Widget-based system, that will help you to A/B test things, boost performance of your website by parallelizing rendering of chunks, ease debugging of the website by creating snippets.
 
 All these things are the part of our upcoming set of libraries for people who develop websites with Clojure. It’s far away from being framework, as we try to keep things decoupled and replacable. Moreover, by using Enlive instead of <name your favorite templating engine> you can build your own abstractions that are relevant to your domain instead of trying to squeeze your big idea into limiting engine.
