@@ -11,6 +11,8 @@ You can use enlive for numerous things. Main purpose of this set of tutorials is
 
 To get more familiar with Enlive, I strongly suggest going through [David Nolen's](https://github.com/swannodette/enlive-tutorial/), or [Brian Marick's](https://github.com/cgrand/enlive/wiki/Table-and-Layout-Tutorial,-Part-1:-The-Goal) tutorials. I'm mostly writing about our experiences with Enlive, what helped us to do what we do, and try to provide tips on how to build more complex things on top of Enlive, rather than cover it's functionality.
 
+Friends of mine mentioned that what I say here may be considered as not a 'traditional' way of doing things, which I do agree with. My major point is that Enlive could be used in many ways, and some of them are not as obvious, even though they are just as straightforward. If you're just starting up with Enlive, it may be helpful to see a couple of use-cases that may be or not be relevant to what you do. But knowing these things will definitely help you to find your own pattern.
+
 ## Anatomy of Enlive
 
 ### Tags
@@ -134,6 +136,12 @@ Turns out to be quite easy, right?
 Now, our previous snippet, where we were manually putting each argument into the place it belongs, turns into:
 
 <script src="https://gist.github.com/f3efb8b520ffededae61.js?file=20.clj"></script>
+
+One of the interesting use cases for that would probably be Google analytics. Which you could of course solve differently (e.q. through introducing `data-attribute` or hidden input with a value that is read from JS). So, you could interpolate things like:
+
+<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=21.clj"></script>
+
+In that particular case it's quite helpful, since it may be not that great of an idea to maintain a single concern in two places (generic snippet for any website, and input that holds a website or page-specific value).
 
 That enables you to add things to your hash, changing template, position of interpolation any time you want, and significantly reduces maintenance. When working with a designer, you may always render a pretty page with pre-set values for him, created by some convention, and after he’s done with his work, put interpolation placeholders back to your template for ease of your use.
 
