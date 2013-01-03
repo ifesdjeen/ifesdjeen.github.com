@@ -139,7 +139,7 @@ Now, our previous snippet, where we were manually putting each argument into the
 
 One of the interesting use cases for that would probably be Google analytics. Which you could of course solve differently (e.q. through introducing `data-attribute` or hidden input with a value that is read from JS). So, you could interpolate things like:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=21.clj"></script>
+<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=21.html"></script>
 
 In that particular case it's quite helpful, since it may be not that great of an idea to maintain a single concern in two places (generic snippet for any website, and input that holds a website or page-specific value).
 
