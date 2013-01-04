@@ -49,7 +49,7 @@ I personally like Moleskine: good paper, good cover. If sweat drops, you won’t
 
 ## Headphones that don't fall out your ears
 
-That was probably the best discovery of 2012. First, I'm now able to leave my phone near the threadmill, have no wires around my neck, and these are probably first headphones that do not fall out my ears. I like the sound, and haven't experienced major bluetooth interruptions. Feels good.
+That was probably the best discovery of 2012. First, I'm now able to leave my phone near the threadmill, have no wires around my neck, and these are probably first headphones that do not fall out my ears. I like the sound, and haven't experienced major bluetooth interruptions. Feels good. I've chosen [JF4 Freedom Bluetooth](http://www.amazon.de/gp/product/B0095P2F1S), lightweight and sweatproof, besides all mentioned goodness.
 
 <img src="/assets/images/2012_gym_gear/08.jpg" />
 
