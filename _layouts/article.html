@@ -55,6 +55,26 @@
         </div>
         <div class='span9'>
           {{ content }}
+          {% if page.disqus_identifier %}
+          <div id='disqus_thread'></div>
+          <script type='text/javascript'>
+            //<![CDATA[
+              /* * * CONFIGURATION VARIABLES * * */
+              var disqus_shortname = 'ifesdjeen'; // required: replace example with your forum shortname
+
+              var disqus_developer = 0; // set to 1 on local machine for testing comments
+              var disqus_identifier = '{{ page.disqus_identifier }}';
+              var disqus_url = '{{ page.disqus_url }}';
+
+              /* * * DON'T EDIT BELOW THIS LINE * * */
+              (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            //]]>
+          </script>
+          {% endif %}
         </div>
       </div>
       <footer class='footer article'>
