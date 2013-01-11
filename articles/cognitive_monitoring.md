@@ -1,5 +1,7 @@
 ---
 title: "Cognitive Monitoring, part 1"
+description: "Simple tricks that will improve your monitoring techniques by providing information in a way that's easier for your brain to see and interpret."
+keywords: "monitoring, devops, psychology, vizualization, graphs"
 layout: article
 disqus_identifier: "cognitive_monitoring"
 disqus_url: "http://coffeenco.de/articles/cognitive_monitoring.html"

@@ -2,7 +2,9 @@
   <title>Alex P's blog: {{ page.title }}</title>
 
   <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-  <meta content='Personal Blog of Alex Petrov.' name='description' />
+  {% if page.keywords %} <meta content='{{page.keywords}}' name='keywords' />  {% endif %}
+  {% if page.description %} <meta content='{{page.description}}' name='description' />  {% endif %}
+
   <meta content='ClojureWerkz Team member, Alex Petrov'  name='author' />
 
   <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,400,600' rel='stylesheet' type='text/css' />

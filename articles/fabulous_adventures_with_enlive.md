@@ -1,5 +1,7 @@
 ---
 title: "Fabulous adventures with Enlive"
+description: "How to build your own templating system using Enlive. Getting into the guts of Enlive, checking out what they do internally and learning how to build your own abstractions on top of it."
+keywords: "clojure, enlive, template system"
 layout: article
 disqus_identifier: "fabulous_adventures_with_enlive"
 disqus_url: "http://coffeenco.de/articles/fabulous_adventures_with_enlive.html"
