@@ -27,3 +27,14 @@ Another example is "conjunction fallacy", where people simplify the decision bas
 Last thing I'm going to mention is when people that are responsible for making some choice, when seeing some benefits (it's cool, many people are using it, I'm good in it, it's said to be fast etc), don't see downsides. I mean - logically, they do see them, but feeling offers the opposite opinion, which people often misunderstand and accept as their logical conclusion. If people find something less appealing, they consider technology to be flawed or bad. That actually explains why people start using questionable technologies. When they start, they see a benefit and they get biased, therefore they can't see downsides or assess complexity any more.
 
 Only thing we can do is to inform ourselves better and seek flaws in our thinking, rather than accepting an intuitive solution or choice. It's not easy, of course, but since our mind is partially blind, and some information is harder to access in our minds, we need to retrieve it with an effort and prevent brain laziness and shortcuts.
+
+# Worth reading
+
+Once again, I'm far away from being an expert on the subject, but I've found following authors/books to be very interesting:
+
+  * "Thinking, Fast and Slow" by Daniel Kahneman
+  * "Stumbling on Happiness" by Daniel Gilbert
+  * "Upside of Irrationality" by Dan Areily
+  * "Whole new Mind" by Daniel Pink
+
+Some of these have some research data on how mind functions. Of course, it's more of a pop-science. I'm not aware of any [more serious] books in English on Psychology subject, really. If you have something to add, ping me on [twitter](http://twitter.com/ifesdjeen)
