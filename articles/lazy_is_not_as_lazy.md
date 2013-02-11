@@ -40,6 +40,8 @@ Now, we define an order of execution:
 
 <script src="https://gist.github.com/ifesdjeen/4757594.js?file=05_lazy.clj""></script>
 
+## Lazy enough?
+
 Thinking in terms of lazy sequences, most straightforward implementation would be something like that:
 
 <script src="https://gist.github.com/ifesdjeen/4757594.js?file=06_lazy.clj""></script>
@@ -54,6 +56,8 @@ a bit different approach. If we can't (or shouldn't) implement that in terms of 
 We need something that's closer to a `while()` loop, which could be either traditional recursion or `loop-recur`
 construct.
 
+## Recursion
+
 Traditional recursive function would look something like that:
 
 <script src="https://gist.github.com/ifesdjeen/4757594.js?file=07_lazy.clj""></script>
@@ -61,6 +65,8 @@ Traditional recursive function would look something like that:
 You start with a complete sequence of fetchers, try first, if it has returned nil, you move to the next one,
 and go through it until you actually find a match. Same functionality, in more 'clojuric' way would look like
 that:
+
+## More of a while thing
 
 <script src="https://gist.github.com/ifesdjeen/4757594.js?file=08_lazy.clj""></script>
 
