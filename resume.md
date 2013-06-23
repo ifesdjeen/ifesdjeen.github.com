@@ -4,28 +4,34 @@ layout: resume
 ---
 
 <div class='logo'>
-  <h1 style="font-size: 100px; line-height: 200px; float: left">Alex P</h1>
-  <img src='/assets/images/flower.png' style="float: left; width: 200px" />
+  <h1 style="font-size: 50px; line-height: 150px; float: left">Alex P</h1>
+  <img src='/assets/images/flower.png' style="float: left; width: 150px" />
 </div>
 <div class="clear"></div>
-<p style="padding-top: 20px; font-family: 'Signika Negative', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 200; line-height: 27px;">
-   Software quality freak. Ruby / C(pp) / Clojure hacker. Starving to see the world where everything is event-driven.
+<p style="padding-top: 20px; font-family: 'Signika Negative', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 200; line-height: 20px;">
+   Software quality freak, serial conference and user group organizer.
+   <br />
+   Ruby / C(pp) / Clojure hacker. Starving to see the world where everything is event-driven.
+   <br />
+   Data analysis, visualization, metrics collection for the win.
    <br />
    Hey, my software is deployed in Düsseldorf Airport, what about yours?
+   <br /><br />
+   I also like <a href="https://speakerdeck.com/ifesdjeen">speaking @ conferences</a> and <a href="https://coffeenco.de">writing</a>
 </p>
 
 ## Get in touch!
 
   * __E-mail / Jabber__ <a href="mailto:oleksandr.petrov@gmail.com">oleksandr.petrov@gmail.com</a>
   * __Skype__: ifesdjeen
-  * __Tel.__: +49 173 310 94 96
+  * __Tel.__: +49 (0) 1573-959-2681
 
 ## Manifesto
 
  * Work with real people, rather than just professionals
  * Extend knowledge, understanding and vision every day, adjust my skills, learn new things, open-source some parts of my code, help other people to grow
  * Develop scalable, supportable, well-designed, implemented, tested, structured software, easy to extend, contribute to and keep up-to-date.
- * Be ready to rewrite, when there's no reasonable way to scale/extend anymore.
+ * Be ready to change approach, when there's no reasonable way to scale/extend anymore.
  * Bring some fresh air to the team I work with, ease every existing process until the point it feels comfortable for each team member.
  * Write software and libraies that matter and help, are useful and easy to use.
  * Code and hack not for sakes of entropy, chaos and programming itself, but for product. Make just enough, not less or more.
@@ -37,16 +43,18 @@ layout: resume
 
  * Ruby
  * JVM Stack (Clojure, Scala and Java)
- * JavaScript (do best things with HTML5 spec & write less glue-code)
- * C++ / C
+ * JavaScript
+ * C
+ * And many others...
 
 ### Software Design / Practices / Inerests
 
-  * Object-relational mapping
-  * Design Patterns, Framework Development, Infrastructure Development
-  * Rich Internet Applications
+  * System Monitoring
+  * High-performance solutions
   * Scalable backend development
-  * Machine Learning / Data Mining (primarily with Weka, Mahout, Maui)
+  * Databases
+  * Design Patterns, Framework Development, Infrastructure Development
+  * Statistics, Machine Learning / Data Mining
 
 ### Agile Practices
 
@@ -56,45 +64,68 @@ layout: resume
   * Test and Behavior Driven Development
   * SCM (Git, Perforce, SVN, Mercurial, Darcs). Can't count it for qualification, but helps ;)
 
-### Databases
+### Tech toolset
 
-  * Relational: Postgre SQL, MySQL, MS SQL, Oracle
-  * Graph: Neo4J (took part in writing 2 drivers, [Ruby](http://github.com/maxdemarzi/neography) and [Clojure](http://github.com/michaelklishin/neocons) ones)
-  * Key/value/document HBase (mostly for Hadoop infrastructure), Redis, MongoDB (took a part in [Clojure driver, Monger](http://github.com/michaelklishin/monger) development, wrote [Entrepot, DataMapper pattern implementation for MongoDB](http://github.com/ifesdjeen/entrepot)), Riak, Cassandra.
+  * Postgre SQL, MySQL, MS SQL, Oracle
+  * Neo4J (took part in writing 2 drivers, [Ruby](http://github.com/maxdemarzi/neography) and [Clojure](http://github.com/michaelklishin/neocons) ones)
+  * HBase, MongoDB, Riak, Cassandra
+  * RabbitMQ
+  * Storm
 
-### Good stuff that didn't get to the forementioned lists
+### Community Work
 
-  * AMQP, took a part in [jRuby Driver](http://github.com/ruby-amqp/hot_bunnies) and [Clojure Driver](http://github.com/michaelklishin/langohr)
-  * ElasticSearch, wrote [Clojure Driver](http://github.com/clojurewerkz/elastisch) and [Ruby Driver](http://github.com/ifesdjeen/elastisch.rb), but latter one is not yet opensource).
-  * Cassandra, wrote [Clojure Driver](https://github.com/clojurewerkz/cassaforte) and [Cascading Tap (to work with Hadoop)](https://github.com/ifesdjeen/cascading-cassandra)
+  * Barcamps, workshops in [Munich](http://munich.rubyshift.org)
+  * [Kiev and Dnepropetrovsk](http://rubyshift.org)
 
 ## Projects
 
-This list of project may be incomplete, for brevity.
+## Open Source
+
+This list of project is incomplete, for brevity.
 
 Besides commercial development, I've been involved into some Open Source Projects. Most known of them are:
 
   * [Travis-CI](http://travis-ci.org), was a core team member until November 2011, helped with SproutCore Migration, helped with Cookbooks, VM builds and maintenance.
+  * AMQP, took a part in [jRuby Driver](http://github.com/ruby-amqp/hot_bunnies) and [Clojure Driver](http://github.com/michaelklishin/langohr)
+  * [Monger](http://github.com/michaelklishin/monger) and [Monger Docs](http://github.com/clojurewerkz/monger-docs), Clojure MongoDB driver
+  * [Cassaforte](https://github.com/clojurewerkz/cassaforte), Cassandra Driver
+  * [Cascading-Cassandra](https://github.com/ifesdjeen/cascading-cassandra), Cascading tap for Cassandra
+  * [Langohr](http://github.com/michaelklishin/langohr), Clojure RabbitMQ driver
+  * [Elastisch](http://github.com/clojurewerkz/elastisch), Clojure ElasticSearch driver
+  * [Welle](https://github.com/michaelklishin/welle), Clojure Riak driver
+  * [Entrepot](http://github.com/ifesdjeen/entrepot), repository pattern implementation (Ruby + Mongodb)
+  * [Neography](http://github.com/maxdemarzi/neography), Ruby client for Neo4J
+  * [Hot Bunnies](http://github.com/ruby-amqp/hot_bunnies), JRuby client for RabbitMQ
+  * [Zweikopf](https://github.com/ifesdjeen/zweikopf), JRuby / Clojure integration
+  * [Embedded Event Processing](http://github.com/clojurewerkz/eep), Embedded Event Processing in Clojure
+  * [Eventoverse-graphs](github.com/ifesdjeen/eventoverse-graphs), Pretty graphs
   * [AMQP Guides](http://rubyamqp.info), helped to make a better website, and get AMQP Docs to [Beautiful Docs list](https://github.com/PharkMillups/beautiful-docs)
-  * [Monger](http://github.com/michaelklishin/monger) and [Monger Docs](http://github.com/clojurewerkz/monger-docs)
-  * [Cassaforte](https://github.com/clojurewerkz/cassaforte)
-  * [Cascading Cassandra Tap](https://github.com/ifesdjeen/cascading-cassandra)
-  * [Langohr](http://github.com/michaelklishin/langohr)
-  * [Elastisch](http://github.com/clojurewerkz/elastisch)
-  * [Welle](https://github.com/michaelklishin/welle)
-  * [Entrepot](http://github.com/ifesdjeen/entrepot)
-  * [Neography](http://github.com/maxdemarzi/neography)
-  * [Hot Bunnies](http://github.com/ruby-amqp/hot_bunnies)
-  * [jReadability](https://github.com/ifesdjeen/jReadability)
-  * And some other ongoing projects that were or were not yet open-sourced and have different production readiness.
+  * And many others, that you can find [here](http://github.com/ifesdjeen) and [here](http://github.com/clojurewerkz)
+
+### Eventoverse
+
+  * Open source monitoring solution (think: Graphite + Statsd, but scalable, easy to integrate + with an nice d3 interface)
+  * Developed out of necessity, existing tools did not provide required level of granularity
+  * 2 years of iterations, all done in spare time, still in works
+  * Parallel, fast, scalable backend
+  * All the quirks are described in a Zef talk: https://speakerdeck.com/ifesdjeen/production-monitoring-zef-side
+
+## Commercial
+
+### StyleFruits
+
+  * Ported large part of the platform to Clojure
+  * Established code-review practices, changed the way development was planned and executed
+  * Implemented system monitoring, reporting and analysis tools for infrastructure and business-related data
+  * Developed a massively parallel web framework
+  * Brought significant performance improvements for different parts of applications
 
 ### Ad.net
 
   * Video-distribution system for major payment processor in Germany
   * Communication between 10K+ ARM-based devices
   * Cross-compiled libv8 together with librabbitmq-c to make it run on ARM architecture, in essence made our own AMQP-based version of Node.js
-  * Front-end: Ruby, Mootools. Backend: Clojure. AMQP was used for messaging.
-  * Open-sourced 6 Clojrue libraries during development
+  * Front-end: Rails. Backend in Clojure, AMQP for messaging.
 
 ### Link-suite
 
@@ -173,9 +204,10 @@ Besides commercial development, I've been involved into some Open Source Project
 
 ## Employments
 
-  * __2010 - now__	Orceo GmbH CTO (Ruby, Clojure, JavaScript)
-  * __2009 - 2010__	Oberon Media Senior Developer (Java, Scala, JavaScript), Scrum Master
-  * __2010 (project-based)__	Vestify (Boston, USA, remote). Ruby on Rails/JavaScript developer.
+  * __2012 - 2013__	StyleFruits, Senior Developer (Clojure)
+  * __2010 - 2012__	Orceo GmbH CTO (Ruby, Clojure, JavaScript)
+  * __2009 - 2010__	Oberon Media, Senior Developer (Java, Scala, JavaScript), Scrum Master
+  * __2010 (project-based)__	Vestify (Boston, USA, remote). Ruby/JavaScript developer.
   * __2007 - 2010 (project-based)__	Orceo GMbH (Munich, Germany, remote). Ruby/JavaScript/C++ developer.
   * __2008 - 2009__	Luxoft. Developer (C#, ASP.NET, MySQL, JavaScript).
   * __2007 - 2008__	Fozzy Group. Team leader (C#, ASP.NET, SQL, JavaScript).
@@ -192,10 +224,6 @@ Besides commercial development, I've been involved into some Open Source Project
   * English - fluent
   * German - intermediate
   * Ukrainian and Russian (not same thing) - even more fluent
-
-### Community Work
-
-  * Barcamps, workshops in [Munich](http://munich.rubyshift.org), [Kiev and Dnepropetrovsk](http://rubyshift.org)
 
 <br/>
 <br/>
