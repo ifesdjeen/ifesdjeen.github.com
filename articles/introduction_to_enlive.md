@@ -243,6 +243,7 @@ resulting tree is passed to the next rules.
 A transformation is a function that returns either a node or collection of node.
 
 Enlive defines several helper functions:
+
 ```clojure
 ;; Replaces the content of the element. Values can be nodes or collection of nodes.
 (content "xyz" a-node "abc")
