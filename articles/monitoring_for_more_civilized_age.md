@@ -319,3 +319,9 @@ If you'd like to learn more about our tooling, you can refer to:
   * [Eventoverse-graphs](https://github.com/ifesdjeen/eventoverse-graphs) for graphs
   * [Clj-pusher](https://github.com/ifesdjeen/clj-pushr) for websockets
   * [Cascalog](https://github.com/nathanmarz/cascalog) for map/reduce
+
+
+You can also check out a couple of other articles related to that one:
+
+  * [Cognitive Monitoring](http://coffeenco.de/articles/cognitive_monitoring.html)
+  * [Congnitive Illusions](http://coffeenco.de/articles/cognitive_illusions.html)
