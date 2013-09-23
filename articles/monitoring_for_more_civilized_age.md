@@ -311,3 +311,11 @@ easier for you to see what is really going on on the server.
 If you like, you can also check out my
 [slides from Monitorama](https://speakerdeck.com/ifesdjeen/new-age-monitoring-toolchain),
 where I talked about same principles.
+
+If you'd like to learn more about our tooling, you can refer to:
+
+  * [EEP](https://github.com/clojurewerkz/eep) for event emitter & windows
+  * [Meltdown](https://github.com/clojurewerkz/eep) for anonymous topologies
+  * [Eventoverse-graphs](https://github.com/ifesdjeen/eventoverse-graphs) for graphs
+  * [Clj-pusher](https://github.com/ifesdjeen/clj-pushr) for websockets
+  * [Cascalog](https://github.com/nathanmarz/cascalog) for map/reduce
