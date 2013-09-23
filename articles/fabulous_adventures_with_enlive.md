@@ -7,6 +7,8 @@ disqus_identifier: "fabulous_adventures_with_enlive"
 disqus_url: "http://coffeenco.de/articles/fabulous_adventures_with_enlive.html"
 ---
 
+## Adventures with Enlive
+
 Enlive gives you a lot of different opportunities. You can write a DSL that fits your application/domain in a best way. You can organize your snippets the way it’s easy for both desigers and developers. It’s very difficult to achieve same level of flexibility with pretty much any other tool.
 
 You can use enlive for numerous things. Main purpose of this set of tutorials is to help you to build rather complex websites and use it as a primary template language. We’ll cover the basics, and then will start building up our own abstractions on top of it, so that you could feel comfortable if you’re coming from Rails or Django background, want to have complex view logic and reusable components in your views.
@@ -21,12 +23,15 @@ Friends of mine mentioned that what I say here may be considered as not a 'tradi
 
 Probably, the first thing I would suggest learning about Enlive, is how it represents tags. For example, that:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=01.html"></script>
+```html
+<img src="/palm_face.png" class="lazy" alt="Palm Face" style="display: inline-block;">
+```
 
 Becomes:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=02.clj"></script>
-
+```clj
+{:tag :img, :attrs {:style "display: inline-block;", :alt "Palm Face", :class lazy, :src "/palm_face.jpg" }, :content nil}
+```
 
 Knowing that, its a bit easier to understand what internals are built around and how they function.
 
@@ -43,21 +48,52 @@ For convenience, we'll use Enlive function called `sniptest`. It does pretty muc
 
 For example, you have a simple HTML snippet, such as:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=03.html"></script>
+```html
+<html><body>
+  <header class="some_class">Header Content</header>
+  <footer></footer>
+</body></html>
+```
 
 Now, let’s figure out what an enlive transformation function does.
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=04.clj"></script>
+```clj
+(ns my-app
+  (:require [net.cgrand.enlive-html :as html]))
+
+(html/sniptest "<html><body><header class=\"some_class\">Header Content</header><footer></footer></body></html>"
+               [:body :header] (fn [a] (println a)))
+               ;; => {:tag :header, :attrs {:class some_class}, :content (Header Content)}
+```
 
 So, basically, what we get here is enlive representation of the selected tag. Let’s transform the tag now. For example, let’s upper-case the `:content` of the tag:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=05.clj"></script>
+```clj
+(html/sniptest "<html><body><header class=\"some_class\">Header Content</header><footer></footer></body></html>"
+                  [:body :header] (fn [html-source]
+                                    (assoc html-source
+                                      :content
+                                      (clojure.string/upper-case (first (:content html-source))))))
+```
 
 Remember what Enlive representation of a tag looked like? It’s basically a hash map, where the content is stored under `:content` key. Here, we `assoc` new, uppercased content within `html-source`.
 
 Now, instead of "Header Content" we’ll get "HEADER CONTENT". Moving forward, let’s try selecting same exact thing twice, and transforming it twice, too. For that, let’s make the content of header repeat twice:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=06.clj"></script>
+```clj
+(html/sniptest "<html><body><header class=\"some_class\">Header Content</header><footer></footer></body></html>"
+                  [:body :header] (fn [html-source]
+                                    (assoc html-source
+                                      :content
+                                      (list (clojure.string/upper-case (first (:content html-source))))))
+                  [:body :header] (fn [html-source]
+                                    (let [content (first (:content html-source))]
+                                      (assoc html-source
+                                        :content
+                                        (list
+                                         (str content " " content)
+                                         )))))
+```
 
 Obviously, we’ll get "HEADER CONTENT HEADER CONTENT". From that we can draw following conclusions:
 
@@ -69,11 +105,19 @@ Knowing these things, you can already apply some magic to your programs. For exa
 
 ### content
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=07.clj"></script>
+```clj
+(html/sniptest "<html><body><header class=\"some_class\">Header Content</header><footer></footer></body></html>"
+                  [:body :header] (html/content "Some New Content"))
+```
 
 Output of this operation will be:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=08.html"></script>
+```html
+<html><body>
+  <header class="some_class">Some New Content</header>
+  <footer></footer>
+</body></html>
+```
 
 So basically `html/content` did pretty much same thing we’ve already seen, only in a more generic way.
 
@@ -81,19 +125,28 @@ So basically `html/content` did pretty much same thing we’ve already seen, onl
 
 `set-attr` is working in a very similar way to `content`. Instead of `assoc`-ing to `:content`, we `assoc` to `:attrs`:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=09.clj"></script>
+```clj
+(defn set-attr
+ [& kvs]
+ #(assoc % :attrs (apply assoc (:attrs % {}) kvs)))
+```
 
 So, for example:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=10.clj"></script>
+```clj
+{:tag :img, :attrs {:class "lazy"}, :content nil}
+```
 
 Having a transformation:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=11.clj"></script>
-
+```clj
+[:img] (set-attr :src "new_src.png" :alt "New Alt Yo")
+```
 You will get
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=12.clj"></script>
+```clj
+{:tag :img, :attrs {:class "lazy" :src "new_src.png" :alt "New Alt Yo"}, :content nil}
+```
 
 ## Custom transformations
 
@@ -101,47 +154,149 @@ Let’s make something more complex now. Personally, first time I’ve started u
 
 For example, let’s take a GitHub header for logged in user (base/logged_in_user_header.html)
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=13.html"></script>
-
+```html
+<html>
+  <body>
+  <ul id="user-links">
+	  <li>
+    	<a href="/profile/link" class="name">
+      		<img src="avatar.jpg" width="20" height="20">
+      		<span>Username</span>
+	    </a>
+	  </li>
+  </body>
+</html>
+```
 And a snippet that’s going to put username, profile link and avatar on their places:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=14.clj"></script>
+```clj
+(ns my.cool.website
+  [net.cgrand.enlive-html :as html])
+
+(html/defsnippet logged-in-user-header "base/logged_in_user_header.html"
+  [:ul#user-links]
+  [user]
+  [:a] (html/set-attr :href (profile-url user))
+  [:a :img] (html/set-attr :src (avatar-url user))
+  [:a :span] (html/content (:username user)))
+```
 
 Now, let’s say you had a redesign and username is now rendered not in a `span`, but in `div`. You have several possibilities, of course, one is to assign a class (or id) to the tag, and use more specific selector. But in any case, it’s a significant amount of an additional work to keep doing it all the time for all the things you need to inject anywhere on the website, and that can be quite unnerving.
 
 So let’s make it possible to interpolate our hash into html snippet  (boilerplate part of html was ommited for brewity):
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=15.html"></script>
+```html
+<a href="{{user-profile-url}}" class="name">
+  <img src="{{user-avatar-url}}" width="20" height="20">
+  <span>{{username}}</span>
+</a>
+```
 
 All we need to do now is to teach enlive how to interpolate such things. Knowing how enlive functions internally, it turns out to be extremely easy.
 
 First, an anonymous function that is going to match our interpolations:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=16.clj"></script>
+```clj
+(def matcher #(re-find #"\{\{.*\}\}" (str %)))
+```
 
 Now, we need to build a predicate selector function for Enlive that will receive nodes and later apply transformations to the matched ones. In case with content (whenever interpolation is a part of the content), it’s quite easy:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=17.clj"></script>
+```clj
+[(html/text-pred matcher)] #(interpolate-kv % m "\\{\\{" "\\}\\}")
+```
 
 Predicate `(html/text-pred matcher)` will find only the tags that match our regular expression and apply `interpolate-kv` function to them.
 
 In case with attributes (whenever interpolation is a part of one of attributes, but not of the content), it gets more complex:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=18.clj"></script>
+```clj
+[(html/pred
+  #(some (fn [i] (and (not (nil? i)) (matcher i))) (get-in % [:attrs])))]
+	#(interpolate-attrs interpolate-kv [m "\\{\\{" "\\}\\}"] %)
+```
 
 Here, we get all the attributes from the tag, find if either one of them has interpolations by matching the regular expression, and then apply `interpolate-attrs` function to the matched tag.
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=19.clj"></script>
+```clj
+(require '[net.cgrand.enlive-html :as html])
+(use 'clojure.test)
+
+(defn apply-to-values [m f]
+  "Applies `f` to each value of `m` map"
+  (into {} (for [[k v] m]
+             [k (f v)])))
+
+;;
+;; Predicates
+;;
+
+(def matcher #(re-find #"\{\{.*\}\}" (str %)))
+
+(def attributes-have-interpolations?
+  (html/pred #(some (fn [i] (and (not (nil? i)) (matcher i))) (get-in % [:attrs]))))
+
+(def content-has-interpolations?
+  (html/text-pred matcher))
+
+(defn interpolate-kv
+  "Interpolates values present within `m` hash to `pattern`"
+  [^String pattern m]
+  (let [interpolate-fn (fn [s [k v]] (clojure.string/replace s (str "{{" k "}}") (str v)))]
+    (reduce #(interpolate-fn %1 %2)
+            pattern
+            (into {}
+                  (for [i (re-seq #"\{\{(.*?)\}\}" pattern)]
+                    [(second i)
+                     (or
+                      (get-in m (map keyword (clojure.string/split (second i) #"\.")))
+                      (str "{{" (second i) "}}")
+                      )])))))
+
+(defn interpolate-attrs
+  "Interpolates values present within `m` hash to `pattern`"
+  [html-source m]
+  (let [interpolated-attrs (utils/apply-to-values (:attrs html-source) #(interpolate-kv % m))]
+    [(assoc html-source :attrs interpolated-attrs)]))
+
+(defn interpolate-snippet
+  "Interpolates snippet"
+  [html-source m]
+  (html/flatmap
+   (html/transformation
+    [attributes-have-interpolations?] #(interpolate-attrs % m)
+    [content-has-interpolations?] #(interpolate-kv % m))
+   html-source))
+
+(deftest interpolations
+  (testing "Complex interpolation"
+    (let [html-source (html/html-snippet "<head><body><div id="{{person.nickname}}"></div><i>{{even.deeper.hash}}</i></body></head>")]
+      (is (= "<head></head><body><div id="ifesdjeen"></div><i>YAY!</i></body>"
+             (utils/render (interpolate-snippet html-source {:person {:nickname "ifesdjeen"} :even {:deeper {:hash "YAY!"}}})))))))
+```
 
 Turns out to be quite easy, right?
 
 Now, our previous snippet, where we were manually putting each argument into the place it belongs, turns into:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=20.clj"></script>
+```clj
+(html/defsnippet logged-in-user-header "base/logged_in_user_header.html"
+  [:ul#user-links]
+  [user]
+  [html/this-node] (interpolate-snippet (assoc user
+                                          :user-profile-url (profile-url user)
+                                          :user-avatar-url (avatar-url user))))
+```
 
 One of the interesting use cases for that would probably be Google analytics. Which you could of course solve differently (e.q. through introducing `data-attribute` or hidden input with a value that is read from JS). So, you could interpolate things like:
 
-<script src="https://gist.github.com/f3efb8b520ffededae61.js?file=21.html"></script>
+```html
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{account}}']);
+  // ...
+</script>
+```
 
 In that particular case it's quite helpful, since it may be not that great of an idea to maintain a single concern in two places (generic snippet for any website, and input that holds a website or page-specific value).
 

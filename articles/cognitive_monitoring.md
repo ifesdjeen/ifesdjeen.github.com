@@ -7,23 +7,25 @@ disqus_identifier: "cognitive_monitoring"
 disqus_url: "http://coffeenco.de/articles/cognitive_monitoring.html"
 ---
 
+## Cognitive Monitoring
+
 When implementing a monitoring system, or, being more precise, visualization part for the monitoring system, it’s very important to keep in mind several concepts of a human mind.
 
-## Context matters: same image means different things in different contexts.
+## Context matters
 
-Check that image out:
+Same image means different things in different contexts. Check that image out:
 
-<img src="/assets/images/cognitive_monitoring/illusion_01.png" />
+<img src="/assets/images/cognitive_monitoring/illusion_01.png" style="max-width: 95%" />
 
-Have you noticed that B and 13 are pretty much the same image? But when reading top-to-bottom and left-to-right, it's quite easy for us to interpret them differently, right? You have no doubt that you're reading A-B-C sequence when reading left-to-right and 12-13-14 sequence when looking up-to-bottom.
+Have you noticed that B and 13 are pretty much the same image? But when reading top-to-bottom and left-to-right, its quite easy for us to interpret them differently, right? You have no doubt that you're reading A-B-C sequence when reading left-to-right and 12-13-14 sequence when looking up-to-bottom.
 
 Same goes for patterns. Consider a graph (1):
 
-<img src="/assets/images/cognitive_monitoring/01.png" />
+<img src="/assets/images/cognitive_monitoring/01.png" style="max-width: 95%" />
 
 Here we see server memory, raising pretty fast, and noticable drops. And another graph (2):
 
-<img src="/assets/images/cognitive_monitoring/02.png" />
+<img src="/assets/images/cognitive_monitoring/02.png" style="max-width: 95%" />
 
 Here we see data points that are staying in pretty much same range.
 
@@ -31,7 +33,7 @@ Without a good context, it’s hard to tell which one may speak of abnormalitite
 
 Or, for example that graph:
 
-<img src="/assets/images/cognitive_monitoring/03.png" />
+<img src="/assets/images/cognitive_monitoring/03.png" style="max-width: 95%" />
 
 Here we see some reasonable distribution, but also some spikes.
 
@@ -39,7 +41,7 @@ If it’s your backend server processor times, it may be fine (it gets something
 
 Given different context, we will interpret some behavior as normal, and some other behavior as abnormal. For processor times. Also, different number ranges for different number classes gields different conclusions.
 
-## Quantity weights more when there’re quantitive differences
+## Quantity weights & differences
 
 For example, when speaking of TCP packet loss/retransmits, it’s important to see the number. It’s definitely not a binary metric (happens all the time), but often, especially if the numbers are aggregare (10, 100, 1000 machines), it’s hard to estimate wether current retransmits frequency is large or small.
 
@@ -83,15 +85,15 @@ User of your monitoring solution may be an experienced devops, or just a beginne
 
 One of such heuristics is horizon graph. It helps you to increase data density, while preserving resoluiton. Without prior knowledge about horizon graphs they may look quite confusing:
 
-<img src="/assets/images/cognitive_monitoring/horizon_01.png" />
+<img src="/assets/images/cognitive_monitoring/horizon_01.png" style="max-width: 95%" />
 
 Same graph originally looked like that:
 
-<img src="/assets/images/cognitive_monitoring/horizon_02.png" />
+<img src="/assets/images/cognitive_monitoring/horizon_02.png" style="max-width: 95%" />
 
 But learning how they work:
 
-<img src="/assets/images/cognitive_monitoring/horizon_03.png" />
+<img src="/assets/images/cognitive_monitoring/horizon_03.png" style="max-width: 95%" />
 
 Changes your understanding. Now you see that higher-dense blue indicates a number, that's lower that lower-dense blue, and higher-dense red represents a negative number, that's absolute value is lower than lower-dense red area. Now, looking at a graph you can visually compare an amount of different colors on graph, and understand where your values lay.
 
@@ -99,7 +101,7 @@ Changes your understanding. Now you see that higher-dense blue indicates a numbe
 
 Seeing a pattern may be a difficult task. Marking abnormalities, or values that are particularly interesting for observer with different colors, helps a lot, too. It's sometimes called Theshold Encoding:
 
-<img src="/assets/images/cognitive_monitoring/04.png" />
+<img src="/assets/images/cognitive_monitoring/04.png" style="max-width: 95%" />
 
 Here, temperature above 55°F is marked with red color. It's very obvious for an observer, which values are above the threshold and which are below.
 
@@ -107,7 +109,7 @@ Here, temperature above 55°F is marked with red color. It's very obvious for an
 
 Yet another thing that helps a lot is a grid. Consider the following graph:
 
-<img src="/assets/images/cognitive_monitoring/05.png" />
+<img src="/assets/images/cognitive_monitoring/05.png" style="max-width: 95%" />
 
 The line is clear, points are visible. But it's still hard to guess an exact value, right? Everything changes as soon as we bring the grid in:
 

@@ -5,6 +5,7 @@ disqus_identifier: "cognitive_illusions"
 disqus_url: "http://coffeenco.de/articles/cognitive_illusions.html"
 ---
 
+## Cognitive Illusions
 In response to tweet by Justin Sheehy of Basho:
 
 <blockquote class="twitter-tweet"><p>I want to hear all of your stories about cargo cult behavior in technology selection. Send them to justin at basho dot com if &gt;140.</p>&mdash; Justin Sheehy (@justinsheehy) <a href="https://twitter.com/justinsheehy/status/299226259467161601">February 6, 2013</a></blockquote>

@@ -5,6 +5,8 @@ disqus_identifier: "2012_gym_gear"
 disqus_url: "http://coffeenco.de/articles/2012_gym_gear.html"
 ---
 
+## 2012 Gym Gear!
+
 Here’s some of the gear that helped me a lot to get past 2012 in gym: supplements, shoes, gloves and other stuff. I’m not a big fan of new year resolutions. I can produce five of those per day and never remeber them again, so I prefer making resolutions on days I can actually remember them.
 
 2012 been a year of total weight loss for me. Lost a total of 14 kilos (within around 3,5 months) and remained on that number while increasing strengh for some time, which is a good indicator for me.

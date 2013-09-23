@@ -38,5 +38,5 @@ PLATFORMS
 
 DEPENDENCIES
   iconv
-  jekyll (>= 1.0.0.rc1)
+  jekyll (~> 1.0.3)
   redcarpet
