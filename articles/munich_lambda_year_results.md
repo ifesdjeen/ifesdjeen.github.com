@@ -22,7 +22,8 @@ people, and was hosted by GuteFrage. It was a very nice and promising start, sin
 we were quite sure there's enough interest, and we should definitely continue.
 
 Over the year, we had 4 meetups and 2 [Clojure Workshops](http://clojureworkshop.com/).
-__Over a hundred__ people visited the meetups, and 35 came to the workshops. We've iterated
+__Over a hundred__ people visited the meetups, and 35 came to the workshops. We had
+talks on `Haskell`, `Clojure` (and `Lisp`), `OCaml`, `Scala` and `Erlang`. We've iterated
 and been improving content and structure of our meetings, and have made many interesting
 conclusions and plans for the next year.
 
