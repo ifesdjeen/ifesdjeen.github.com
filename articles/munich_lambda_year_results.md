@@ -89,5 +89,5 @@ We wish you a Merry Christmas and a Happy Functional Year! See you soon!
   * Heiko Seeburger: [Type-safe equality with Scala implicits](https://github.com/hseeberger/demo-equality)
   * Steffen Jost: [Haskell Is Pure](https://speakerdeck.com/defworkshop/steffen-jost-haskell-is-pure)
   * Alex P: [Lisp in Huskell](https://speakerdeck.com/ifesdjeen/lisp-in-huskell)
-  * Maximilian Karasz: [Musical Creativity](https://github.com/josephwilk/musical-creativity)
+  * Maximilian Karasz: [Musical Creativity](https://github.com/josephwilk/musical-creativity) and [Sampling on the corpus of giants](http://www.slideshare.net/mknoszlig/sampling-on-the-corpus-of-giants)
   * [Clojure Workshop materials](https://speakerdeck.com/defworkshop)
