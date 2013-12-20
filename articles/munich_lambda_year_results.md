@@ -82,3 +82,12 @@ and let's see how we make it all happen! There are already some events scheduled
 first three months of 2013, and there will be even more coming next.
 
 We wish you a Merry Christmas and a Happy Functional Year! See you soon!
+
+## Bonus: Slides & Code
+
+  * Marek Kubica [Using static typing features for fun and profit](https://speakerdeck.com/leonidas/using-static-typing-features-for-fun-and-profit)
+  * Heiko Seeburger: [Type-safe equality with Scala implicits](https://github.com/hseeberger/demo-equality)
+  * Steffen Jost: [Haskell Is Pure](https://speakerdeck.com/defworkshop/steffen-jost-haskell-is-pure)
+  * Alex P: [Lisp in Huskell](https://speakerdeck.com/ifesdjeen/lisp-in-huskell)
+  * Maximilian Karasz: [Musical Creativity](https://github.com/josephwilk/musical-creativity)
+  * [Clojure Workshop materials](https://speakerdeck.com/defworkshop)
