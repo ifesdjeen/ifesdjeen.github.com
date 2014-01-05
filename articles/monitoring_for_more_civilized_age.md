@@ -325,3 +325,5 @@ You can also check out a couple of other articles related to that one:
 
   * [Cognitive Monitoring](http://coffeenco.de/articles/cognitive_monitoring.html)
   * [Congnitive Illusions](http://coffeenco.de/articles/cognitive_illusions.html)
+
+<i>Published on Sep 23 2013</i>

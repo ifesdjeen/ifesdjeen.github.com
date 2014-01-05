@@ -132,3 +132,5 @@ to, make it run in a quiet mode etc.
 <script src="https://gist.github.com/2667797.js?file=initscript.sh"></script>
 
 Well, that's pretty much it. It's just one of many ways for you to handle your clojure deployments.
+
+<i>Published on May 12, 2012</i>

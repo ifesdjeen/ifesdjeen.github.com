@@ -128,3 +128,5 @@ Attributions:
 
   * Images for horizon graphs are taken from [d3.horizon](https://github.com/d3/d3-plugins/tree/master/horizon) plugin
   * Theshold encoding image is caputred from [this bl.ock](http://bl.ocks.org/3970883)
+
+<i>Published on Jan 6 2013</i>

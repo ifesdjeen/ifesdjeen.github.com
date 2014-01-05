@@ -313,3 +313,5 @@ Until then, you can start learning Haskell and other FP languages with
 us in our Functional Institute meetups. [First
 one](http://www.meetup.com/Munich-Lambda/events/158156492/)
 will take place at codecentric AG Munich Office on 9th of January.
+
+<i>Published on Jan 3 2014</i>

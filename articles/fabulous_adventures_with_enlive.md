@@ -309,3 +309,5 @@ Enlive is a magical system, it allows you to do a lot of great stuff very easily
 All these things are the part of our upcoming set of libraries for people who develop websites with Clojure. It’s far away from being framework, as we try to keep things decoupled and replacable. Moreover, by using Enlive instead of <name your favorite templating engine> you can build your own abstractions that are relevant to your domain instead of trying to squeeze your big idea into limiting engine.
 
 Never be scared of writing your own thing. Often it will help you more than it will hinder. And, writing Clojure code is always fun. You can have it all.
+
+<i>Published on Jul 2 2013</i>

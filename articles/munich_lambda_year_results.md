@@ -91,3 +91,5 @@ We wish you a Merry Christmas and a Happy Functional Year! See you soon!
   * Alex P: [Lisp in Huskell](https://speakerdeck.com/ifesdjeen/lisp-in-huskell)
   * Maximilian Karasz: [Musical Creativity](https://github.com/josephwilk/musical-creativity) and [Sampling on the corpus of giants](http://www.slideshare.net/mknoszlig/sampling-on-the-corpus-of-giants)
   * [Clojure Workshop materials](https://speakerdeck.com/defworkshop)
+
+<i>Published on Dec 20 2013</i>
