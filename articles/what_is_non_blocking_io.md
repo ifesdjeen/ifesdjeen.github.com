@@ -126,13 +126,7 @@ Every flow, even the most basic one will involve not only scheduling your events
 
 If you take a look at libev code, you will find tons of details about differences of implementation of Async I/O on all the operation system.
 
-## If you were to write your own non-blocking IO ##
-
-Problem with a scheduler.
-
-## Ok, why i need to to notify them when I fork? ##
-
-## Why is there such a hype around node.js? Haven't they heard of Tornado, EM, and many others? ##
+## Further reading
 
 Better things to read on the topic:
 
