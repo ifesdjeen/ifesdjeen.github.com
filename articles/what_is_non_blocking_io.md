@@ -135,15 +135,14 @@ Problem with a scheduler.
 ## Why is there such a hype around node.js? Haven't they heard of Tornado, EM, and many others? ##
 
 Better things to read on the topic:
-  Very good post by Mathias Meyer on EM: http://www.paperplanes.de/2011/4/25/eventmachine-how-does-it-work.html
-  Docs of libev: http://doc.dvgu.ru/devel/ev.html
-  IBM article on libev and libevent: http://www.ibm.com/developerworks/aix/library/au-libev/index.html
-  The C10K problem: http://www.kegel.com/c10k.html
-  Epoll, sciense and superpoll: http://sheddingbikes.com/posts/1280829388.html
+
+  * Very good post by Mathias Meyer on EM: http://www.paperplanes.de/2011/4/25/eventmachine-how-does-it-work.html
+  * Docs of libev: http://doc.dvgu.ru/devel/ev.html
+  * IBM article on libev and libevent: http://www.ibm.com/developerworks/aix/library/au-libev/index.html
+  * The C10K problem: http://www.kegel.com/c10k.html
+  * Epoll, sciense and superpoll: http://sheddingbikes.com/posts/1280829388.html
 
 Source code of cool.io and eventmachine is highly advised as well:
-  https://github.com/tarcieri/cool.io
-  https://github.com/eventmachine/eventmachine
 
-
-WTF is https://github.com/espace/neverblock
+  * https://github.com/tarcieri/cool.io
+  * https://github.com/eventmachine/eventmachine
