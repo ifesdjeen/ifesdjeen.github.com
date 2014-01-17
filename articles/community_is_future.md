@@ -164,16 +164,12 @@ for the event in order to avoid such faiules, for example:
   * summer time (mid June until mid September) is usually a low time
     for all the user groups. Amount of people willing to show up on
     the event drops significantly.
-
   * public holidays, days right before and right after public holidays
     are generally bad, too.
-
   * for Munich, Oktoberfest time is bad, for Rio - Carnival times.
     If there're certain days your whole city is upside down - it's a good
     idea to avoid them.
-
   * mondays and fridays generally work worse than all the other days.
-
   * Christmas time (actually, mid December until mid January) is almost
     as bad as Oktoberfest time.
 
