@@ -49,3 +49,7 @@ Here're some of them:
 # Pilsensee
 
 <a href="/assets/images/panoramas/IMG_0259.JPG"><img src="/assets/images/panoramas/IMG_0259.JPG" style="max-width: 1000px"/><br/><br/></a>
+
+# Alps
+
+<a href="/assets/images/panoramas/IMG_1614.JPG"><img src="/assets/images/panoramas/IMG_1614.JPG" style="max-width: 1000px"/><br/><br/></a>

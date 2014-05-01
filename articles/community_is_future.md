@@ -32,14 +32,14 @@ a community, or to become a part of one. Local and global communities
 form daily, based on interests and enthusiasm, and getting stronger
 daily.
 
-Everyone wants to work with cutting edge technologies, try out new stuff
+Everyone wants to work with the __cutting edge__ technologies, try out new stuff
 and work on something interesting and exciting, but same exact people
 seem to wait unitl it all comes to them. And guess what? It will never
 happen. If you want to write Java in a functional style, write a
 high-throughput in-memory queue, try out Erlang for new service you're
-working on, or start using Clojure, your desire is not enough.
+working on, or start using Clojure, **your desire is not enough**.
 
-Businesses rely on professional experience, and it's hard to get a
+Businesses rely on __professional experience__, and it's hard to get a
 permission to use something no one has idea about. But it's also quite
 easy to fix it. Get the expertise, get other people in your circle
 involved, convince them that it's worth trying and start using it!
@@ -47,31 +47,43 @@ involved, convince them that it's worth trying and start using it!
 That may sound simplistic, but it's true. On our meetups we constantly
 meet people who want to switch from Perl or PHP to Ruby, from Java to
 Scala or Clojure. And there's something in common between many of them:
-they say that they're not allowed to make that switch on their daily
+they say that **they're not allowed to make that switch** on their daily
 job, and they can't find a position where they would be able to learn
 it.
+
+But that's also quite clear: no business wants to rely on some esoteric
+nonsense that noone knows about. And the only way to fix that is
+education, which consists of two crucial parts: learning yourself and
+teaching people around you.
 
 ## Learning X the hard way
 
 Not sure wether schools are to be blamed for it or no, but for the
-majority of subjects people have an instinctive reaction of "let me
-read a book about it" when approached some learning.
+majority of subjects people have an instinctive reaction of **"let me
+read a book about it"** when approached some learning.
 
 Well, good luck learning to play piano with a book. Or learning a
 programming language. Of course, whenever you need to understand some
-music theory or how the compilers are built, you'll have to read a
-book. But noone needs to read a book in order to start learning a
-programming language.
+music theory or how the compilers are built, **you'll have to read a
+book**. But __noone needs to read a book in order to start learning a
+programming language__.
+
+For the complete beginners books won't make any sense at all, since
+they're using some spooky vocabulary, which they've never heard about.
+And more advanced people, who already have an experience of working
+with other tech will simply get bored, will stop reading and will just
+wait until they have a chance to get their hands dirty with it. But,
+without an effort that day will never come.
 
 That's when community chimes in, and becomes an essential part
-of learning. During your first steps, it's really handy to have
-someone to ask around. Someone who can check out a code of a fresh
+of learning. During your first steps, __it's really handy to have
+someone to ask around__. Someone who can check out a code of a fresh
 Haskeller and give a necessary feedback of how people are handling
-same things in a practical way.
+same things in a **practical way**.
 
 Attending hackathons, and all kinds of events, where you can find
-both novices and professionals, is going to make you more fluent
-with a technology of your preference. Reminding your colleagues
+both beginners and professionals, is going to make you more fluent
+with a technology of your preference. Reminding people around you
 about it is, in a way, a work of an __Evangelist__, which everyone
 thinks is so easy and fun.
 
@@ -80,11 +92,11 @@ thinks is so easy and fun.
 Whereas that satement is not applicable to everything in the world,
 it is applicable to community. We've been doing user groups starting
 with 2008. In different cities, dedicated to different technologies.
-Mostly because I moved so many times in my life, I didn't have a
+Mostly because I moved so many times in my life, I never had a
 chance to bootstrap the next event on the solid foundation of some
 core group.
 
-Having just 5-10 people who're willing to get together on a regular
+__Having just 5-10 people__ who're willing to get together on a regular
 basis (they don't have to be there on each and every event) is
 already great. After a couple of years, your network will extend
 and more people will attend the events you organise. It may be
@@ -100,16 +112,21 @@ to volounteer to pitch in with a talk yourself, or sit and look
 for people somewhere on the Web, writing them emails about
 how much a fresh user group needs them.
 
+Finding people is quite easy these days: everyone has a GitHub
+profile and Twitter, or at least an email. People __like__ to
+be approached and asked about their experience, and usually like
+to share what they know. So just ping them whatever the way
+you can and **ask them for the help**.
+
 ## Topic selection
 
 It may happen that certain topics are underrepresented in certain
 areas. Although we should always keep in mind that in majority
 of times there's a possiblilty of finding a group of topics that
-includes the one you're interested in, personally. For example,
+includes the one you're interested in personally. For example,
 if you like Natural Language Processing, try starting with
-Machine Learning / Data user group. Interested in Erlang? Maybe
-it makes sense to start with Functional Programming languages
-in general.
+Machine Learning / Data. Interested in Erlang? Maybe it makes
+sense to start with Functional Programming languages in general.
 
 This way you'll be able to attract more speakers and listeners.
 Whenever the group is large enough, it will moderate itself, and
@@ -196,7 +213,7 @@ for any piece of technology. You may have a very convincing website,
 and an amazing piece of tech, but in the end what matters is what
 people say to each other personally.
 
-I Don't want to mention any names here, but there're certain pieces
+I don't want to mention any names here, but there're certain pieces
 of technology that have gotten a large attention mostly because they
 were making very bold claims, and despite the fact what they said
 wasn't entirely true, they got extremely successful and were fixing
