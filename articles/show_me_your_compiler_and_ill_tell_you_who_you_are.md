@@ -15,7 +15,7 @@ Despite the fact many people were discussing this topic, have strong
 opinions and taking sides, I try to approach this question from the
 perspective of my productivity of my team and my own.
 
-During initial phases of any software project, when design is still
+During __initial phases__ of any software project, when design is still
 unclear, and many features are being added, dynamic languages help a
 lot, since you can chance method / function returns any way you like,
 change APIs and move code around.
@@ -26,18 +26,18 @@ In Clojure, people like to pass primitives around. Everything you see
 around application is either a hash, vector, list or a set. It's easy to
 transform them, change keys and rename the fields, change the
 order, arity or return type. However, whenever it comes to
-refactoring, and stabilizing an API, you realize that you can't easily
+__refactoring__, and __stabilizing__ an API, you realize that you can't easily
 find all occurrences of a certain `type` and changing it is gets
 harder as the codebase grows.
 
 Often people "solve" this problem by writing unit tests. This may be a
 reasonable approach for tested APIs, but library internals remain a
-black box, where consistency is questionable. You may face a subtle
+black box, where consistency is questionable. You __may__ face a subtle
 bug caused by missed replace or a typo.
 
 ## Compile-time checks
 
-Having an instrument that can help you to at least validate input,
+Having an instrument that can help you to __at least__ validate input,
 output and basic format, show you what type you're currently dealing
 with is invaluable.
 
