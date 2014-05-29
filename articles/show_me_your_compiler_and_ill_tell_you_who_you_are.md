@@ -5,7 +5,7 @@ disqus_identifier: "show_me_your_compiler_and_ill_tell_you_who_you_are"
 disqus_url: "http://coffeenco.de/articles/show_me_your_compiler_and_ill_tell_you_who_you_are.html"
 ---
 
-# Show me your compiler and I'll show you who you are
+# Show me your compiler and I'll tell you who you are
 
 During the different "phases" of my software developer life I'm thinking
 of programming languages in very different ways: is dynamic better
