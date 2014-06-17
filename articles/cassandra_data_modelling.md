@@ -1,8 +1,8 @@
 ---
 title: "Cassandra Data Modelling"
 layout: article
-disqus_identifier: "data_modelling"
-disqus_url: "http://coffeenco.de/articles/data_modelling.html"
+disqus_identifier: "cassandra_data_modelling"
+disqus_url: "http://coffeenco.de/articles/cassandra_data_modelling.html"
 ---
 
 ## About this guide
@@ -290,3 +290,5 @@ Good things to remember while modelling your data would be:
     may want to split it to smaller chunks or reconsider your reading patterns.
   * Make sure that your keys do not collide. That is especially applicable to time-series.
     You may end up overwriting some parts of the data.
+
+<i>Published on June 17, 2014</i>
