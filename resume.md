@@ -11,7 +11,7 @@ layout: resume
 <p style="padding-top: 20px; font-family: 'Signika Negative', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 200; line-height: 20px;">
    Software quality freak, serial conference and user group organizer.
    <br />
-   Ruby / C(pp) / Clojure hacker. Starving to see the world where everything is event-driven.
+   Clojure / Java / Haskell / C hacker. Starving to see the world where everything is event-driven.
    <br />
    Data analysis, visualization, metrics collection for the win.
    <br />
@@ -37,12 +37,14 @@ layout: resume
  * Code and hack not for sakes of entropy, chaos and programming itself, but for product. Make just enough, not less or more.
 
 
-## Beloved technologies
+## Technology Stack 
 
 ### Programming languages
 
- * Ruby
  * JVM Stack (Clojure, Scala and Java)
+ * Ruby 
+ * Haskell  
+ * Erlang
  * JavaScript
  * C
  * And many others...
@@ -66,17 +68,21 @@ layout: resume
 
 ### Tech toolset
 
-  * Postgre SQL, MySQL, MS SQL, Oracle
-  * Neo4J (took part in writing 2 drivers, [Ruby](http://github.com/maxdemarzi/neography) and [Clojure](http://github.com/michaelklishin/neocons) ones)
-  * HBase, MongoDB, Riak, Cassandra
-  * RabbitMQ
-  * Storm
+  * <b>NoSQL data stores</b>: HBase, MongoDB, Riak, Cassandra
+  * <b>SQL Data Stores</b>: Postgre SQL, MySQL, MS SQL, Oracle
+  * <b>Graph DBs</b>: Neo4J
+  * <b>Message queues</b>: RabbitMQ, Kafka
+  * <b>ETL/Stream/Batch Processing</b>: Storm, Hadoop, Reactor, Spark
+  * <b>Communication libs</b>: nanomsg, 0mq, Netty
 
 ### Community Work
 
   * Barcamps, workshops in [Munich](http://munich.rubyshift.org)
   * [Kiev and Dnepropetrovsk](http://rubyshift.org)
-
+  * [Munich Ruby User Group](http://www.meetup.com/Munich-Rubyshift-Ruby-User-Group/) 
+  * [Munich Lambda](http://www.meetup.com/Munich-Lambda/) User Group
+  * [Munich NoSQL(http://www.meetup.com/Munich-NoSQL-Meetup/)] meetup
+  
 ## Projects
 
 ## Open Source
@@ -86,21 +92,26 @@ This list of project is incomplete, for brevity.
 Besides commercial development, I've been involved into some Open Source Projects. Most known of them are:
 
   * [Travis-CI](http://travis-ci.org), was a core team member until November 2011, helped with SproutCore Migration, helped with Cookbooks, VM builds and maintenance.
+  * [Project Reactor](https://github.com/reactor/reactor) a foundation for reactive fastdata applications on the JVM.
   * AMQP, took a part in [jRuby Driver](http://github.com/ruby-amqp/hot_bunnies) and [Clojure Driver](http://github.com/michaelklishin/langohr)
-  * [Monger](http://github.com/michaelklishin/monger) and [Monger Docs](http://github.com/clojurewerkz/monger-docs), Clojure MongoDB driver
+  * [Monger](https://github.com/michaelklishin/monger) and [Monger Docs](http://github.com/clojurewerkz/monger-docs), Clojure MongoDB driver
+  * [Buffy](https://github.com/clojurewerkz/buffy), the Clojure library for working with binary data.
   * [Cassaforte](https://github.com/clojurewerkz/cassaforte), Cassandra Driver
   * [Cascading-Cassandra](https://github.com/ifesdjeen/cascading-cassandra), Cascading tap for Cassandra
-  * [Langohr](http://github.com/michaelklishin/langohr), Clojure RabbitMQ driver
-  * [Elastisch](http://github.com/clojurewerkz/elastisch), Clojure ElasticSearch driver
+  * [Langohr](https://github.com/michaelklishin/langohr), Clojure RabbitMQ driver
+  * [Elastisch](https://github.com/clojurewerkz/elastisch), Clojure ElasticSearch driver
   * [Welle](https://github.com/michaelklishin/welle), Clojure Riak driver
-  * [Entrepot](http://github.com/ifesdjeen/entrepot), repository pattern implementation (Ruby + Mongodb)
-  * [Neography](http://github.com/maxdemarzi/neography), Ruby client for Neo4J
-  * [Hot Bunnies](http://github.com/ruby-amqp/hot_bunnies), JRuby client for RabbitMQ
+  * [Entrepot](https://github.com/ifesdjeen/entrepot), repository pattern implementation (Ruby + Mongodb)
+  * [Neography](https://github.com/maxdemarzi/neography), Ruby client for Neo4J
+  * [Hot Bunnies](https://github.com/ruby-amqp/hot_bunnies), JRuby client for RabbitMQ
   * [Zweikopf](https://github.com/ifesdjeen/zweikopf), JRuby / Clojure integration
-  * [Embedded Event Processing](http://github.com/clojurewerkz/eep), Embedded Event Processing in Clojure
-  * [Eventoverse-graphs](github.com/ifesdjeen/eventoverse-graphs), Pretty graphs
+  * [Embedded Event Processing](https://github.com/clojurewerkz/eep), Embedded Event Processing in Clojure
+  * [Envision](https://github.com/clojurewerkz/envision), Clojure Data Visualisation library, based on Statistiker and D3
   * [AMQP Guides](http://rubyamqp.info), helped to make a better website, and get AMQP Docs to [Beautiful Docs list](https://github.com/PharkMillups/beautiful-docs)
-  * And many others, that you can find [here](http://github.com/ifesdjeen) and [here](http://github.com/clojurewerkz)
+  * [Statistiker](https://github.com/clojurewerkz/statistiker) Minimalistic statistics library for Clojure
+  * [Continuum](https://github.com/ifesdjeen/continuum) a leveldb-based Time Series database
+  * And many others, that you can find [here](https://github.com/ifesdjeen) and [here](https://github.com/clojurewerkz)
+  
 
 ### Eventoverse
 
@@ -112,6 +123,13 @@ Besides commercial development, I've been involved into some Open Source Project
 
 ## Commercial
 
+### codecentric AG
+
+  * Functional Programming promotion.
+  * Classes, workshops and conference talks on Functional Programming Languages.
+  * Work on a high-performance stream-based solution for statistical data analysis.
+  * Data analysis, visualization for major worldwide platform.
+  
 ### StyleFruits
 
   * Ported large part of the platform to Clojure
@@ -204,6 +222,7 @@ Besides commercial development, I've been involved into some Open Source Project
 
 ## Employments
 
+  * __2013 - 2014__	Senior IT Consultant, Senior Developer (Clojure, Java)
   * __2012 - 2013__	StyleFruits, Senior Developer (Clojure)
   * __2010 - 2012__	Orceo GmbH CTO (Ruby, Clojure, JavaScript)
   * __2009 - 2010__	Oberon Media, Senior Developer (Java, Scala, JavaScript), Scrum Master
