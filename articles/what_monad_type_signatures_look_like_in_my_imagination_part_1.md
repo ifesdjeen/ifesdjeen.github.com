@@ -27,7 +27,7 @@ been most helpful for me personally:
 For more information and links on how to start with Haskell, I suggest
 referring to [Chris Allen's Learn Haskell repo](https://github.com/bitemyapp/learnhaskell).
 
-## Reader's manual
+## Intro
 
 Several things to keep in mind while reading this article:
 
