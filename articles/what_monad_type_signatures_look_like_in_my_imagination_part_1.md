@@ -5,7 +5,7 @@ disqus_identifier: "what_monad_type_sginatures_look_like_in_my_imagination"
 disqus_url: "http://coffeenco.de/articles/what_monad_type_sginatures_look_like_in_my_imagination_part_1.html"
 ---
 
-# What monad type signatures look like in my imagination, Part 1
+<h1 id="toc_01">What monad type signatures look like in my imagination, Part 1</h1>
 
 The thing that's been bothering me with Haskell more than anything else 
 is certainly type checking. Although, that's my favourite feature from
@@ -27,7 +27,7 @@ been most helpful for me personally:
 For more information and links on how to start with Haskell, I suggest
 referring to [Chris Allen's Learn Haskell repo](https://github.com/bitemyapp/learnhaskell).
 
-## Intro
+<h2 id="toc_02">Intro</h2>
 
 Several things to keep in mind while reading this article:
 
@@ -67,7 +67,7 @@ already understand signatures perfectly well, this post is not for you.
 Main purpose of this article is for you to gain some intuition on when to use, 
 what, and imagining which "visual" pattern that signature may be mapped to. 
 
-## `bind` / `return`
+<h3 id="bind_return"><code>bind</code> / <code>return</code></h3>
 
 Bind (`>>=`) and `return` is the simplest combination available in 
 monadic stack, and everyone seems to get it quite fast.
@@ -86,7 +86,7 @@ main = do
 Even though I'm using `IO` monad here, same exact thing is 
 possible with any other monad. 
 
-## Two `bind`s and `return`
+<h3 id="two_binds_and_return">Two <code>bind</code>s and <code>return</code></h3>
 
 In the same way, you can combine things that are coming from several
 contexts:
@@ -104,7 +104,8 @@ main = do
   return (i1 + i2)
 ```
 
-## `bind`, `<$>` and `return`
+<h3 id="fmap_and_return"><code>bind</code>, <code><$></code> and <code>return</code></h3>
+
 
 Now, let's imagine, we have one function that returns `IO Integer`,
 and second one that returns `Maybe Integer`, and we'd like to return
@@ -139,8 +140,8 @@ So somewhere in my imagination the last line looks like:
 
 And it would return `Maybe Integer`. In order to add our desired `IO`, we
 shuold only add `return` before it.
-    
-## `liftM`
+   
+<h2 id="liftM"><code>liftM</code></h2>
 
 `liftM` was especially useful for me when writing some convenience functions
 that operate on things within a monadic context. For example, if you have
@@ -169,7 +170,7 @@ extractSndFromTuple tuple = snd <$> tuple
 extractSndFromTuple = fmap snd
 ```
 
-## `liftM2`
+<h2 id="liftM2"><code>liftM2</code></h2>
 
 `liftM` however has version with 2 arguments, called `liftM2`, which is very 
 useful when you'd like, for example, make a sum of of several things, wrapped
@@ -200,7 +201,8 @@ concatenateMStrings = liftM2 (++)
 Just for the reference, there are also versions of `liftM` for 3, 4, 5 
 arguments: `liftM3`, `liftM4` and `liftM5`.
 
-## `<$>` and `<*>`
+<h2 id="_and_"><code><$></code> and <code><*></code></h2>
+
 
 Because every `Monad` is an `Applicative` and a `Functor`, you can use
 `<$>` and `<*>` to yield the same exact result: 
