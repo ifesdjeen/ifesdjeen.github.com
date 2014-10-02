@@ -222,7 +222,7 @@ Besides commercial development, I've been involved into some Open Source Project
 
 ## Employments
 
-  * __2013 - 2014__	Senior IT Consultant, Senior Developer (Clojure, Java)
+  * __2013 - today__	codecentric AG, Senior IT Consultant, Senior Developer (Clojure, Java)
   * __2012 - 2013__	StyleFruits, Senior Developer (Clojure)
   * __2010 - 2012__	Orceo GmbH CTO (Ruby, Clojure, JavaScript)
   * __2009 - 2010__	Oberon Media, Senior Developer (Java, Scala, JavaScript), Scrum Master
