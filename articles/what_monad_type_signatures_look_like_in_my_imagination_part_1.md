@@ -41,11 +41,12 @@ Several things to keep in mind while reading this article:
     convenient as composing things wrapped into `Maybe` context, so you may replace
     `IO` with `Maybe` (or any other "context") in most of examples and yield same
     exact results.
-  * Most of functions don't have implementation, and I'm using `undefined` placeholder
+  * Most of the functions don't have implementation, and I'm using `undefined` placeholder
     for them. This was done for you to be able to copy-and-paste the code straight
     to your favourite editor and try playing with them / seeing that they type check 
     without providing implementations or even thinking about implementation details.
-
+  * `$` is just a function application: `f $ x = f x`, helps to save some brackets.
+  
 ## Approaching Monads 
 
 After going through first several Monad Tutorials™, it was clear that monad is 
@@ -61,10 +62,11 @@ eventually I've mostly stopped noticing presence of monads in many parts of the
 codebase.
 
 We all learn differently, and for me it got much easier when I started seeing 
-these patterns. You may say it's all in signatures, and would be true, but if you 
-already understand signatures perfectly well, this post is not for you. 
+these patterns. You may say it's easy to infer all the required information from
+type signatures, and would be true, but if you already understand signatures 
+perfectly well, this post is not for you. 
 
-Main purpose of this article is for you to gain some intuition on when to use, 
+The main purpose of this article is for you to gain some intuition on when to use, 
 what, and imagining which "visual" pattern that signature may be mapped to. 
 
 <h3 id="bind_return"><code>bind</code> / <code>return</code></h3>
@@ -109,7 +111,7 @@ main = do
 
 Now, let's imagine, we have one function that returns `IO Integer`,
 and second one that returns `Maybe Integer`, and we'd like to return
-a sum of them. Most likely the type of desired result would be
+a sum of them. Most likely the type of the desired result would be
 `IO (Maybe Integer)`:
 
 ```haskell
@@ -130,8 +132,9 @@ Here, several things are worth mentioning:
   * type of `i1` is `Integer`
   * type of `i1+` is `Integer -> Integer` 
   * since `intOp2` is `Maybe Integer`, and `Maybe` is an `Functor`, we 
-    can use `<$>` to apply `Integer -> Integer` opration to `Maybe Integer`.
-    
+  can use `<$>` to apply an `Integer -> Integer` operation to `Maybe Integer`.
+  * `<$>` is actually same exact thing as `fmap`
+  
 So somewhere in my imagination the last line looks like:
 
 ```haskell
@@ -173,8 +176,8 @@ extractSndFromTuple = fmap snd
 <h2 id="liftM2"><code>liftM2</code></h2>
 
 `liftM` however has version with 2 arguments, called `liftM2`, which is very 
-useful when you'd like, for example, make a sum of of several things, wrapped
-into `IO` context. 
+useful when you'd like, for example, sum several things, wrapped into `IO` 
+context. 
 
 For example, if you want to concatenate two `Strings` wrapped into `IO`, you can
 use `liftM2`: 
@@ -198,8 +201,12 @@ concatenateMStrings :: Monad m => m String -> m String -> m String
 concatenateMStrings = liftM2 (++)
 ```
 
+To put it simply, `liftM*` functions are used to apply a "pure" function to
+the values wrapped within a monadic context. 
+
 Just for the reference, there are also versions of `liftM` for 3, 4, 5 
 arguments: `liftM3`, `liftM4` and `liftM5`.
+
 
 <h2 id="_and_"><code><$></code> and <code><*></code></h2>
 
@@ -224,6 +231,11 @@ concatenateAStrings ioStr1 ioStr2 = (++) <$> ioStr1 <*> ioStr2
 To be honest, reading type signatures for `<$>` and `<*>` didn't help
 me at first. Although seeing this pattern repeated by several people
 in different projects have helped me to understand it all better.
+
+Generally, using Applicative instances is better than using Monad ones,
+and combination of `<$>` and `<*>` is more idiomatic and preferred in
+Haskell. Almost every monadic operation has it's Applicative counterpart,
+and we'll talk about it in the next parts.
 
 ## End of the part 1
 
