@@ -4,88 +4,132 @@ layout: resume
 ---
 
 <div class='logo'>
-  <h1 style="font-size: 50px; line-height: 150px; float: left">Alex P</h1>
+  <h1 style="color: #000; line-height: 100px; float: left; font-family: &quot;Signika Negative&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight: bold;">αλεx π</h1>
   <img src='/assets/images/flower.png' style="float: left; width: 150px" />
 </div>
 <div class="clear"></div>
 <p style="padding-top: 20px; font-family: 'Signika Negative', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 200; line-height: 20px;">
-   Software quality freak, serial conference and user group organizer.
+   Software quality freak
    <br />
-   Clojure / Java / Haskell / C hacker. Starving to see the world where everything is event-driven.
+   Serial conference and user group organizer
+   <br />
+   Clojure / Java / Haskell / C hacker
    <br />
    Data analysis, visualization, metrics collection for the win.
-   <br />
-   Hey, my software is deployed in Düsseldorf Airport, what about yours?
    <br /><br />
    I also like <a href="https://speakerdeck.com/ifesdjeen">speaking @ conferences</a> and <a href="https://coffeenco.de">writing</a>
 </p>
+
+<br />
 
 ## Get in touch!
 
   * __E-mail / Jabber__ <a href="mailto:oleksandr.petrov@gmail.com">oleksandr.petrov@gmail.com</a>
   * __Skype__: ifesdjeen
-  * __Tel.__: +49 (0) 1573-959-2681
-
+  * __Twitter__: [ifesdjeen](http://twitter.com/ifesdjeen)
+  
 ## Manifesto
 
  * Work with real people, rather than just professionals
- * Extend knowledge, understanding and vision every day, adjust my skills, learn new things, open-source some parts of my code, help other people to grow
- * Develop scalable, supportable, well-designed, implemented, tested, structured software, easy to extend, contribute to and keep up-to-date.
- * Be ready to change approach, when there's no reasonable way to scale/extend anymore.
- * Bring some fresh air to the team I work with, ease every existing process until the point it feels comfortable for each team member.
- * Write software and libraies that matter and help, are useful and easy to use.
- * Code and hack not for sakes of entropy, chaos and programming itself, but for product. Make just enough, not less or more.
+ * Extend knowledge, understanding and vision every day
+ * Develop scalable, well-designed, implemented, tested, structured software
+ * Write software and libraies that matter and help, are useful and easy to use
+ * Implement what is relevant and important for the product
 
 
-## Technology Stack 
+<table>
+  <tr>
+    <td style="width: 300px;">
+      <h2>Languages</h2>
 
-### Programming languages
+      <ul>
+        <li>JVM Stack (Clojure, Scala and Java)</li>
+        <li>Haskell </li>
+        <li>Erlang</li>
+        <li>JavaScript</li>
+        <li>Ruby</li>
+        <li>C</li>
+      </ul>
+    </td>
+    <td>
+      <h2>Practices</h2>
 
- * JVM Stack (Clojure, Scala and Java)
- * Ruby 
- * Haskell  
- * Erlang
- * JavaScript
- * C
- * And many others...
+      <ul>
+        <li>System Monitoring</li>
+        <li>High-performance solutions</li>
+        <li>Scalable backend development</li>
+        <li>Databases</li>
+        <li>Design Patterns, Infrastructure Development</li>
+        <li>Statistics / Data Mining</li>
+      </ul>
+    </td>
+  </tr>
 
-### Software Design / Practices / Inerests
+  <tr>
+    <td>
+      <h2>Agile Practices</h2>
 
-  * System Monitoring
-  * High-performance solutions
-  * Scalable backend development
-  * Databases
-  * Design Patterns, Framework Development, Infrastructure Development
-  * Statistics, Machine Learning / Data Mining
+      <ul>
+        <li>Continuous Integration</li>
+        <li>Build Automation</li>
+        <li>Scrum</li>
+        <li>Test and Behavior Driven Development</li>
+        <li>SCM (Git, Perforce, SVN, Mercurial, Darcs)</li>
+      </ul>
+    </td>
+    <td>
+      <h2>Tech toolset</h2>
 
-### Agile Practices
+      <ul>
+        <li><b>NoSQL Stores</b>: HBase, Riak, Cassandra</li>
+        <li><b>SQL Stores</b>: Postgresql, MySQL, MS SQL</li>
+        <li><b>Graph DBs</b>: Neo4J</li>
+        <li><b>Message queues</b>: RabbitMQ, Kafka</li>
+        <li><b>Processing</b>: Storm, Hadoop, Reactor, Spark</li>
+        <li><b>Communication</b>: nanomsg, 0mq, Netty</li>
+      </ul>
+    </td>
+  </tr>
+  
+</table>
 
-  * Continuous Integration
-  * Build Automation
-  * Scrum
-  * Test and Behavior Driven Development
-  * SCM (Git, Perforce, SVN, Mercurial, Darcs). Can't count it for qualification, but helps ;)
+<div style="page-break-before: always">&nbsp</div>
 
-### Tech toolset
+## Employments
 
-  * <b>NoSQL data stores</b>: HBase, MongoDB, Riak, Cassandra
-  * <b>SQL Data Stores</b>: Postgre SQL, MySQL, MS SQL, Oracle
-  * <b>Graph DBs</b>: Neo4J
-  * <b>Message queues</b>: RabbitMQ, Kafka
-  * <b>ETL/Stream/Batch Processing</b>: Storm, Hadoop, Reactor, Spark
-  * <b>Communication libs</b>: nanomsg, 0mq, Netty
+  * __2013 - today__	codecentric AG, Senior IT Consultant, Senior Developer (Clojure, Java)
+  * __2012 - 2013__	StyleFruits, Senior Developer (Clojure)
+  * __2010 - 2012__	Orceo GmbH CTO (Ruby, Clojure, JavaScript)
+  * __2009 - 2010__	Oberon Media, Senior Developer (Java, Scala, JavaScript), Scrum Master
+  * __2010 (project-based)__	Vestify (Boston, USA, remote). Ruby/JavaScript developer.
+  * __2007 - 2010 (project-based)__	Orceo GMbH (Munich, Germany, remote). Ruby/JavaScript/C++ developer.
+  * __2008 - 2009__	Luxoft. Developer (C#, ASP.NET, MySQL, JavaScript).
+  * __2007 - 2008__	Fozzy Group. Team leader (C#, ASP.NET, SQL, JavaScript).
+  * __2006 - 2007__	Novades (Software Development Company). Programmer (PHP, C#, ASP.NET, JavaScript).
+  * __2006 (May - October)__	Village Market (Three Rivers, USA). Network administrator, project-based.
+  * __2004-2006__	StuGroup Game Development, InterStudent. C++ game developer.
 
-### Community Work
+## Community Work
 
   * Barcamps, workshops in [Munich](http://munich.rubyshift.org)
   * [Kiev and Dnepropetrovsk](http://rubyshift.org)
   * [Munich Ruby User Group](http://www.meetup.com/Munich-Rubyshift-Ruby-User-Group/) 
   * [Munich Lambda](http://www.meetup.com/Munich-Lambda/) User Group
-  * [Munich NoSQL(http://www.meetup.com/Munich-NoSQL-Meetup/)] meetup
-  
-## Projects
+  * [Munich NoSQL](http://www.meetup.com/Munich-NoSQL-Meetup/) meetup
 
-## Open Source
+## Education
+
+  * __2002-2006:__ East-Ukranian National University named after V. Dal'. Faculty of Computer Technologies. Specialty: Flexible Computerized Systems and Robotics. Red diploma. Master`s degree.
+
+## Human Languages
+
+  * English - fluent
+  * German - intermediate
+  * Ukrainian and Russian - native
+
+<div style="page-break-before: always">&nbsp</div>
+
+## Open Source Projects
 
 This list of project is incomplete, for brevity.
 
@@ -101,8 +145,6 @@ Besides commercial development, I've been involved into some Open Source Project
   * [Langohr](https://github.com/michaelklishin/langohr), Clojure RabbitMQ driver
   * [Elastisch](https://github.com/clojurewerkz/elastisch), Clojure ElasticSearch driver
   * [Welle](https://github.com/michaelklishin/welle), Clojure Riak driver
-  * [Entrepot](https://github.com/ifesdjeen/entrepot), repository pattern implementation (Ruby + Mongodb)
-  * [Neography](https://github.com/maxdemarzi/neography), Ruby client for Neo4J
   * [Hot Bunnies](https://github.com/ruby-amqp/hot_bunnies), JRuby client for RabbitMQ
   * [Zweikopf](https://github.com/ifesdjeen/zweikopf), JRuby / Clojure integration
   * [Embedded Event Processing](https://github.com/clojurewerkz/eep), Embedded Event Processing in Clojure
@@ -112,16 +154,9 @@ Besides commercial development, I've been involved into some Open Source Project
   * [Continuum](https://github.com/ifesdjeen/continuum) a leveldb-based Time Series database
   * And many others, that you can find [here](https://github.com/ifesdjeen) and [here](https://github.com/clojurewerkz)
   
+<div style="page-break-before: always">&nbsp</div>
 
-### Eventoverse
-
-  * Open source monitoring solution (think: Graphite + Statsd, but scalable, easy to integrate + with an nice d3 interface)
-  * Developed out of necessity, existing tools did not provide required level of granularity
-  * 2 years of iterations, all done in spare time, still in works
-  * Parallel, fast, scalable backend
-  * All the quirks are described in a Zef talk: https://speakerdeck.com/ifesdjeen/production-monitoring-zef-side
-
-## Commercial
+## Commercial Projects
 
 ### codecentric AG
 
@@ -200,7 +235,7 @@ Besides commercial development, I've been involved into some Open Source Project
   * Achievements: Client-side JavaScript improvements, refactoring, optimization. Backend optimization, splitting backed into key parts modules in order to ease development process and improve system maintanability.
   * Developed for: Novades
 
-### Verumax Device Portal: Dev version available at: VeruDev website (Credentials: test / test)
+### Verumax Device Portal: 
 
   * Back-End development
   * JavaScript Programming
@@ -220,29 +255,6 @@ Besides commercial development, I've been involved into some Open Source Project
   * Achievements: Development of a unique Active-Directory management system from scratch to production-ready state. Caching system development. Backup/rollback/update subsystems development. WebSphere / SAP integration. Complete SOAP solution development.
   * Developed for: Fozzy Group
 
-## Employments
-
-  * __2013 - today__	codecentric AG, Senior IT Consultant, Senior Developer (Clojure, Java)
-  * __2012 - 2013__	StyleFruits, Senior Developer (Clojure)
-  * __2010 - 2012__	Orceo GmbH CTO (Ruby, Clojure, JavaScript)
-  * __2009 - 2010__	Oberon Media, Senior Developer (Java, Scala, JavaScript), Scrum Master
-  * __2010 (project-based)__	Vestify (Boston, USA, remote). Ruby/JavaScript developer.
-  * __2007 - 2010 (project-based)__	Orceo GMbH (Munich, Germany, remote). Ruby/JavaScript/C++ developer.
-  * __2008 - 2009__	Luxoft. Developer (C#, ASP.NET, MySQL, JavaScript).
-  * __2007 - 2008__	Fozzy Group. Team leader (C#, ASP.NET, SQL, JavaScript).
-  * __2006 - 2007__	Novades (Software Development Company). Programmer (PHP, C#, ASP.NET, JavaScript).
-  * __2006 (May - October)__	Village Market (Three Rivers, USA). Network administrator, project-based.
-  * __2004-2006__	StuGroup Game Development, InterStudent. C++ game developer.
-
-## Education
-
-  * __2002-2006:__ East-Ukranian National University named after V. Dal'. Faculty of Computer Technologies. Specialty: Flexible Computerized Systems and Robotics. Red diploma. Master`s degree.
-
-## Human Programming Languages
-
-  * English - fluent
-  * German - intermediate
-  * Ukrainian and Russian (not same thing) - even more fluent
 
 <br/>
 <br/>
