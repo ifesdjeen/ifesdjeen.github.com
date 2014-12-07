@@ -99,8 +99,7 @@ But since that's a rather philosophical post, I'm not putting any
 concrete information such as dates here. It doesn't matter how much I
 learned. It's been long enough for everyone I know to get bored with a
 subject, and long enough for me to start thinking about where all the
-time went. I can only speak for myself, and if it was different for you
-- I'm very glad.
+time went. I can only speak for myself, and if it was different for you - I'm very glad.
 
 But if you feel the same way I do, and, when looking around, sees only
 people who find those discussions about endofunctors and isomorphisms
