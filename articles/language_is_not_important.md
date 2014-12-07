@@ -5,6 +5,8 @@ disqus_identifier: "language_is_not_important"
 disqus_url: "http://coffeenco.de/articles/language_is_not_important.html"
 ---
 
+# Language is not important
+
 Some people like to make fun of me and like to call me a hipster,
 especially ever since I've started working with Functional Programming
 languages. The longer you're working with them, the more opinionated you
