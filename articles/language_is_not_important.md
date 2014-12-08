@@ -295,3 +295,14 @@ fancy thing you've read about at your work: it's not necessary, and
 it's all happening and living in your head before it gets translated
 into code in some language.
 
+## P.S.
+
+If you liked this post, you may also like
+[Show me your compiler and I'll tell you who you are](http://coffeenco.de/articles/show_me_your_compiler_and_ill_tell_you_who_you_are.html)
+post of mine.
+
+If you're beginning with Haskell, you may like
+[What monad type signatures look like in my imagination](http://coffeenco.de/articles/what_monad_type_signatures_look_like_in_my_imagination_part_1.htm).
+
+
+
