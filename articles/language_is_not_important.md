@@ -304,5 +304,6 @@ post of mine.
 If you're beginning with Haskell, you may like
 [What monad type signatures look like in my imagination](http://coffeenco.de/articles/what_monad_type_signatures_look_like_in_my_imagination_part_1.htm).
 
+<i>Published on December 8, 2014</i>
 
 
