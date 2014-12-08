@@ -283,9 +283,7 @@ things: algorithms, linux kernel, statistics and linear algebra.
 
 If it feels for you that this post is a rant - you're tuning yourself
 much too negatively. Or if it felt as if learning new languages isn't
-important for your career - no, it is extremely important. There was a
-great book by Seth Godin called "The Dip: A Little Book That Teaches You
-When To Quit", which kind of inspired me for that post. 
+important for your career - no, it is extremely important. 
 
 In the end, my own takeaway from writing it all is quite simple: take it
 slow and take it easy. Don't try to match all the cool kids out
