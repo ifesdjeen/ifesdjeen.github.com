@@ -150,9 +150,9 @@ time was well spent. I've learned a whole bunch of things, and I'm still
 planning to continue writing my little database in Haskell. I just don't
 want to invest years of my life into a demanding technology.
 
-Moreover, it's impossible to grasp what Functors, Applicatives and
-Monads (and all kinds of Semigroups, Monoids and other fancy things) are
-from the "Monad Tutorials". They kind of scratch the surface of
+Moreover, it's impossible to grasp what [Functors](http://en.wikipedia.org/wiki/Functor), [Applicatives](https://www.haskell.org/haskellwiki/Applicative_functor) and
+[Monads](http://en.wikipedia.org/wiki/Monad_%28functional_programming%29) (and all kinds of [Semigroups](http://en.wikipedia.org/wiki/Semigroup), [Monoids](http://en.wikipedia.org/wiki/Monoid) and other fancy things) are
+from the ["Monad Tutorials"](https://www.haskell.org/haskellwiki/Monad_tutorials_timeline). They kind of scratch the surface of
 usefulness from time to time, but in majority of cases they're either
 misleading or not really helping to understand the whole power of the
 concept and how to apply it in real life.
@@ -250,8 +250,8 @@ for a minute and accept the fact that concepts are more important than a
 concrete implementation. Every implementation is flawed, and there will
 always be languages that do certain things better than yours.
 
-For example, no one can still beat Erlang in Binary Pattern Matching,
-and the way Actors are implemented there. If you check out OTP - you'll
+For example, no one can still beat Erlang in [Binary Pattern Matching](http://www.erlang.org/doc/efficiency_guide/binaryhandling.html),
+and the way Actors are implemented there. If you check out [OTP](http://learnyousomeerlang.com/what-is-otp) - you'll
 want it under your toolbelt every day.
 
 There are people who prefer OCaml, Rust, Go (that happens, too, don't
