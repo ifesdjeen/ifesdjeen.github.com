@@ -209,7 +209,9 @@ does after it compiled.
 
 It's really great that I can have IO encoded in the type signature, but
 that was never been a selling point for me. There are many other things
-I appreciate much more (like ADTs, Pattern Matching, Tuples etc). But
+I appreciate much more (like
+[ADTs](http://en.wikipedia.org/wiki/Algebraic_data_type), 
+[Pattern Matching](http://en.wikipedia.org/wiki/Pattern_matching), [Tuples](http://en.wikipedia.org/wiki/Tuple) etc). But
 they're generic and universal, and do not belong to any specific piece
 of technology. I'm also sure that sooner or later many things will get
 better in mainstream programming languages. Whenever the humanity is
