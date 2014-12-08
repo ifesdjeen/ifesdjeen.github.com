@@ -186,7 +186,7 @@ of time, and usually return does not excite you so much.
 If you enter the World Of Haskell with the great enthusiasm, the
 opportunities are pretty much endless. You start with Haskell itself,
 and you can practice and master it for years and years. If you feel
-fancy, you can start learning Category Theory (or Homotopy Type Theory)
+fancy, you can start learning Category Theory (or [Homeopaty Type Theory](http://homotopytypetheory.org/))
 and Abstract Algebra. I'm still not sure whether you have to have a
 great mathematical mind in order to learn and understand it all (most
 likely yes), I've only scratched the surface.
