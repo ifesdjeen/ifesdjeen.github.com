@@ -302,7 +302,7 @@ If you liked this post, you may also like
 post of mine.
 
 If you're beginning with Haskell, you may like
-[What monad type signatures look like in my imagination](http://coffeenco.de/articles/what_monad_type_signatures_look_like_in_my_imagination_part_1.htm).
+[What monad type signatures look like in my imagination](http://coffeenco.de/articles/what_monad_type_signatures_look_like_in_my_imagination_part_1.html).
 
 "Homeopaty" wasn't a typo. It was a joke. Also, real Homeopathy is 
 spelled with `th`. Was inserted with the best intention of making
