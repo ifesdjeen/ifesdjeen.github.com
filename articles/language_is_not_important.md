@@ -304,6 +304,11 @@ post of mine.
 If you're beginning with Haskell, you may like
 [What monad type signatures look like in my imagination](http://coffeenco.de/articles/what_monad_type_signatures_look_like_in_my_imagination_part_1.htm).
 
+"Homeopaty" wasn't a typo. It was a joke. Also, real Homeopathy is 
+spelled with `th`. Was inserted with the best intention of making
+the post easier to read, and never to make the actual theory
+unsound.
+
 <i>Published on December 8, 2014</i>
 
 
