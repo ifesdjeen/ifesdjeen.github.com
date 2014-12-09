@@ -277,7 +277,7 @@ reality and won't be able to both learn and understand the things
 outside of something you made your comfort zone.
 
 It's obviously not necessary to dive deep into Category Theory to work
-with Haskell, but somehow everyone who wants to be a part of the corwd
+with Haskell, but somehow everyone who wants to be a part of the crowd
 is doing it. I thought that I'd rather invest same time into other
 things: algorithms, linux kernel, statistics and linear algebra.
 
