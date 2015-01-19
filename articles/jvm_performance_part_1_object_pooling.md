@@ -335,7 +335,13 @@ several months, I'll be releasing the articles on JVM-related
 performance tricks you may find helpful. If you have any comments on
 this article, don't hesitate to ping me over [email](alex@clojurewerkz.org).
 
-<i>Published on Jan 6 2013</i>
+## JDK.IO Talk
+
+This article accompanies my JDK.IO talk "Going Off Heap". You can watch the slides here:
+
+<script async class="speakerdeck-embed" data-id="7750f99082020132ec290201723d3ce0" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<i>Published on Jan 19 2015</i>
 
 <small>Copyright(c) Alex Petrov. Commercial use of complete work or parts of work is not allowed.
 When referencing complete work or parts of work, explicit attribution is required.</small>
