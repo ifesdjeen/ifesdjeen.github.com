@@ -339,7 +339,7 @@ this article, don't hesitate to ping me over [email](alex@clojurewerkz.org).
 
 This article accompanies my JDK.IO talk "Going Off Heap". You can watch the slides here:
 
-<script async class="speakerdeck-embed" data-id="7750f99082020132ec290201723d3ce0" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="ef68ebc0820101327cb32efb460f291e" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 <i>Published on Jan 19 2015</i>
 
