@@ -97,7 +97,7 @@ layout: resume
 
 ## Employments
 
-  * __2013 - today__	codecentric AG, Senior IT Consultant, Senior Developer (Clojure, Java)
+  * __2013 - today__codecentric AG, Senior IT Consultant, Senior Developer (Clojure, Java)
   * __2012 - 2013__	StyleFruits, Senior Developer (Clojure)
   * __2010 - 2012__	Orceo GmbH CTO (Ruby, Clojure, JavaScript)
   * __2009 - 2010__	Oberon Media, Senior Developer (Java, Scala, JavaScript), Scrum Master
@@ -116,6 +116,11 @@ layout: resume
   * [Munich Ruby User Group](http://www.meetup.com/Munich-Rubyshift-Ruby-User-Group/) 
   * [Munich Lambda](http://www.meetup.com/Munich-Lambda/) User Group
   * [Munich NoSQL](http://www.meetup.com/Munich-NoSQL-Meetup/) meetup
+
+## Prominent Publications 
+
+Authored multiple chapters of [Clojure Cookbook](http://clojure-cookbook.com/) published by O'Reily,
+a Crowd-Sourced book of Clojure recipes.
 
 ## Education
 
