@@ -301,7 +301,6 @@ wrong:
     objects, but if conditions do not allow you do do that, you may
     run into problem of modification object while it's content is being
     read. 
-  * 
 
 ## If there are so many pitfalls, why should I even bother?
 
