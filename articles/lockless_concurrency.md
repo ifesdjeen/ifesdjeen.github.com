@@ -134,14 +134,14 @@ from several threads.
 
 Atom is a concept that were present for a while, although got
 more popular with `Clojure`. `Clojure` has a very simple implementation
-of an `Atom`, which you can find [here](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java).
+of an `Atom`, which you can find (here)[https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java].
 Although Clojure implementation isn't generic, mostly due to how
 Clojure is operating on data structures, and you will find that
 every operation only has just `Object` type signatures in it.
 
 I've tried to generify the implementation and add a couple of
 operations to it. You can find my implementation in `Halflife`,
-an upcoming Stream Processing solution on JVM [here](https://github.com/ifesdjeen/halflife/blob/master/halflife-core/src/java/halflife/bus/concurrent/Atom.java).
+an upcoming Stream Processing solution on JVM (here)[https://github.com/ifesdjeen/halflife/blob/master/halflife-core/src/java/halflife/bus/concurrent/Atom.java].
 
 I'm also putting a simplified version here:
 
@@ -231,7 +231,7 @@ copy of the object on each update.
 
 Gladly, there are enough resources and libraries out there that provide
 you with lots of ready to use Data Structures, such as `Lists`, `Sets`,
-`Maps` and so on. One of the examples is of course (Google Guava)[https://github.com/google/guava/wiki/ImmutableCollectionsExplained].
+`Maps` and so on. One of the examples is of course [Google Guava](https://github.com/google/guava/wiki/ImmutableCollectionsExplained).
 There are more implementations and examples, although I don't want
 to endorse either one, so I'll leave it for others.
 
@@ -273,7 +273,7 @@ useful than simply copying things around. It also allows you to
 avoid adding semantics of copying into your program as such.
 
 There are several nice implementations of Immutable Persistent
-Data Structures in Java, one of them could be found (here)[http://pcollections.org/].
+Data Structures in Java, one of them could be found [here](http://pcollections.org/).
 
 # Conclusion
 
