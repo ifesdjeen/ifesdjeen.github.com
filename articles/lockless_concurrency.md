@@ -21,15 +21,57 @@ to avoid creating class for every single possible clause where variables escape
 the context. They also allow to think of operations in terms of small, atomic
 pieces that can be combined, passed around, reused and referenced.
 
-# State Of the Art
+In this post I’ll try to examine the question of lockless concurrency in Java -
+an extremely useful, yet shamefully overlooked topic.
+
+# State of the Art
+
+Before we start, let's discuss the concept of `atomicity`. By saying that
+the set of operations is `atomic`, you imply the guarantee that operations
+(usually representing a single logical part) will behave as if they were
+a single step. No other thread can observe the operation in a half-complete
+state.
 
 Concept of Thread Safety arises exactly from the problem that it's hard to
-guarantee all the operations within your data structures are atomic,
+guarantee all operations within your data structures are `atomic`
 so you have to introduce several indirection layers for them. Pieces
-that have to be syncronised are also hard to identify. In more complex
+that have to be synchronised are also hard to identify. In more complex
 scenarios you have to also think about the access patterns, and despite
 safety of the concrete operations, one can still end up with an
 unpredictable state.
+
+"Traditional" example of non-atomic operation is pretty much anything
+that looks like a "single entry", but is, in fact, multiple, for example,
+there's an integer field `a` with an intial value of 0, which is updated
+from two threads:
+
+```java
+// One is trying to update it by adding 100 to it
+a = a + 100;
+
+// Second one is trying to update it by adding 200
+a = a + 200;
+```
+
+Reading `a` is an atomic operation (you can't read the value of `a`
+partially). Same with writing `a`: it will be atomic. Although the
+value of `a` may change between the initial read and the final
+assignment.
+
+`a` was equal to `0`. One thread is trying to add `100` to it,
+which would result to `100`. Meanwhile, another thread is
+trying to modify the value of `a` by adding `200`. 
+
+If both operations were applied after one another sequentially,
+we'd end up with a value of `300` (`0 + 100 + 200`).
+
+Although, because theads have read the initial value of `a` (which
+was `0`), we might end up having `a` with a value of _either_
+`100` _or_ `200`. So it's not only utterly wrong, but also
+undeterministic.
+
+This is certainly an oversimplified scenario, but it demonstrates
+how non-atomic operation might go wrong.
 
 Gladly, there are many solutions that allow one to simplify development
 of concurrent software. Sometimes such guarantees are granted by
@@ -138,6 +180,20 @@ programming. If you combine the Atomic Object with a tight loop,
 you end up with so called `Atom`, which is simply a Reference
 that allows performing safe operations on it.
 
+Atoms have the following properties:
+
+  * Every operation will suceed after the finite number of tries
+  * Every operation leaves Atom in a consistent state
+  * Operations applied to same input value will always result into
+    the same output value
+
+Another concept which is arising from Mathematics that applies
+to Atoms is `linearizability`. If `atomicity` only guarantees
+that any operation will suceed or fail under certain assumptions,
+`linearizability` implies that the set of operations will look
+for the rest of system as instantaneous (e.g. as if they
+were just one op). 
+
 Atom is a concept that were present for a while, although got
 more popular with `Clojure`. `Clojure` has a very simple implementation
 of an `Atom`, which you can find (here)[https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java].
@@ -221,6 +277,33 @@ to the general assumptions made by such an approach.
 Another good thing about `Atoms` is that readers are completely independent
 from writers, and they will simply be learning the latest updated value by
 dereferencing an `Atom`, and will never collide with writers.
+
+# Thinking in Increments
+
+These concepts will also stronlgy influence the way you're thinking about
+how you're modelling your data. For example, you have an `Atom<T>`, which
+has an unary (`T -> T`, read: taking a type `T` and returning a type `T`)
+operation attached to it, you can define simple rules and reason about
+possible outcomes of your software in terms of the applied operations.
+
+For example, if the operation look like `(Integer old) -> old + 100`, you
+know that no matter which order the operations are applied in, they
+will produce the same outcome. You can check composition of the possible
+operations and whether they converge to the same result despite
+reordering.
+
+In fact, it's easier to think of these operations in terms of `+ 100`,
+`- 50` and so on, discarding the `old` value. This way it becomes
+more obvious that `Atom` starts with some initial state, and, if
+a certain set of operations is applied, no matter in which order,
+no matter when and after how many attempts, the program will be error
+prone.
+
+Keeping a replayable log of incoming events can make your software
+even more robust, especially if you happen to find an error in
+an update operation and discover that all the updates to the
+state were resulting to something you did not initially intend.
+But that's a story for another day.
 
 # Immutable Data Structures 
 
@@ -310,6 +393,15 @@ I'll try my best not to go into nitty-gritty details and keeping it
 practical and accessible, but will try to provide enough details
 for the people who'd like to take a step further and learn
 these things deeper.
+
+# Further Reading
+
+You may also call it "background reading". In no particular order:
+
+  * [Low-Level post on Atomic Operations](http://preshing.com/20130618/atomic-vs-non-atomic-operations/)
+  * Most likely I'm not the first one to refer to [The Art of Multiprocessor Programming](http://www.amazon.de/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376)
+  * [Is Parallel Programming Hard, And, If So, What Can You Do About It?](https://www.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook-1c.2015.01.31a.pdf)
+  * 
 
 Posted on 26 July 2015.
 
