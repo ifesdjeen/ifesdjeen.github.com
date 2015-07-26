@@ -173,46 +173,137 @@ public class  Atom<T> {
    * Apply an Operation that will atomically update the Atom.
    **/
   public T swap(UnaryOperator<T> swapOp) {
-    for (;;) {
-      T old = ref.get();
-      T newv = swapOp.apply(old);
-      if(ref.compareAndSet(old, newv)) {
-        return newv;
+    for (;;) {                           // (5)
+      T old = ref.get();                 // (1)
+      T newv = swapOp.apply(old);        // (2)
+      if(ref.compareAndSet(old, newv)) { // (3)
+        return newv;                     // (4)
       }
     }
   }
 
-  /**
-   * Atomically update the Atom (simply reset the value without learning the old one).
-   **/
-  public T reset(T newv) {
-    for (;;) {
-      T old = ref.get();
-      if(ref.compareAndSet(old, newv)) {
-        return newv;
-      }
-    }
-  }
 }
 ```
 
-As you can see, an implementation is extremely simple. We're using
-a generic `java.util.concurrent.AtomicReference` here, w
+As you can see, an implementation is extremely simple. We, once again,
+split up the whole update into several steps:
 
-# Immutable Data Structure
+  * `(1)` we read the current value from the `AtomicReference` and save it
+    for later reference
+  * `(2)` we apply the update (swap) operation to the `old` value
+  * `(3)` we compare the newer (updated `newv`) value with `old` and atomically
+    set it
+  * `(4)` we return a new value set by the `Atom` if the atomicity of the whole
+    operation can be guaranteed by what we see
+  * `(5)` if atomicity can't be guaranteed, we're running in an tight loop that
+    will retry the operation until it suceeds.
+
+We're using a generic `java.util.concurrent.AtomicReference` here, which
+provides us with a `compareAndSet` operation, which guarantees that the value
+will only be set in case it hasn't been changed.
+
+An eternal loop `(5)` might look a bit scary, but if you think of it for
+another minute, this, as was mentioned previously, is an optimistic approach
+to concurrency: we expect that update operations will be made by producers
+that, if ran simultaneously, will make a small amount of retries, but
+will usually succeed from the first attempt.
+
+In practice, retries are so infrequent that you shouldn't even think about them.
+Although it's always better to make sure your architecture doesn't contradict
+to the general assumptions made by such an approach.
+
+Another good thing about `Atoms` is that readers are completely independent
+from writers, and they will simply be learning the latest updated value by
+dereferencing an `Atom`, and will never collide with writers.
+
+# Immutable Data Structures 
+
+Of course, if you're using "normal" data structures inside of your `Atom`,
+there's still a lot of room for error. So it's always better to opt-out
+for the immutable data structures.
+
+There are many ways of making your data structures immutable. One of them
+is to only use `final` fields, and only have `getters`. It's certainly very
+straightforward, but also limiting, since you may want to use something
+more complex than `POJOs` (or `Value Bags` as they used to be called).
+Another downside of such an approach is that you'll end up making a
+copy of the object on each update.
+
+Gladly, there are enough resources and libraries out there that provide
+you with lots of ready to use Data Structures, such as `Lists`, `Sets`,
+`Maps` and so on. One of the examples is of course (Google Guava)[https://github.com/google/guava/wiki/ImmutableCollectionsExplained].
+There are more implementations and examples, although I don't want
+to endorse either one, so I'll leave it for others.
 
 # Persistent Data Structures
 
+If you're fancy to go a step further, you will end up with Persistent
+Data Structures. They're still immutable, although they have a built-in
+concept of `structural sharing`, which means that when the data structure
+is updated, all previously read values are still available in memory,
+and some parts of them are shared with a new one without copying.
 
+Let's walk through the simple example. For instance, we have a hashmap:
 
+```
+{ "key1": "value1" }
+```
 
+And we'd like to update it, by "inserting" one more value to it:
 
-# Lambdas
+```
+{ "key1": "value1"
+  "key2": "value1" }
+```
 
-## captured context
+Now, if one of consumer threads have learned that __last__ value was
+`{ "key1": "value1" }`, it will stay like that for this thread:
+it is guaranteed that map will not get changed during the iteration
+or while getting particular values from the map. Although keys
+and values themselves won't be copied: they will be shared
+between all the current instances of the `Persistent Map`.
 
-## wrapping
+Of course, this implies that both keys and values have to be in fact
+immutable, but in majority of cases it is possible to model your
+data in the way that nested updates won't require any copying at all.
 
-## Passing operations
+Persistent Data Structures reduce the memory consumption and help
+to avoid copying, also freeing CPU resources for something more
+useful than simply copying things around. It also allows you to
+avoid adding semantics of copying into your program as such.
 
-## 
+There are several nice implementations of Immutable Persistent
+Data Structures in Java, one of them could be found (here)[http://pcollections.org/].
+
+# Conclusion
+
+Immutable and Persistent Data Structures are both very powerful
+and useful concepts, although they become much more useful when
+you combine them with something like `Atoms`.
+
+If you decide to go lock-free, it's easy enough to end up solving
+problems which were already solved by other communities some time
+ago, so it's always better to look your fellow PLT person over the
+shoulder and check out what are the recent (or well-forgotten)
+developments in this direction.
+
+There are more complex concepts, such as `Software Transactional Memory`,
+which help to achieve transactionality over multiple Data Structures.
+
+This post is one in an upcoming series of concepts from the languages
+such as `Haskell`, `Clojure` and `Erlang`, which are worth taking
+a look at. I'll be covering the concepts and paradigms which are
+already actively used by the awsome Open Source projects such
+as (Netty)[https://github.com/netty/netty], (Cassandra)[https://github.com/apache/cassandra],
+(Reactor)[https://github.com/reactor/reactor] and many others.
+Examples include `Streams`, `Async I/O`, `Channels`, interesting
+non-mainstream Data Structures such as skip lists, snapshottable
+data structures and more.
+
+I'll try my best not to go into nitty-gritty details and keeping it
+practical and accessible, but will try to provide enough details
+for the people who'd like to take a step further and learn
+these things deeper.
+
+Posted on 26 July 2015.
+
