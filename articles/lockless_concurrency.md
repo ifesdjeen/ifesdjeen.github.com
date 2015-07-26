@@ -96,9 +96,11 @@ any timeframe.
 
 # Programming With Locks
 
-// Here Be Dragons
+// TODO: Here Be Dragons
 
 # Why Go Lockless?
+
+// TODO: Requires much workz
 
 Lock-free algorithms allow threads to keep the control over CPU and try
 to progress forward as long as it is possible. It is much simpler to reason
@@ -114,14 +116,13 @@ ownership of the resource in order to progress.
 
 When certain threads have a priority over the others, it may result into
 higher-priority threads to wait for the resource and result into massive
-scalability issues. Besides all the forementioned issues, problems with
-locks, as it already was mentioned are hard to identify and debug. 
+scalability issues. 
 
 # Optimistic Concurrency
 
 Optimistic Concurrency assumes that any __Atomic Operation__ on state can be
 completed without interfering with others. Each and every operation will
-run without acquiring locks to the resources. Before comitting the result
+run without acquiring locks to the resources. Before committing the result
 to the memory, the operation will verify that there was no modification
 to the resource during the update operation. If verification discovers that
 data was in fact modified meanwhile, the operation will be restarted.
@@ -130,9 +131,9 @@ Main assumption of the Optimistic Concurrency is that resources aren't
 contended, and retries will be infrequent and in majority of cases will
 never occur.
 
-Since update operations are allowed (and eventually will) retry, they have
-to be both stateless (have no shared state between operations), and pure
-(have no side-effects on other resources).
+Since update operations are allowed to (and eventually will) retry, they
+have to be both stateless (have no shared state between operations), and
+pure (have no side-effects on other resources).
 
 # Compare and Swap
 
