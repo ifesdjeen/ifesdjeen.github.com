@@ -273,7 +273,7 @@ useful than simply copying things around. It also allows you to
 avoid adding semantics of copying into your program as such.
 
 There are several nice implementations of Immutable Persistent
-Data Structures in Java, one of them could be found (here)[http://pcollections.org/].
+Data Structures in Java, one of them could be found [here](http://pcollections.org/).
 
 # Conclusion
 
