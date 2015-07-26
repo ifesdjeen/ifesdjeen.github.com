@@ -74,43 +74,36 @@ This is certainly an oversimplified scenario, but it demonstrates
 how non-atomic operation might go wrong.
 
 Gladly, there are many solutions that allow one to simplify development
-of concurrent software. Sometimes such guarantees are granted by
-applying simple mathematical concepts such as `commutativity` (think:
-reordering of values applied by the operation) and `associativity`
-(think: changing the order of operation application).
+of concurrent software. Sometimes such guarantees can be achieved by
+applying simple constraints such as `commutativity` (think:
+reordering of values to which the operation is applied doesn't change
+the result) and `associativity` (think: changing the order of operation
+application doesn't change the result).
 
 Another way of thinking of it is atomic operations: each and every
 operation is guaranteed to leave the object in an absolutely predictable
 state, as if there were no other operation running at the same time.
 This concept is often combined with transactionality, which means
-that operations will might get retried. More of it will be covered
-in next paragraphs.
+that operations will get rolled back to their initial state and re-run.
+More of it will be covered in next paragraphs.
 
-If you imagine a simple in-memory cache, which consists just of a `Map`
+Imagine a simple in-memory cache, which consists just of a `Map`
 that holds keys and values. If you check the implementation of the `HashMap`
 itself, it becomes obvious that updating it involves several steps.
 In case several threads are competing for the resource, it's impossible
 to say which thread will be starting any particular operation in
 any timeframe.
 
-Locks are hard to get right, and I don't want to go into detailed
-examples of how to analyse the software to reassure yourself that
-it's formally correct. In this post, I'm going to concentrate on
-one of the methods which is much simpler to grasp, implement, use
-and reason about. But before that let's think about why an
-alternative can even be better. 
+# Programming With Locks
+
+// Here Be Dragons
 
 # Why Go Lockless?
 
-Concurrent Programming with locks is by no means an easy task. It is's often
-very hard to get right and is prone to many problems, such as `deadlocks`,
-`livelocks` and `race conditions`. All these problems are very hard to
-identify and debug, and often appear to be heisenbugs. 
-
 Lock-free algorithms allow threads to keep the control over CPU and try
-progressing forward as long as it is possible. It is much simpler to reason
+to progress forward as long as it is possible. It is much simpler to reason
 about your achitecture, concurrency and the general program layout when
-you know you don't have to worry if something that's going to be accessed
+you know you don't have to worry if something is going to be accessed
 from several threads doesn't have to be syncronised.
 
 One of the reasons to go lockless is an overhead introduced by the
