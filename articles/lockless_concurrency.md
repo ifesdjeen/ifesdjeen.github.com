@@ -231,7 +231,7 @@ copy of the object on each update.
 
 Gladly, there are enough resources and libraries out there that provide
 you with lots of ready to use Data Structures, such as `Lists`, `Sets`,
-`Maps` and so on. One of the examples is of course [Google Guava](https://github.com/google/guava/wiki/ImmutableCollectionsExplained).
+`Maps` and so on. One of the examples is of course (Google Guava)[https://github.com/google/guava/wiki/ImmutableCollectionsExplained].
 There are more implementations and examples, although I don't want
 to endorse either one, so I'll leave it for others.
 
@@ -273,7 +273,7 @@ useful than simply copying things around. It also allows you to
 avoid adding semantics of copying into your program as such.
 
 There are several nice implementations of Immutable Persistent
-Data Structures in Java, one of them could be found [here](http://pcollections.org/).
+Data Structures in Java, one of them could be found (here)[http://pcollections.org/].
 
 # Conclusion
 
@@ -294,8 +294,8 @@ This post is one in an upcoming series of concepts from the languages
 such as `Haskell`, `Clojure` and `Erlang`, which are worth taking
 a look at. I'll be covering the concepts and paradigms which are
 already actively used by the awsome Open Source projects such
-as (Netty)[https://github.com/netty/netty], (Cassandra)[https://github.com/apache/cassandra],
-(Reactor)[https://github.com/reactor/reactor] and many others.
+as [Netty](https://github.com/netty/netty), [Cassandra](https://github.com/apache/cassandra),
+[Reactor](https://github.com/reactor/reactor) and many others.
 Examples include `Streams`, `Async I/O`, `Channels`, interesting
 non-mainstream Data Structures such as skip lists, snapshottable
 data structures and more.
