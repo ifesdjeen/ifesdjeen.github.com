@@ -107,7 +107,7 @@ you know you don't have to worry if something is going to be accessed
 from several threads doesn't have to be syncronised.
 
 One of the reasons to go lockless is an overhead introduced by the
-resource aquisition. Same problem can also result to resource contention.
+resource acquisition. Same problem can also result to resource contention.
 This is particularly important for cases when there's a clear separation
 of consumers and producers, although they both have to obtain an exclusive
 ownership of the resource in order to progress.
@@ -121,7 +121,7 @@ locks, as it already was mentioned are hard to identify and debug.
 
 Optimistic Concurrency assumes that any __Atomic Operation__ on state can be
 completed without interfering with others. Each and every operation will
-run without aquiring locks to the resources. Before comitting the result
+run without acquiring locks to the resources. Before comitting the result
 to the memory, the operation will verify that there was no modification
 to the resource during the update operation. If verification discovers that
 data was in fact modified meanwhile, the operation will be restarted.
@@ -162,7 +162,7 @@ Things like `ReentrantLock` and `CountDownLatch`, for example, wouldn't
 be possible without `CAS` memory guarantees. They are both implemented
 a bit differently in JDK (via `sun.misc.Unsafe`, `compareAndSwapInt` and
 `compareAndSwapObject`), but general idea is exactly the same. If lock
-operations weren't atomic, it would have been possible to aquire lock
+operations weren't atomic, it would have been possible to acquire lock
 from several threads.
 
 # Atoms
