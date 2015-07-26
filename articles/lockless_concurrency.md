@@ -132,6 +132,12 @@ from several threads.
 
 # Atoms
 
+Although CAS operations provide us with some very nice and useful
+guarantees, they are just one of the building blocks for lock-free
+programming. If you combine the Atomic Object with a tight loop,
+you end up with so called `Atom`, which is simply a Reference
+that allows performing safe operations on it.
+
 Atom is a concept that were present for a while, although got
 more popular with `Clojure`. `Clojure` has a very simple implementation
 of an `Atom`, which you can find (here)[https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java].
