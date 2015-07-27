@@ -152,21 +152,24 @@ pure (have no impact on other resources).
 # Compare and Swap
 
 Modern CPUs have built-in support for the atomic `Compare And Swap`
-operations.  In Java they're available via `java.util.concurrent.atomic`
-package. Generally, such an operation consists of 4 steps:
+operations. In Java CAS operations are available via
+`java.util.concurrent.atomic` package. Generally, such an operation
+consists of 4 steps:
 
   * (1) Read the value from memory and save it for future reference
   * (2) Perform a necessary update of the value
-  * (3) Read the value once again, make sure it hasn't changed since (1)
+  * (3) Read the value once again, make sure it hasn't changed since (1) by
+    comparing it with a saved value
   * (4) Perform commit of the new value
 
 The alert reader will notice that such operations are prone to so called
 `ABA Problems`, or a false-positive match, when the value between read
 and write operations is getting changed from `A` to `B` and then back to
-`A`.  Although CPU designers have already solved this problem for us by
+`A`. Although CPU designers have already solved this problem for us by
 adding a counter alongside with the value being swapped. Every operation
 will receive a value together with a counter, which both will be later
-used for when attempting a commit.
+used for when attempting a commit. If you need such guarantees on
+JVM, you'd need to use an `AtomicStampedReference`.
 
 New value will be immediately visible for all the reading threads.
 While write or swap operation is performed, old value is available for
