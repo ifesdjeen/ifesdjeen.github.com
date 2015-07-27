@@ -339,8 +339,8 @@ making a copy of the object on each update.
 
 Gladly, there are enough resources and libraries out there that provide
 you with lots of ready to use Data Structures, such as `Lists`, `Sets`,
-`Maps` and so on. One of the examples is of course (Google
-Guava)[https://github.com/google/guava/wiki/ImmutableCollectionsExplained].
+`Maps` and so on. One of the examples is of course [Google
+Guava](https://github.com/google/guava/wiki/ImmutableCollectionsExplained).
 There are more implementations and examples, although I don't want to
 endorse either one, so I'll leave it for others.
 
