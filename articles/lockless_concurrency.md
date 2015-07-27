@@ -133,7 +133,16 @@ you with a straightforward way to fix it.
 
 It's worth mentioning that lockless data structures are simple from
 the user perspective, but require different design approaches from
-the implementer, if the data structure is more complex. 
+the implementer, which doesn't always make them easier to implement.
+One of the most straightforward data structures to implement is
+a `Circular Buffer`: an array and two atomic integers for reader
+and writer indexes.
+
+Another interesting lockless data structure is a `ConcurrentBitSet`,
+a concurrent lockless implementation of the `BitSet` which is using
+an `AtomicLongArray` and bitwise operators with masks to get and
+set certain bits. 
+
 
 # Optimistic Concurrency
 
@@ -434,5 +443,6 @@ You may also call it "background reading". In no particular order:
   * [Proving the Correctness of Nonblocking Data Structures](http://queue.acm.org/detail.cfm?id=2490873)
   * [Lock-Free Code: A False Sense of Security](http://www.drdobbs.com/cpp/lock-free-code-a-false-sense-of-security/210600279)
   * [Linearizability: A Correctness Condition for Concurrent Objects](http://courses.cs.vt.edu/~cs5204/fall07-kafura/Papers/TransactionalMemory/Linearizability.pdf)
+  * [ConcurrentBitSet](https://github.com/ifesdjeen/blomstre/blob/master/src/main/java/ifesdjeen/blomstre/ConcurrentBitSet.java)
 Posted on 26 July 2015.
 
