@@ -204,15 +204,15 @@ will suceed or fail under certain assumptions, `linearizability` implies
 that the set of operations will look for the rest of system as
 instantaneous (e.g. as if they were just one op).
 
-Atom is a concept that were present for a while, although got more
+Atom is a concept that was present for a while, although got more
 popular with `Clojure`. `Clojure` has a very simple implementation of an
 `Atom`, which you can find
 (here)[https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java].
-Although Clojure implementation isn't generic, mostly due to how Clojure
-is operating on data structures, and you will find that every operation
+Clojure implementation doesn't use generics, mostly due to how Clojure
+is operating on data structures, so you will find that every operation
 only has just `Object` type signatures in it.
 
-It's easy to change this implementation to use Java generics.  You can
+It's easy to improve this implementation to use Java generics. You can
 find my implementation in `Halflife`, an upcoming Stream Processing
 solution on JVM
 (here)[https://github.com/ifesdjeen/halflife/blob/master/halflife-core/src/java/halflife/bus/concurrent/Atom.java]. I'm
@@ -276,12 +276,12 @@ provides us with a `compareAndSet` operation, which guarantees that the
 value will only be set in case it hasn't been changed.
 
 An eternal loop `(5)` might look a bit scary, but if you think of it for
-another minute, this, as was mentioned previously, is an optimistic
-approach to concurrency: we expect that update operations will be made
-by producers that, if ran simultaneously, will make a small amount of
-retries, but will usually succeed from the first attempt.
+another minute, this is an optimistic approach to concurrency: we expect
+that update operations will be made by producers that, if ran
+simultaneously, will make a small amount of retries, but will usually
+succeed from the first attempt.
 
-In practice, retries are so infrequent that you shouldn't even think
+In practice, retries are so infrequent that you don't have to worry
 about them.  Although it's always better to make sure your architecture
 doesn't contradict to the general assumptions made by such an approach.
 
@@ -307,9 +307,10 @@ reordering.
 
 In fact, it's easier to think of these operations in terms of `+ 100`,
 `- 50` and so on, discarding the `old` value. This way it becomes more
-obvious that `Atom` starts with some initial state, and, if a certain
-set of operations is applied, no matter in which order, no matter when
-and after how many attempts, the program will be error prone.
+obvious that `Atom` starts with some initial state, and, given the same
+set of updates to perform, no matter in which order, no matter when and
+after how many attempts, the program will be producing the same exact
+result.
 
 Keeping a replayable log of incoming events can make your software even
 more robust, especially if you happen to find an error in an update
