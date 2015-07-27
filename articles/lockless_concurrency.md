@@ -25,6 +25,8 @@ referenced.
 
 In this post I’ll try to examine the question of lockless concurrency in
 Java - an extremely useful, yet shamefully overlooked topic.
+Implementing lockless algorithms and data structures requires some
+intuition on basic principles, so let's start with something simple.
 
 # State of the Art
 
