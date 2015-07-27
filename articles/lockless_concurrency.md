@@ -1,5 +1,5 @@
 ---
-title: "Things overlooked in Java Community, Part 1: Lockless Concurrency"
+title: "Things overlooked in Java Community: Lockless Concurrency"
 layout: article
 disqus_identifier: "things_overlooked_in_java_community_lockless_concurrency"
 disqus_url: "http://coffeenco.de/articles/2012_gym_gear.html"
