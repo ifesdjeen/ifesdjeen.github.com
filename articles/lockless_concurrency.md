@@ -455,5 +455,6 @@ You may also call it "background reading". In no particular order:
   * [Lock-Free Code: A False Sense of Security](http://www.drdobbs.com/cpp/lock-free-code-a-false-sense-of-security/210600279)
   * [Linearizability: A Correctness Condition for Concurrent Objects](http://courses.cs.vt.edu/~cs5204/fall07-kafura/Papers/TransactionalMemory/Linearizability.pdf)
   * [ConcurrentBitSet](https://github.com/ifesdjeen/blomstre/blob/master/src/main/java/ifesdjeen/blomstre/ConcurrentBitSet.java)
+
 Posted on 26 July 2015.
 
