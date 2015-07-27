@@ -143,6 +143,17 @@ a concurrent lockless implementation of the `BitSet` which is using
 an `AtomicLongArray` and bitwise operators with masks to get and
 set certain bits. 
 
+`ConcurrentLinkedQueue` implementation involves a `Node` object
+holding a volatile field that's updated atomically with an
+`AtomicReferenceFieldUpdater` and pointers to head and tail of
+the Queue. If you check it's internals, it involves tight loops,
+just like the `Atoms`, which will be adressed further during
+this post.
+
+If there's enough interest, I'll make a write up dissecting
+methods used in these three data structures. They all use
+different techniques, which seem to cover enough for anyone
+to get a good overview of how to implement a lockless DS.
 
 # Optimistic Concurrency
 
