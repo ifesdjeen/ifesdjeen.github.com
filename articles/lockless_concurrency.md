@@ -44,7 +44,7 @@ with an unpredictable state when using a combination of those.
 
 "Traditional" example of non-atomic operation is pretty much anything
 that looks like it's done in a single step, but is, in fact, done in
-multiple, for example, there's an integer field `a` with an intial value
+multiple, for example, there's an integer field `a` with an initial value
 of `0`, which is updated from two threads:
 
 ```java
@@ -66,9 +66,9 @@ value of `a` by adding `200`.
 If both operations were applied after one another sequentially, we'd end
 up with a value of `300` (`0 + 100 + 200`).
 
-Although, because theads have read the initial value of `a` (which was
+Although, because threads have read the initial value of `a` (which was
 `0`), we might end up having `a` with a value of _either_ `100` _or_
-`200`. So it's not only utterly wrong, but also undeterministic.
+`200`. So it's not only utterly wrong, but also non-deterministic.
 
 This certainly is an oversimplified scenario, but it demonstrates how
 non-atomic operation might go wrong.
@@ -103,7 +103,7 @@ the resource, which all may result into contention.
 
 Another one is __programming overhead__, which is harder to
 measure. It's easy to overlook a block of code that requires
-syncronisation, identifying possible thread safety issues in third-party
+synchronisation, identifying possible thread safety issues in third-party
 code needs an in-depth investigation and analysis, one can release a
 lock too early or hold it for too long without a need.
 
@@ -114,10 +114,10 @@ requiring acquiring the same lock.
 
 On the other hand, `lock-free` algorithms allow threads to keep the
 control over CPU and try to progress forward as long as it is
-possible. It is much simpler to reason about your achitecture,
+possible. It is much simpler to reason about your architecture,
 concurrency and the general program layout when you know that you don't
 have to worry whether something that's going to be accessed concurrently
-has to be syncronised.
+has to be synchronised.
 
 For example, readers can always proceed without any locking at all.
 Writers don't have to wait for readers, just have to make sure that
@@ -143,7 +143,7 @@ Main assumption of the Optimistic Concurrency is that modifications of
 the won't be performed simultaneously all the time, and retries will be
 infrequent and in majority of cases will never occur. Read patterns
 aren't taken into consideration, since in lockless systems they do not
-require any syncronisation whatsoever.
+require any synchronisation whatsoever.
 
 Since update operations are allowed to (and eventually will) retry, they
 have to be both stateless (have no shared state between operations), and
@@ -200,7 +200,7 @@ Atoms have the following properties:
 
 Another concept which is arising from Mathematics that applies to Atoms
 is `linearizability`. If `atomicity` only guarantees that any operation
-will suceed or fail under certain assumptions, `linearizability` implies
+will succeed or fail under certain assumptions, `linearizability` implies
 that the set of operations will look for the rest of system as
 instantaneous (e.g. as if they were just one op).
 
@@ -269,10 +269,10 @@ split up the whole update into several steps:
   * `(4)` we return a new value set by the `Atom` if the atomicity of
     the whole operation can be guaranteed by what we see
   * `(5)` if atomicity can't be guaranteed, we're running in an tight
-    loop that will retry the operation until it suceeds.
+    loop that will retry the operation until it succeeds.
 
-We're using a generic `java.util.concurrent.AtomicReference` here, which
-provides us with a `compareAndSet` operation, which guarantees that the
+We're using a generic `java.util.concurrent.AtomicReference` here, which,
+by providing us with a `compareAndSet` operation, guarantees that the
 value will only be set in case it hasn't been changed.
 
 An eternal loop `(5)` might look a bit scary, but if you think of it for
@@ -292,7 +292,7 @@ writers.
 
 # Thinking in Increments
 
-These concepts will also stronlgy influence the way you're thinking
+These concepts will also strongly influence the way you're thinking
 about how you're modelling your data. For example, you have an
 `Atom<T>`, which has an unary (`T -> T`, read: taking a type `T` and
 returning a type `T`) operation attached to it, you can define simple
@@ -312,11 +312,11 @@ set of updates to perform, no matter in which order, no matter when and
 after how many attempts, the program will be producing the same exact
 result.
 
-Keeping a replayable log of incoming events can make your software even
-more robust, especially if you happen to find an error in an update
-operation and discover that all the updates to the state were resulting
-to something you did not initially intend.  But that's a story for
-another day.
+Keeping a log of incoming events that you can replay can make your
+software even more robust, especially if you happen to find an error in
+an update operation and discover that all the updates to the state were
+resulting to something you did not initially intend.  But that's a story
+for another day.
 
 # Immutable Data Structures
 
@@ -377,7 +377,7 @@ simply copying things around. It also allows you to avoid adding
 semantics of copying into your program as such.
 
 There are several nice implementations of Immutable Persistent Data
-Structures in Java, one of them could be found
+Structures in Java, one of them can be found
 [here](http://pcollections.org/).
 
 # Conclusion
@@ -399,7 +399,7 @@ Structures.
 This post is one in an upcoming series of concepts from the languages
 such as `Haskell`, `Clojure` and `Erlang`, which are worth taking a look
 at. I'll be covering the concepts and paradigms which are already
-actively used by the awsome Open Source projects such as
+actively used by the awesome Open Source projects such as
 [Netty](https://github.com/netty/netty),
 [Cassandra](https://github.com/apache/cassandra),
 [Reactor](https://github.com/reactor/reactor) and many others.  Examples
@@ -419,7 +419,7 @@ You may also call it "background reading". In no particular order:
   * Most likely I'm not the first one to refer to
     [The Art of Multiprocessor Programming](http://www.amazon.de/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376)
   * [Is Parallel Programming Hard, And, If So, What Can You Do About It?](https://www.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook-1c.2015.01.31a.pdf)
-  * [OpenJDK 8 Syncrhoniser](http://hg.openjdk.java.net/jdk8/jdk8/hotspot/file/87ee5ee27509/src/share/vm/runtime/synchronizer.cpp)
+  * [OpenJDK 8 Synchroniser](http://hg.openjdk.java.net/jdk8/jdk8/hotspot/file/87ee5ee27509/src/share/vm/runtime/synchronizer.cpp)
   * [Understanding Clojure's Persistent Vectors](http://hypirion.com/musings/understanding-persistent-vector-pt-1)
   
 Posted on 26 July 2015.
