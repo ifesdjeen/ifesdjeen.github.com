@@ -12,16 +12,16 @@ with people, it stroke me that many things that were available and
 extremely popular in the other communities (like Clojure and Haskell)
 are still so little used in Java world.
 
-Ever since Java got `Lambdas`, `Streams` and default methods in
-`Interfaces`, it actually became much more enjoyable language to use. It
-should have also changed ways people write their code, although this
-process is much slower than I would have expected.
+Ever since Java got `Lambdas`, `Streams` and default method
+implementations in `Interfaces`, it actually became much more enjoyable
+language to use. It should have also changed ways people write their
+code, although this process is much slower than I would have expected.
 
-`Lambdas` allowed us to pass anonymous functions with captured context
-in order to avoid creating class for every single possible clause where
-variables escape the context. They also allow to think of operations in
-terms of small, atomic pieces that can be combined, passed around,
-reused and referenced.
+`Lambdas` allowed us to pass anonymous functions in order to avoid
+creating a class for every single possible clause where variables escape
+the context. They also allow to think of operations in terms of small,
+atomic pieces that can be combined, passed around, reused and
+referenced.
 
 In this post I’ll try to examine the question of lockless concurrency in
 Java - an extremely useful, yet shamefully overlooked topic.
@@ -30,22 +30,22 @@ Java - an extremely useful, yet shamefully overlooked topic.
 
 Before we start, let's discuss the concept of `atomicity`. By saying
 that the set of operations is `atomic`, you imply the guarantee that
-operations (usually representing a single logical part) will behave as
-if they were a single step. No other thread can observe the operation in
-a half-complete state.
+operations will behave as if they were a single step. Usually such
+operations represent a single logical step.  No other thread can observe
+the operation in a half-complete state.
 
-Concept of Thread Safety arises exactly from the problem that it's hard
-to guarantee all operations within your data structures are `atomic` so
-you have to introduce several indirection layers for them. Pieces that
-have to be synchronised are also hard to identify. In more complex
-scenarios you have to also think about the access patterns, and despite
-safety of the concrete operations, one can still end up with an
-unpredictable state.
+Concept of `Thread Safety` arises exactly from the problem that it's
+hard to guarantee all operations within your data structures are
+`atomic`, so you have to introduce several indirection layers to make it
+work. Pieces that have to be synchronised are also hard to identify. In
+more complex scenarios you have to also think about the access patterns,
+and despite the operations themselves look safe, one can still end up
+with an unpredictable state when using a combination of those.
 
 "Traditional" example of non-atomic operation is pretty much anything
-that looks like a "single entry", but is, in fact, multiple, for
-example, there's an integer field `a` with an intial value of 0, which
-is updated from two threads:
+that looks like it's done in a single step, but is, in fact, done in
+multiple, for example, there's an integer field `a` with an intial value
+of `0`, which is updated from two threads:
 
 ```java
 // One is trying to update it by adding 100 to it
@@ -70,7 +70,7 @@ Although, because theads have read the initial value of `a` (which was
 `0`), we might end up having `a` with a value of _either_ `100` _or_
 `200`. So it's not only utterly wrong, but also undeterministic.
 
-This is certainly an oversimplified scenario, but it demonstrates how
+This certainly is an oversimplified scenario, but it demonstrates how
 non-atomic operation might go wrong.
 
 Gladly, there are many solutions that allow one to simplify development
@@ -80,27 +80,14 @@ of values to which the operation is applied doesn't change the result)
 and `associativity` (think: changing the order of operation application
 doesn't change the result).
 
-Another way of thinking of it is atomic operations: each and every
+Another way of thinking of it is `atomic operations`: each and every
 operation is guaranteed to leave the object in an absolutely predictable
-state, as if there were no other operation running at the same time.
-This concept is often combined with transactionality, which means that
-operations will get rolled back to their initial state and re-run.  More
-of it will be covered in next paragraphs.
-
-Imagine a simple in-memory cache, which consists just of a `Map` that
-holds keys and values. If you check the implementation of the `HashMap`
-itself, it becomes obvious that updating it involves several steps.  In
-case several threads are competing for the resource, it's impossible to
-say which thread will be starting any particular operation in any
-timeframe.
+(discrete) state, as if there were no other operation running at the
+same time. This concept is often combined with `transactionality`, which
+means that operations will get rolled back to their initial state and
+re-run again. These subjects will be covered in next paragraphs.
 
 # Why Go Lockless?
-
-Lock-free algorithms allow threads to keep the control over CPU and try
-to progress forward as long as it is possible. It is much simpler to
-reason about your achitecture, concurrency and the general program
-layout when you know that you don't have to worry whether something
-that's going to be accessed concurrently has to be syncronised.
 
 Introducing locks usually means several things. One of them is
 __blocking__: locks imply an exclusive ownership over the locked
@@ -125,19 +112,38 @@ two resources waiting for not being able to proceed because one is
 already holding a lock, but it's progress depends on another one,
 requiring acquiring the same lock.
 
+On the other hand, `lock-free` algorithms allow threads to keep the
+control over CPU and try to progress forward as long as it is
+possible. It is much simpler to reason about your achitecture,
+concurrency and the general program layout when you know that you don't
+have to worry whether something that's going to be accessed concurrently
+has to be syncronised.
+
+For example, readers can always proceed without any locking at all.
+Writers don't have to wait for readers, just have to make sure that
+the changes that they apply to the object do not coincide with
+other writes happen at the same time.
+
+Such an approach is also much simpler to reason about. When we move
+further to discuss `Atoms`, you'll notice that they make the notion
+of a conflict by concurrent execution explicit, and provide you with
+a straightforward way to fix it. 
+
 # Optimistic Concurrency
 
 Optimistic Concurrency assumes that any __Atomic Operation__ on state
 can be completed without interfering with others. Each and every
 operation will run without acquiring locks to the resources. Before
 committing the result to the memory, the operation will verify that
-there was no modification to the resource during the update
-operation. If verification discovers that data was in fact modified
-meanwhile, the operation will be restarted.
+there was no modification to the resource during the update. If
+verification discovers that data was in fact modified meanwhile, the
+operation will be restarted.
 
-Main assumption of the Optimistic Concurrency is that resources aren't
-contended, and retries will be infrequent and in majority of cases will
-never occur.
+Main assumption of the Optimistic Concurrency is that modifications of
+the won't be performed simultaneously all the time, and retries will be
+infrequent and in majority of cases will never occur. Read patterns
+aren't taken into consideration, since in lockless systems they do not
+require any syncronisation whatsoever.
 
 Since update operations are allowed to (and eventually will) retry, they
 have to be both stateless (have no shared state between operations), and
