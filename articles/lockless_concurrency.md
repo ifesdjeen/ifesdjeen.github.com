@@ -126,10 +126,14 @@ Writers don't have to wait for readers, just have to make sure that
 the changes that they apply to the object do not coincide with
 other writes happen at the same time.
 
-Such an approach is also much simpler to reason about. When we move
-further to discuss `Atoms`, you'll notice that they make the notion
-of a conflict by concurrent execution explicit, and provide you with
-a straightforward way to fix it. 
+Such an approach is also much more straightforward to reason about.
+When we move further to discuss `Atoms`, you'll notice that they make
+the notion of a conflict by concurrent execution explicit, and provide
+you with a straightforward way to fix it.
+
+It's worth mentioning that lockless data structures are simple from
+the user perspective, but require different design approaches from
+the implementer, if the data structure is more complex. 
 
 # Optimistic Concurrency
 
