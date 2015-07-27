@@ -94,29 +94,36 @@ In case several threads are competing for the resource, it's impossible
 to say which thread will be starting any particular operation in
 any timeframe.
 
-# Programming With Locks
-
-// TODO: Here Be Dragons
-
 # Why Go Lockless?
-
-// TODO: Requires much workz
 
 Lock-free algorithms allow threads to keep the control over CPU and try
 to progress forward as long as it is possible. It is much simpler to reason
 about your achitecture, concurrency and the general program layout when
-you know you don't have to worry if something is going to be accessed
-from several threads doesn't have to be syncronised.
+you know that you don't have to worry whether something that's going to be
+accessed concurrently has to be syncronised.
 
-One of the reasons to go lockless is an overhead introduced by the
-resource acquisition. Same problem can also result to resource contention.
-This is particularly important for cases when there's a clear separation
-of consumers and producers, although they both have to obtain an exclusive
-ownership of the resource in order to progress.
+Introducing locks usually means several things. One of them is __blocking__:
+locks imply an exclusive ownership over the locked resource,
+which means that only one thread can progress at a time. The rest of threads
+will be waiting for lock to be released. Locks may introduce a contention,
+when there are many parties interested in the certain resource. One of the
+ways to improve the situation is to use read/write locks, which allow
+multiple readers to access the resource simultaneously, but provide an
+exclusive resource ownership for the writer. This means that writer
+will read for other readers and writers. Also, that readers will wait
+until writer is done manipulating the resource, which all may result
+into contention.
 
-When certain threads have a priority over the others, it may result into
-higher-priority threads to wait for the resource and result into massive
-scalability issues. 
+Another one is __programming overhead__, which is harder to measure. It's
+easy to overlook a block of code that requires syncronisation, identifying
+possible thread safety issues in third-party code needs an in-depth
+investigation and analysis, one can release a lock too early or hold it for
+too long without a need.
+
+Modelling such system requires thinking dependencies through to avoid two
+resources waiting for not being able to proceed because one is already
+holding a lock, but it's progress depends on another one, requiring
+acquiring the same lock. 
 
 # Optimistic Concurrency
 
