@@ -390,7 +390,8 @@ Structures in Java, one of them can be found
 
 Immutable and Persistent Data Structures are both very powerful and
 useful concepts, although they become much more useful when you combine
-them with something like `Atoms`.
+them with something like `Atoms`. They're both worth of a post their
+own, there's a lot to learn about their internals and semantics.
 
 If you decide to go lock-free, it's easy enough to end up solving
 problems which were already solved by other communities some time ago,
