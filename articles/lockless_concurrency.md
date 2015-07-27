@@ -400,7 +400,7 @@ You may also call it "background reading". In no particular order:
   * [Low-Level post on Atomic Operations](http://preshing.com/20130618/atomic-vs-non-atomic-operations/)
   * Most likely I'm not the first one to refer to [The Art of Multiprocessor Programming](http://www.amazon.de/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376)
   * [Is Parallel Programming Hard, And, If So, What Can You Do About It?](https://www.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook-1c.2015.01.31a.pdf)
-  * 
+  * [OpenJDK 8 Syncrhoniser](http://hg.openjdk.java.net/jdk8/jdk8/hotspot/file/87ee5ee27509/src/share/vm/runtime/synchronizer.cpp)
 
 Posted on 26 July 2015.
 
