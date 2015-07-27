@@ -394,18 +394,20 @@ them with something like `Atoms`.
 
 If you decide to go lock-free, it's easy enough to end up solving
 problems which were already solved by other communities some time ago,
-so it's always better to look your fellow PLT person over the shoulder
-and check out what are the recent (or well-forgotten) developments in
-this direction.
+so it's always better to check out what's going on around the world
+and refer to the recent (or well-forgotten) developments.
 
-There are more complex concepts, such as `Software Transactional
-Memory`, which help to achieve transactionality over multiple Data
-Structures.
+Immutability is one of the ways of dealing with concurrency, but
+there are other ways to do it. There are many compromises and
+alternatives: data structures with fast snapshots for reads and
+syncronised writes, lockless mutable data stuctures, STM (which,
+depending on implementation, also uses locking underneath) but
+helps to achieve transactionality over multiple data structures,
+and so on.
 
-This post is one in an upcoming series of concepts from the languages
-such as `Haskell`, `Clojure` and `Erlang`, which are worth taking a look
-at. I'll be covering the concepts and paradigms which are already
-actively used by the awesome Open Source projects such as
+I'd like to continue sharing the concepts and paradigms from the other
+programming languages such as `Haskell`, `Clojure` and `Erlang`, also
+from Java Open Source projects, such as
 [Netty](https://github.com/netty/netty),
 [Cassandra](https://github.com/apache/cassandra),
 [Reactor](https://github.com/reactor/reactor) and many others.  Examples
