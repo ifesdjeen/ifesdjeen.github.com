@@ -419,16 +419,19 @@ I'll try my best not to go into nitty-gritty details and keeping it
 practical and accessible, but will try to provide enough details for the
 people who'd like to take a step further and learn these things deeper.
 
+
 # Further Reading
 
 You may also call it "background reading". In no particular order:
 
   * [Low-Level post on Atomic Operations](http://preshing.com/20130618/atomic-vs-non-atomic-operations/)
-  * Most likely I'm not the first one to refer to
-    [The Art of Multiprocessor Programming](http://www.amazon.de/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376)
+  * Most likely I'm not the first one to refer to [The Art of Multiprocessor Programming](http://www.amazon.de/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376)
   * [Is Parallel Programming Hard, And, If So, What Can You Do About It?](https://www.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook-1c.2015.01.31a.pdf)
   * [OpenJDK 8 Synchroniser](http://hg.openjdk.java.net/jdk8/jdk8/hotspot/file/87ee5ee27509/src/share/vm/runtime/synchronizer.cpp)
   * [Understanding Clojure's Persistent Vectors](http://hypirion.com/musings/understanding-persistent-vector-pt-1)
-  
+  * [Nonblocking Algorithms and Scalable Multicore Programming](http://queue.acm.org/detail.cfm?id=2492433)
+  * [Proving the Correctness of Nonblocking Data Structures](http://queue.acm.org/detail.cfm?id=2490873)
+  * [Lock-Free Code: A False Sense of Security](http://www.drdobbs.com/cpp/lock-free-code-a-false-sense-of-security/210600279)
+  * [Linearizability: A Correctness Condition for Concurrent Objects](http://courses.cs.vt.edu/~cs5204/fall07-kafura/Papers/TransactionalMemory/Linearizability.pdf)
 Posted on 26 July 2015.
 
