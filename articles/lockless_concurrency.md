@@ -162,15 +162,6 @@ consists of 4 steps:
     comparing it with a saved value
   * (4) Perform commit of the new value
 
-The alert reader will notice that such operations are prone to so called
-`ABA Problems`, or a false-positive match, when the value between read
-and write operations is getting changed from `A` to `B` and then back to
-`A`. Although CPU designers have already solved this problem for us by
-adding a counter alongside with the value being swapped. Every operation
-will receive a value together with a counter, which both will be later
-used for when attempting a commit. If you need such guarantees on
-JVM, you'd need to use an `AtomicStampedReference`.
-
 New value will be immediately visible for all the reading threads.
 While write or swap operation is performed, old value is available for
 reading without any locking. Operation is guaranteed to be performed in
@@ -183,6 +174,15 @@ bit differently in JDK (via `sun.misc.Unsafe`, `compareAndSwapInt` and
 operations weren't atomic, it would have been possible to acquire lock
 from several threads.
 
+The alert reader will notice that such operations are prone to so called
+`ABA Problems`, or a false-positive match, when the value between read
+and write operations is getting changed from `A` to `B` and then back to
+`A`. Although CPU designers have already solved this problem for us by
+adding a counter alongside with the value being swapped. Every operation
+will receive a value together with a counter, which both will be later
+used for when attempting a commit. If you need such guarantees on
+JVM, you have to use an `AtomicStampedReference`.
+
 # Atoms
 
 Although CAS operations provide us with some very nice and useful
@@ -193,7 +193,7 @@ performing safe operations on it.
 
 Atoms have the following properties:
 
-  * Every operation will suceed after the finite number of tries
+  * Every operation will succeed after the finite number of tries
   * Every operation leaves Atom in a consistent state
   * Operations applied to same input value will always result into
     the same output value
