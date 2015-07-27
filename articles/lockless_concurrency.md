@@ -140,7 +140,7 @@ never occur.
 
 Since update operations are allowed to (and eventually will) retry, they
 have to be both stateless (have no shared state between operations), and
-pure (have no side-effects on other resources).
+pure (have no impact on other resources).
 
 # Compare and Swap
 
@@ -202,11 +202,9 @@ Although Clojure implementation isn't generic, mostly due to how
 Clojure is operating on data structures, and you will find that
 every operation only has just `Object` type signatures in it.
 
-I've tried to generify the implementation and add a couple of
-operations to it. You can find my implementation in `Halflife`,
-an upcoming Stream Processing solution on JVM (here)[https://github.com/ifesdjeen/halflife/blob/master/halflife-core/src/java/halflife/bus/concurrent/Atom.java].
-
-I'm also putting a simplified version here:
+It's easy to change this implementation to use Java generics.
+You can find my implementation in `Halflife`, an upcoming Stream
+Processing solution on JVM (here)[https://github.com/ifesdjeen/halflife/blob/master/halflife-core/src/java/halflife/bus/concurrent/Atom.java]. I'm also putting a simplified version here:
 
 ```java
 package halflife.bus.concurrent;
