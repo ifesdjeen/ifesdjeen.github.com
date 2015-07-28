@@ -167,8 +167,8 @@ there was no modification to the resource during the update. If
 verification discovers that data was in fact modified meanwhile, the
 operation will be restarted.
 
-Main assumption of the Optimistic Concurrency is that modifications of
-the won't be performed simultaneously all the time, and retries will be
+Main assumption of the Optimistic Concurrency is that modifications
+won't be performed simultaneously all the time, retries will be
 infrequent and in majority of cases will never occur. Read patterns
 aren't taken into consideration, since in lockless systems they do not
 require any synchronisation whatsoever.
