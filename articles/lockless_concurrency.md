@@ -10,7 +10,7 @@ disqus_url: "http://coffeenco.de/articles/2012_gym_gear.html"
 # Introduction
 
 I've recently visited `#jcrete`, a Java Un-Conference. After talking
-with people, it stroke me that many things that were available and
+with people, it struck me that many things that were available and
 extremely popular in the other communities (like Clojure and Haskell)
 are still so little used in Java world.
 
