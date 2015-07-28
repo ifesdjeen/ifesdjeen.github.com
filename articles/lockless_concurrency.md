@@ -233,7 +233,7 @@ instantaneous (e.g. as if they were just one op).
 Atom is a concept that was present for a while, although got more
 popular with `Clojure`. `Clojure` has a very simple implementation of an
 `Atom`, which you can find
-(here)[https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java].
+[here](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Atom.java).
 Clojure implementation doesn't use generics, mostly due to how Clojure
 is operating on data structures, so you will find that every operation
 only has just `Object` type signatures in it.
@@ -241,7 +241,7 @@ only has just `Object` type signatures in it.
 It's easy to improve this implementation to use Java generics. You can
 find my implementation in `Halflife`, an upcoming Stream Processing
 solution on JVM
-(here)[https://github.com/ifesdjeen/halflife/blob/master/halflife-core/src/java/halflife/bus/concurrent/Atom.java]. I'm
+[here](https://github.com/ifesdjeen/halflife/blob/master/halflife-core/src/java/halflife/bus/concurrent/Atom.java). I'm
 also putting a simplified version here:
 
 ```java
@@ -404,7 +404,7 @@ semantics of copying into your program as such.
 
 There are several nice implementations of Immutable Persistent Data
 Structures in Java, one of them can be found
-[here](http://pcollections.org/).
+[here](http://pcollections.org/). 
 
 # Conclusion
 
