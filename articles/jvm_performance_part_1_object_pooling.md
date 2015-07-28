@@ -95,7 +95,7 @@ borrowing is more explicit, reference counting implies automatic
 recycling when all interested parties are done with the object.
 Let's check out both of them.
 
-# Borrowing 
+## Borrowing 
 
 Borrowing mostly looks like `malloc` / `free` on top of
 garbage-collected runtime, and you'll certainly face same issues as you
@@ -121,7 +121,7 @@ completely up to consumer, object itself doesn't have to take care of
 it. This means that you may even pool the API objects of an external
 library.
 
-# Reference-counting
+## Reference-counting
 
 Reference counting is slightly more complex in terms of implementation,
 but it also offers more granular control over the data structure, and 
