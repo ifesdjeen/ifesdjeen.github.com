@@ -318,6 +318,11 @@ independent from writers, and they will simply be learning the latest
 updated value by dereferencing an `Atom`, and will never collide with
 writers.
 
+Under heavy write loads, when multiple simultaneous writes are involved,
+this approach is unlikely to scale well as the counts go up. As a guiding
+principle, one should minimize cross core writes and try to localize
+writes and avoid write contention.
+
 # Thinking in Increments
 
 These concepts will also strongly influence the way you're thinking
