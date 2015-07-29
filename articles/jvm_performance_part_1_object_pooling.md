@@ -190,13 +190,11 @@ For example, if you have `100` items in the pool, and `20` items are
 taken form pool every second, but only `10` are returned, you will empty
 the pool after `9` seconds.
 
-$ poolWillBeEmptyIn = \frac{poolSize - takeRate}{takeRate - returnRate} + 1$
+$$ poolWillBeEmptyIn = \frac{poolSize - takeRate}{takeRate - returnRate} + 1 $$
 
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 </script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
+
 
 Using this information, you can "plan ahead" and allocate enough
 elements to satisfy the lease requirements.
