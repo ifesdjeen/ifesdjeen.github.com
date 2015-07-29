@@ -5,7 +5,7 @@ disqus_identifier: "things_overlooked_in_java_community_lockless_concurrency"
 disqus_url: "http://coffeenco.de/articles/2012_gym_gear.html"
 ---
 
-# A Gentle Introduction to Lockless Concurrency
+# Gentle Introduction to Lockless Concurrency
 
 # Introduction
 
