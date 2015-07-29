@@ -463,5 +463,12 @@ You may also call it "background reading". In no particular order:
   * [Linearizability: A Correctness Condition for Concurrent Objects](http://courses.cs.vt.edu/~cs5204/fall07-kafura/Papers/TransactionalMemory/Linearizability.pdf)
   * [ConcurrentBitSet](https://github.com/ifesdjeen/blomstre/blob/master/src/main/java/ifesdjeen/blomstre/ConcurrentBitSet.java)
 
+Thanks everyone who reviewed the post and have given their feedback:
+[Konstantin Rack](https://twitter.com/ConstantinRack),
+[Vitaliy Davidovich](https://groups.google.com/forum/#!topic/mechanical-sympathy/bAB3yoji8NE),
+[Ruslan Shevchenko](https://twitter.com/rssh1),
+[John Mostovoy](https://twitter.com/podmostom) and others. Some wordings
+were borrowed straight from their feedback.
+
 Posted on 26 July 2015.
 
