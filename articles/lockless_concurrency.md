@@ -205,11 +205,11 @@ from several threads.
 The alert reader will notice that such operations are prone to so called
 `ABA Problems`, or a false-positive match, when the value between read
 and write operations is getting changed from `A` to `B` and then back to
-`A`. Although CPU designers have already solved this problem for us by
-adding a counter alongside with the value being swapped. Every operation
-will receive a value together with a counter, which both will be later
-used for when attempting a commit. If you need such guarantees on
-JVM, you have to use an `AtomicStampedReference`.
+`A`. You can work around this problem for us by adding a counter
+alongside with the value being swapped. Every operation will receive a
+value together with a counter, which both will be later used for when
+attempting a commit. If you need such guarantees on JVM, you have to use
+an `AtomicStampedReference`.
 
 # Atoms
 
