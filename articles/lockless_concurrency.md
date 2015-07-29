@@ -101,7 +101,7 @@ introduce a contention, when there are many parties interested in the
 certain resource. One of the ways to improve the situation is to use
 read/write locks, which allow multiple readers to access the resource
 simultaneously, but provide an exclusive resource ownership for the
-writer. This means that writer will read for other readers and
+writer. This means that writer will wait for other readers and
 writers. Also, that readers will wait until writer is done manipulating
 the resource, which all may result into contention.
 
