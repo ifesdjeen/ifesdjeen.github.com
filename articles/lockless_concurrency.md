@@ -15,7 +15,7 @@ extremely popular in the other communities (like Clojure and Haskell)
 are still so little used in Java world.
 
 Ever since Java got `Lambdas`, `Streams` and default method
-implementations in `Interfaces`, it actually became much more enjoyable
+implementations in `Interfaces`, it actually became a much more enjoyable
 language to use. It should have also changed ways people write their
 code, although this process is much slower than I would have expected.
 
@@ -25,16 +25,16 @@ the context. They also allow to think of operations in terms of small,
 atomic pieces that can be combined, passed around, reused and
 referenced.
 
-In this post I’ll try to examine the question of lockless concurrency in
+In this post, I’ll try to examine the question of lockless concurrency in
 Java - an extremely useful, yet shamefully overlooked topic.
-Implementing lockless algorithms and data structures requires some
+Implementing lockless algorithms and data structures require some
 intuition on basic principles, so let's start with something simple.
 
 # State of the Art
 
 Before we start, let's discuss the concept of `atomicity`. By saying
 that the set of operations is `atomic`, you imply the guarantee that
-operations will behave as if they were a single step. Usually such
+operations will behave as if they were a single step. Usually, such
 operations represent a single logical step.  No other thread can observe
 the operation in a half-complete state.
 
@@ -42,7 +42,7 @@ Concept of `Thread Safety` arises exactly from the problem that it's
 hard to guarantee all operations within your data structures are
 `atomic`, so you have to introduce several indirection layers to make it
 work. Pieces that have to be synchronised are also hard to identify. In
-more complex scenarios you have to also think about the access patterns,
+more complex scenarios, you have to also think about the access patterns,
 and despite the operations themselves look safe, one can still end up
 with an unpredictable state when using a combination of those.
 
@@ -72,10 +72,10 @@ up with a value of `300` (`0 + 100 + 200`).
 
 Although, because threads have read the initial value of `a` (which was
 `0`), we might end up having `a` with a value of _either_ `100` _or_
-`200`. So it's not only utterly wrong, but also non-deterministic.
+`200`. So it's not only utterly wrong but also non-deterministic.
 
 This certainly is an oversimplified scenario, but it demonstrates how
-non-atomic operation might go wrong.
+the non-atomic operation might go wrong.
 
 Gladly, there are many solutions that allow one to simplify development
 of concurrent software. Sometimes such guarantees can be achieved by
@@ -96,19 +96,18 @@ re-run again. These subjects will be covered in next paragraphs.
 Introducing locks usually means several things. One of them is
 __blocking__: locks imply an exclusive ownership over the locked
 resource, which means that only one thread can progress at a time. The
-rest of threads will be waiting for lock to be released. Locks may
-introduce a contention, when there are many parties interested in the
+rest of threads will be waiting for the lock to be released. Locks may
+introduce a contention when there are many parties interested in the
 certain resource. One of the ways to improve the situation is to use
 read/write locks, which allow multiple readers to access the resource
 simultaneously, but provide an exclusive resource ownership for the
 writer. This means that writer will wait for other readers and
-writers. Also, that readers will wait until writer is done manipulating
+writers. Also, that readers will wait until the writer is done manipulating
 the resource, which all may result into contention.
 
 Another one is __programming overhead__, which is harder to
 measure. It's easy to overlook a block of code that requires
-synchronisation, identifying possible thread safety issues in third-party
-code needs an in-depth investigation and analysis, one can release a
+synchronisation, identifying possible thread safety issues in the third-party code needs an in-depth investigation and analysis, one can release a
 lock too early or hold it for too long without a need.
 
 Modelling such system requires thinking dependencies through to avoid
@@ -130,11 +129,11 @@ other writes happen at the same time.
 
 Such an approach is also much more straightforward to reason about.
 When we move further to discuss `Atoms`, you'll notice that they make
-the notion of a conflict by concurrent execution explicit, and provide
+the notion of a conflict by concurrent execution explicit and provide
 you with a straightforward way to fix it.
 
 It's worth mentioning that lockless data structures are simple from
-the user perspective, but require different design approaches from
+the user perspective but require different design approaches from
 the implementer, which doesn't always make them easier to implement.
 One of the most straightforward data structures to implement is
 a `Circular Buffer`: an array and two atomic integers for reader
@@ -149,10 +148,10 @@ set certain bits.
 holding a volatile field that's updated atomically with an
 `AtomicReferenceFieldUpdater` and pointers to head and tail of
 the Queue. If you check it's internals, it involves tight loops,
-just like the `Atoms`, which will be adressed further during
+just like the `Atoms`, which will be addressed further during
 this post.
 
-If there's enough interest, I'll make a write up dissecting
+If there's enough interest, I'll make a write-up dissecting
 methods used in these three data structures. They all use
 different techniques, which seem to cover enough for anyone
 to get a good overview of how to implement a lockless DS.
@@ -167,10 +166,10 @@ there was no modification to the resource during the update. If
 verification discovers that data was in fact modified meanwhile, the
 operation will be restarted.
 
-Main assumption of the Optimistic Concurrency is that modifications
+The main assumption of the Optimistic Concurrency is that modifications
 won't be performed simultaneously all the time, retries will be
-infrequent and in majority of cases will never occur. Read patterns
-aren't taken into consideration, since in lockless systems they do not
+infrequent and in the majority of cases will never occur. Read patterns
+aren't taken into consideration since in lockless systems they do not
 require any synchronisation whatsoever.
 
 Since update operations are allowed to (and eventually will) retry, they
@@ -180,7 +179,7 @@ pure (have no impact on other resources).
 # Compare and Swap
 
 Modern CPUs have built-in support for the atomic `Compare And Swap`
-operations. In Java CAS operations are available via
+operations. In Java, CAS operations are available via
 `java.util.concurrent.atomic` package. Generally, such an operation
 consists of 4 steps:
 
@@ -190,19 +189,19 @@ consists of 4 steps:
     comparing it with a saved value
   * (4) Perform commit of the new value
 
-New value will be immediately visible for all the reading threads.
-While write or swap operation is performed, old value is available for
-reading without any locking. Operation is guaranteed to be performed in
-full at all times, therefore read values are safe to consume.
+The new value will be immediately visible for all the reading threads.
+While write or swap operation is performed, the old value is available for
+reading without any locking. The operation is guaranteed to be performed in
+full at all times, therefore, read values are safe to consume.
 
 Things like `ReentrantLock` and `CountDownLatch`, for example, wouldn't
 be possible without `CAS` memory guarantees. They are both implemented a
 bit differently in JDK (via `sun.misc.Unsafe`, `compareAndSwapInt` and
-`compareAndSwapObject`), but general idea is exactly the same. If lock
-operations weren't atomic, it would have been possible to acquire lock
+`compareAndSwapObject`), but the general idea is exactly the same. If lock
+operations weren't atomic, it would have been possible to acquire the lock
 from several threads.
 
-The alert reader will notice that such operations are prone to so called
+The alert reader will notice that such operations are prone to so-called
 `ABA Problems`, or a false-positive match, when the value between read
 and write operations is getting changed from `A` to `B` and then back to
 `A`. You can work around this problem for us by adding a counter
@@ -216,7 +215,7 @@ an `AtomicStampedReference`.
 Although CAS operations provide us with some very nice and useful
 guarantees, they are just one of the building blocks for lock-free
 programming. If you combine the Atomic Object with a tight loop, you end
-up with so called `Atom`, which is simply a Reference that allows
+up with so-called `Atom`, which is simply a Reference that allows
 performing safe operations on it.
 
 Atoms have the following properties:
@@ -296,8 +295,8 @@ split up the whole update into several steps:
     atomically set it
   * `(4)` we return a new value set by the `Atom` if the atomicity of
     the whole operation can be guaranteed by what we see
-  * `(5)` if atomicity can't be guaranteed, we're running in an tight
-    loop that will retry the operation until it succeeds.
+  * `(5)` if atomicity can't be guaranteed, we're running in a tight
+    the loop that will retry the operation until it succeeds.
 
 We're using a generic `java.util.concurrent.AtomicReference` here, which,
 by providing us with a `compareAndSet` operation, guarantees that the
@@ -306,7 +305,7 @@ value will only be set in case it hasn't been changed.
 An eternal loop `(5)` might look a bit scary, but if you think of it for
 another minute, this is an optimistic approach to concurrency: we expect
 that update operations will be made by producers that, if ran
-simultaneously, will make a small amount of retries, but will usually
+simultaneously, will make a few retries, but will usually
 succeed from the first attempt.
 
 In practice, retries are so infrequent that you don't have to worry
@@ -314,7 +313,7 @@ about them.  Although it's always better to make sure your architecture
 doesn't contradict to the general assumptions made by such an approach.
 
 Another good thing about `Atoms` is that readers are completely
-independent from writers, and they will simply be learning the latest
+independent of writers, and they will simply be learning the latest
 updated value by dereferencing an `Atom`, and will never collide with
 writers.
 
@@ -334,7 +333,7 @@ the applied operations.
 
 For example, if the operation look like `(Integer old) -> old + 100`,
 you know that no matter which order the operations are applied in, they
-will produce the same outcome. You can check composition of the possible
+will produce the same outcome. You can check the composition of the possible
 operations and whether they converge to the same result despite
 reordering.
 
@@ -358,7 +357,7 @@ Of course, if you're using "normal" data structures inside of your
 opt-out for the immutable data structures.
 
 There are many ways of making your data structures immutable. One of
-them is to only use `final` fields, and only have `getters`. It's
+them is to only use `final` fields and only have `getters`. It's
 certainly very straightforward, but also limiting, since you may want to
 use something more complex than `POJOs` (or `Value Bags` as they used to
 be called).  Another downside of such an approach is that you'll end up
@@ -428,7 +427,7 @@ and refer to the recent (or well-forgotten) developments.
 Immutability is one of the ways of dealing with concurrency, but
 there are other ways to do it. There are many compromises and
 alternatives: data structures with fast snapshots for reads and
-syncronised writes, lockless mutable data stuctures, STM (which,
+synchronised writes, lockless mutable data structures, STM (which,
 depending on implementation, also uses locking underneath) but
 helps to achieve transactionality over multiple data structures,
 and so on.
@@ -440,7 +439,7 @@ from Java Open Source projects, such as
 [Cassandra](https://github.com/apache/cassandra),
 [Reactor](https://github.com/reactor/reactor) and many others.  Examples
 include `Streams`, `Async I/O`, `Channels`, interesting non-mainstream
-Data Structures such as skip lists, snapshottable data structures and
+Data Structures such as skip lists, snapshotable data structures and
 more.
 
 I'll try my best not to go into nitty-gritty details and keeping it
@@ -471,4 +470,3 @@ Thanks everyone who reviewed the post and have given their feedback:
 were borrowed straight from their feedback.
 
 Posted on 26 July 2015.
-
