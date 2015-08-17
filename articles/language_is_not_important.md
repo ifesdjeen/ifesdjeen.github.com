@@ -15,7 +15,7 @@ certain features that generally have very little to do with Functional
 Programming (such as pattern matching and list comprehensions), but are
 extremely useful in a day-to-day life.
 
-I've been doing Clojure since 2011, and have started looking at Erlang
+I've been doing Clojure since 2011 and have started looking at Erlang
 and Haskell a couple of years ago. Up till the date, I still haven't
 written anything reasonably large in Erlang (just a [toy implementation](https://github.com/ifesdjeen/polyxena)
 of Cassandra CQL binary protocol, but that's still rather small).
@@ -26,7 +26,7 @@ a [pet project](https://github.com/ifesdjeen/continuum) , which will take a long
 even accidentally managed to send [two](https://github.com/ghc/ghc/commit/08610c1fdc7816c74faed40f8a7d3c4b4758709e) [pull](https://github.com/ghc/ghc/commit/35833122da8ddb2c0e7aaee0c9b6089af52e38b1) requests to GHC. But I'd
 never call myself even an
 [intermediate Haskeller](http://www.reddit.com/r/haskell/comments/2olrxn/what_is_an_intermediate_haskell_programmer/cmoldii?context=1). I'm
-just an amateur, and do it for sheer fun.
+just an amateur and do it for sheer fun.
 
 ## Having drunk FP Kool Aid
 
@@ -42,7 +42,7 @@ people (especially ones that aren't planning to build a great Haskell
 career), stop there and decide they've seen it all, and know the Monads.
 
 If you stick around Haskell for long enough, you realize that you don't
-really need Monad everywhere, and majority of things can actually be
+really need Monad everywhere, and the majority of things can actually be
 accomplished with whatever Functor and Applicative offer. You don't feel
 stuck when you see the type signatures, and you start really enjoying
 that making a massive refactoring in your project can be done in
@@ -50,17 +50,17 @@ relatively small amount of time, and in majority of cases, "when it
 compiles, it works".
 
 It's hard to say how much time it takes to get from the first to the
-second stage. For some people, it's a couple of days. For some it may be
-months. For me it was rather long. I felt myself lost in front of all
+second stage. For some people, it's a couple of days. For some, it may be
+months. For me, it was rather long. I felt myself lost in front of all
 those Monads and wanted to give up pretty much every day. When I tried
 asking people about help, I was either getting answers that were rather
 generic and didn't make sense for me (probably made a lot of sense for
 the person on the other side of the wire). Although once I got an
-awesome 30 minute lecture on Monad Transformers on IRC, and I will never
+awesome 30-minute lecture on Monad Transformers on IRC, and I will never
 stop being thankful for that.
 
 In general, it's close to impossible to just sit and start programming
-Haskell. Syntax is simple, but you have to catch up on the theory. But I
+Haskell. The syntax is simple, but you have to catch up on the theory. But I
 now tend to think that the concepts behind all the cool things in
 Haskell are much more important than Haskell itself for me.
 
@@ -71,16 +71,16 @@ the impossibility of such, but won't really make you sit and stare at
 ceiling for 20 minutes, realizing how cool that is and resenting not 
 knowing it for your whole life. But both these things are only relevant
 for me on a conceptual level. I can build them into any language I use. I
-don't need no Haskell for that.
+don't need Haskell for that.
 
 *hears raging voices saying it's impossible without an awesome
-typechecker*
+type checker*
 
 ## Category Shmategory
 
 I knew that Haskell is also a gateway drug into the world of Abstract
 Algebra and Category Theory. So I decided to start with the books in my
-native language, and have gotten myself familiar with
+native language and have gotten myself familiar with
 [graphs](http://en.wikipedia.org/wiki/Graph_(mathematics)),
 [isomorphisms](http://en.wikipedia.org/wiki/Isomorphism),
 [binary operations](http://en.wikipedia.org/wiki/Binary_operation), all
@@ -97,12 +97,12 @@ pages of formulas and proving to explain, and even the simplest types
 are expressed in the terms so abstract that it felt necessary to google
 for that GitHub repo Russian government banned GitHub over.
 
-I must admit that I didn't do PhD in either of those topics. It's all
+I must admit that I didn't do Ph.D. in either of those topics. It's all
 been just my hobby, and I will some day continue studying Abstract
 Algebra for fun. But for now, it all feels much too abstract and I see
 absolutely no application for it in my life.
 
-## Financial Pyramyd
+## Financial Pyramid
 
 For all those months of learning, when I felt lost and every line of
 code was taking minutes and sometimes hours to write, I kept listening
@@ -167,7 +167,7 @@ proficient enough to use it anywhere.
 
 ## Learning things
 
-It's always hard to choose what to learn next, since there are so many
+It's always hard to choose what to learn next since there are so many
 things out there that are very interesting. Many people enthusiastic
 about Functional Programming Languages are ready to teach their peers,
 and invest their personal time into making it all bigger. But you have
@@ -177,10 +177,9 @@ people who learn, which is quite normal and applies to anything,
 starting from learning how to bike and up to quantum physics.
 
 Most of the time, when people talk about using the cool stuff at work,
-they also mention some bonds or obligations: the one who brought FP in,
-should be teaching and supporting the others. I have spent 2 years
+they also mention some bonds or obligations: the one who brought FP in should be teaching and supporting the others. I have spent 2 years
 [helping people learn](http://www.meetup.com/Munich-Lambda) Clojure,
-Haskell and other FP Languages. And I can say that it takes a lot
+Haskell, and other FP Languages. And I can say that it takes a lot
 of time, and usually return does not excite you so much. 
 
 If you enter the World Of Haskell with the great enthusiasm, the
@@ -191,10 +190,10 @@ and Abstract Algebra. I'm still not sure whether you have to have a
 great mathematical mind in order to learn and understand it all (most
 likely yes), I've only scratched the surface.
 
-Once I've been told by the Haskell Enthusiast that I want to rip what i
-sew too quickly, which I admit is true. But, unfortunately, there
+Once I've been told by the Haskell Enthusiast that I want to reap what I
+saw too quickly, which I admit is true. But, unfortunately, there
 are too many things applicable in everyday life I'd like to learn, so
-I'm putting my `4b$7rac7 $7uff` endeavour on a pause.
+I'm putting my `4b$7rac7 $7uff` endeavor on a pause.
 
 ## Language doesn't matter
 
@@ -212,7 +211,7 @@ that was never been a selling point for me. There are many other things
 I appreciate much more (like
 [ADTs](http://en.wikipedia.org/wiki/Algebraic_data_type), 
 [Pattern Matching](http://en.wikipedia.org/wiki/Pattern_matching), [Tuples](http://en.wikipedia.org/wiki/Tuple) etc). But
-they're generic and universal, and do not belong to any specific piece
+they're generic and universal and do not belong to any specific piece
 of technology. I'm also sure that sooner or later many things will get
 better in mainstream programming languages. Whenever the humanity is
 ready for that.
@@ -220,7 +219,7 @@ ready for that.
 Knowing concepts turned out to be much more important than being able to
 use a certain implementation (or syntax) for me. Of course, I will never
 be able to do Pattern Matching in Java that'd look at least remotely
-sane, but in majority of cases I can also live with it. At least I can
+sane, but in the majority of cases I can also live with it. At least I can
 guarantee immutability when I need it, and I now know and understand
 very well how to work with immutable data structures without making your
 code look awful or complicated.
@@ -237,10 +236,10 @@ still use a more sensible language whenever it makes sense.
 Other than that - the tools that you're using aren't that important. The
 most important stuff is going on in your brain. Despite the current hype
 and global love to immutability, the concept has been around for a long
-time. Pure functions were known for longer time than computers
+time. Pure functions were known for the longer time than computers
 existed. And trust me, there will be many new languages that will
 implement things in a better, more interesting way, and bring you
-ever-more fun. Although, most of the time, I do not buy the agrument
+ever-more fun. Although, most of the time, I do not buy the argument
 "older is better". 
 
 Except for chasing new languages won't get you anywhere. Yes, there
@@ -252,7 +251,7 @@ always be languages that do certain things better than yours.
 
 For example, no one can still beat Erlang in [Binary Pattern Matching](http://www.erlang.org/doc/efficiency_guide/binaryhandling.html),
 and the way Actors are implemented there. If you check out [OTP](http://learnyousomeerlang.com/what-is-otp) - you'll
-want it under your toolbelt every day.
+want it under your tool belt every day.
 
 There are people who prefer OCaml, Rust, Go (that happens, too, don't
 ask me), even Ruby, Python, Scala (another secret), and they'll be
@@ -263,7 +262,7 @@ preference.
 
 When the mathematician is reading papers, it's not important for him
 whether the others are using the same exact notation. People may use the
-most obscure notations for their works, because they have to optimize
+most obscure notations for their works because they have to optimize
 for what they do. The same way it works in our industry. It will never
 (never say never) converge to the single, commonly accepted language
 (even if it's multi-paradigm and is running on JVM).
@@ -271,7 +270,7 @@ for what they do. The same way it works in our industry. It will never
 ## Keep pressing on
 
 Don't take away a fun of learning new things from yourself, but try to
-always be sceptical about everything you've been promised. Learn the
+always be skeptical about everything you've been promised. Learn the
 concepts, but don't become a fanatic, since you'll lose a contact with
 reality and won't be able to both learn and understand the things
 outside of something you made your comfort zone.
@@ -279,7 +278,7 @@ outside of something you made your comfort zone.
 It's obviously not necessary to dive deep into Category Theory to work
 with Haskell, but somehow everyone who wants to be a part of the crowd
 is doing it. I thought that I'd rather invest same time into other
-things: algorithms, linux kernel, statistics and linear algebra.
+things: algorithms, Linux kernel, statistics and linear algebra.
 
 If it feels for you that this post is a rant - you're tuning yourself
 much too negatively. Or if it felt as if learning new languages isn't
