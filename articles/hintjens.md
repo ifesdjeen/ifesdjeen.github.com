@@ -5,6 +5,8 @@ disqus_identifier: "hintjens"
 disqus_url: "http://coffeenco.de/articles/hintjens.html"
 ---
 
+# Pieter Hintjens
+
 I've met Pieter in 2014 on the way to the Coding Serbia conference. We were
 standing waiting for the bus near Belgrade Airport to pick us up and bring to
 Novi Sad. I knew who Pieter was, so I approached him and introduced myself and
@@ -14,7 +16,7 @@ Culture and Empire, which he handed out to anyone who was interested. He gave
 his talk without having any slides. It felt as if he had a cheat sheet hidden
 somewhere.
 
-<img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10727597_1548543195381630_1210911155_n.jpg?ig_cache_key=ODI3NDgxMDQwMTM0MzE5OTI0.2" align="left" margin="20px" />
+<img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10727597_1548543195381630_1210911155_n.jpg?ig_cache_key=ODI3NDgxMDQwMTM0MzE5OTI0.2" align="left" style="margin: 20px; width: 300px;" />
 
 During the conference, he was sitting in hallways in his baseball hat and either
 writing the next book or hacking some new project together. I've never met
@@ -42,7 +44,7 @@ that he's just observing how the people would react, and there will be a great
 book about it and everything's going to end well. Turned out that I was right
 about the book, but wrong about the rest.
 
-<img src="https://dl.dropboxusercontent.com/u/2516311/IMG_5301.JPG" align="left" margin="10px" />
+<img src="https://dl.dropboxusercontent.com/u/2516311/IMG_5301.JPG" align="left" style="margin: 20px; width: 300px;"/>
 
 His work and words inspired me a lot and helped me to make an important decision
 at some point in my life. Hanging out with him was always fun and always good to
