@@ -25,6 +25,8 @@ their time. It seems that he has somehow cracked the code of life and figured
 out how to make it meaningful. Something many other people lack. The only word
 that keeps coming to my mind is "natural". Everything he decided to do seemed so
 natural and he always turned out to be very good in it.
+<br />
+<br />
 
 <img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10693376_276089942587224_702118743_n.jpg?ig_cache_key=ODI3NDc5MzIyNTgzNjA5MDkz.2" align="left" style="margin: 20px; width: 300px;" />
 
