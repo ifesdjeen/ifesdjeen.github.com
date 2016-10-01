@@ -12,7 +12,7 @@ standing waiting for the bus near Belgrade Airport to pick us up and bring to
 Novi Sad. I knew who Pieter was, so I approached him and introduced myself and
 we started talking on wide variety of subjects, from sciense and politics to
 computer sciense and managing software teams. He carried multiple copies of
-[]Culture and Empire](https://www.amazon.com/dp/B00GF48Z4S), which he handed out to anyone who was interested. He gave
+[Culture and Empire](https://www.amazon.com/dp/B00GF48Z4S), which he handed out to anyone who was interested. He gave
 his talk without having any slides. It felt as if he had a cheat sheet hidden
 somewhere.
 
@@ -61,3 +61,10 @@ out. I'm always impressed by your productivity and passion. You've always been
 a big inspiration and example for me.
 
 _1 October 2016_
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
