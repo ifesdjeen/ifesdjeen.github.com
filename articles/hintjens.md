@@ -53,8 +53,8 @@ plausible.
 
 <img src="https://dl.dropboxusercontent.com/u/2516311/IMG_5301.JPG" align="left" style="margin: 20px; width: 300px;"/>
 
-I got upset, when Pieter decided to leave Twitter. Several days later he made a
-comeback to inform his friends about some bad news. When I first read it, I
+I got upset, when Pieter decided to [leave Twitter](https://twitter.com/hintjens/status/713722016436760577). [Some time later](https://twitter.com/hintjens/status/722073087676706820) he made a
+comeback to inform his friends about [some bad news](https://twitter.com/hintjens/status/722073835244298246). When I first read it, I
 could not believe it. I wanted to think it was some sort of social experiment,
 that he's just observing how the people would react, and there will be a great
 book about it and everything's going to end well. Turned out that I was right
@@ -66,7 +66,9 @@ remember. He always gathered crowds of interesting people around him. There are
 few people who have such natural charisma and are able to lead every
 conversation, no matter which subject it involved, feel natural and fluent.
 
-
+The most impressive thing is that in the light of the events he's been facing,
+instead of living in fear and desperation, after his [last article](https://twitter.com/hintjens/status/723359463214710784), he's released more content than many of us release
+in a lifetime.
 
 You could be always sure if you join him on bar crawl, conference discussion,
 lunch, hack night, restaurant dinner, everyone's going to have great time and
