@@ -13,7 +13,7 @@ Novi Sad. I knew who Pieter was, so I approached him and introduced myself and
 we started talking on wide variety of subjects, from sciense and politics to
 computer sciense and managing software teams. He carried multiple copies of
 [Culture and Empire](https://www.amazon.com/dp/B00GF48Z4S), which he handed out to anyone who was interested. He gave
-his talk without having any slides. It felt as if he had a cheat sheet hidden
+his talk [without having any slides](https://www.youtube.com/watch?v=xFVDNTXIC_Y). It felt as if he had a cheat sheet hidden
 somewhere.
 
 <img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10727597_1548543195381630_1210911155_n.jpg?ig_cache_key=ODI3NDgxMDQwMTM0MzE5OTI0.2" align="left" style="margin: 20px; width: 300px;" />
@@ -26,6 +26,13 @@ out how to make it meaningful. Something many other people lack. The only word
 that keeps coming to my mind is "natural". Everything he decided to do seemed so
 natural and he always turned out to be very good in it.
 
+There, a conference TV crew came over and asked us for an interview. I was hesitant:
+what do I even have to say. Pieter [took over](https://youtu.be/ptrdQgkWZWQ?t=92).
+"It's very important in this industry to be always learning, and to be challenged
+by new ideas and new experiences, new exposure. To leave the cubicles where they're
+working and meet the other people". Somehow, after him, it was surprisingly
+simple to stand in front of the camera...
+
 Second time we've met in Brussels, Belgium, on [EdgeNet](http://hintjens.com/blog:76) hackathon. During the day
 we were sitting together with a group of enthusiasts discussing and building
 some prototypes with [ZeroMQ](http://zeromq.org/). Back then, I was searching
@@ -33,14 +40,14 @@ for a life advise and Pieter helped me to understand what my professional
 interests were and which path I should pursure. He's a wise and insightful
 person and a perfect storyteller.
 
-Third and the last time was in 2015 on the next Coding Serbia in Novi Sad. One
+<img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10693376_276089942587224_702118743_n.jpg?ig_cache_key=ODI3NDc5MzIyNTgzNjA5MDkz.2" align="left" style="margin: 20px; width: 300px;" />
+
+Third and the last time was in 2015 on the next [Coding Serbia](https://www.youtube.com/watch?v=7HECD3eLoVo) in Novi Sad. One
 evening, it was much too loud on the official afterparty so we went from one bar
 to the next one talking and observing people, making fun hypotheses about who
 thinks what and why people act the certain way. It was always said in a fun and
 positive form and most of the time his explanations of situations sounded very
 plausible.
-
-<img src="https://dl.dropboxusercontent.com/u/2516311/IMG_5301.JPG" align="left" style="margin: 20px; width: 300px;"/>
 
 I got upset, when Pieter decided to leave Twitter. Several days later he made a
 comeback to inform his friends about some bad news. When I first read it, I
@@ -54,6 +61,8 @@ at some point in my life. Hanging out with him was always fun and always good to
 remember. He always gathered crowds of interesting people around him. There are
 few people who have such natural charisma and are able to lead every
 conversation, no matter which subject it involved, feel natural and fluent.
+
+<img src="https://dl.dropboxusercontent.com/u/2516311/IMG_5301.JPG" align="left" style="margin: 20px; width: 300px;"/>
 
 You could be always sure if you join him on bar crawl, conference discussion,
 lunch, hack night, restaurant dinner, everyone's going to have great time and
