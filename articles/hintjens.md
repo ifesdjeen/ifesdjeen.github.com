@@ -7,6 +7,8 @@ disqus_url: "http://coffeenco.de/articles/hintjens.html"
 
 # Pieter Hintjens
 
+<img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10727597_1548543195381630_1210911155_n.jpg?ig_cache_key=ODI3NDgxMDQwMTM0MzE5OTI0.2" align="left" style="margin: 20px; width: 300px;" />
+
 I've met Pieter in 2014 on the way to the Coding Serbia conference. We were
 standing waiting for the bus near Belgrade Airport to pick us up and bring to
 Novi Sad. I knew who Pieter was, so I approached him and introduced myself and
@@ -16,8 +18,6 @@ computer sciense and managing software teams. He carried multiple copies of
 his talk [without having any slides](https://www.youtube.com/watch?v=xFVDNTXIC_Y). It felt as if he had a cheat sheet hidden
 somewhere.
 
-<img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10727597_1548543195381630_1210911155_n.jpg?ig_cache_key=ODI3NDgxMDQwMTM0MzE5OTI0.2" align="left" style="margin: 20px; width: 300px;" />
-
 During the conference, he was sitting in hallways in his baseball hat and either
 writing the next book or hacking some new project together. I've never met
 another person so inspired and productive and trying to use every second of
@@ -25,6 +25,8 @@ their time. It seems that he has somehow cracked the code of life and figured
 out how to make it meaningful. Something many other people lack. The only word
 that keeps coming to my mind is "natural". Everything he decided to do seemed so
 natural and he always turned out to be very good in it.
+
+<img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10693376_276089942587224_702118743_n.jpg?ig_cache_key=ODI3NDc5MzIyNTgzNjA5MDkz.2" align="left" style="margin: 20px; width: 300px;" />
 
 There, a conference TV crew came over and asked us for an interview. I was hesitant:
 what do I even have to say. Pieter [took over](https://youtu.be/ptrdQgkWZWQ?t=92).
@@ -40,14 +42,14 @@ for a life advise and Pieter helped me to understand what my professional
 interests were and which path I should pursure. He's a wise and insightful
 person and a perfect storyteller.
 
-<img src="https://instagram.ftxl1-1.fna.fbcdn.net/t51.2885-15/e15/10693376_276089942587224_702118743_n.jpg?ig_cache_key=ODI3NDc5MzIyNTgzNjA5MDkz.2" align="left" style="margin: 20px; width: 300px;" />
-
 Third and the last time was in 2015 on the next [Coding Serbia](https://www.youtube.com/watch?v=7HECD3eLoVo) in Novi Sad. One
 evening, it was much too loud on the official afterparty so we went from one bar
 to the next one talking and observing people, making fun hypotheses about who
 thinks what and why people act the certain way. It was always said in a fun and
 positive form and most of the time his explanations of situations sounded very
 plausible.
+
+<img src="https://dl.dropboxusercontent.com/u/2516311/IMG_5301.JPG" align="left" style="margin: 20px; width: 300px;"/>
 
 I got upset, when Pieter decided to leave Twitter. Several days later he made a
 comeback to inform his friends about some bad news. When I first read it, I
@@ -62,7 +64,7 @@ remember. He always gathered crowds of interesting people around him. There are
 few people who have such natural charisma and are able to lead every
 conversation, no matter which subject it involved, feel natural and fluent.
 
-<img src="https://dl.dropboxusercontent.com/u/2516311/IMG_5301.JPG" align="left" style="margin: 20px; width: 300px;"/>
+
 
 You could be always sure if you join him on bar crawl, conference discussion,
 lunch, hack night, restaurant dinner, everyone's going to have great time and
@@ -74,6 +76,13 @@ a big inspiration and example for me.
 
 _1 October 2016_
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <br />
 <br />
 <br />
