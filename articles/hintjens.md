@@ -28,7 +28,10 @@ natural and he always turned out to be very good in it.
 
 Second time we've met in Brussels, Belgium, on [EdgeNet](http://hintjens.com/blog:76) hackathon. During the day
 we were sitting together with a group of enthusiasts discussing and building
-some prototypes with [ZeroMQ](http://zeromq.org/).
+some prototypes with [ZeroMQ](http://zeromq.org/). Back then, I was searching
+for a life advise and Pieter helped me to understand what my professional
+interests were and which path I should pursure. He's a wise and insightful
+person and a perfect storyteller.
 
 Third and the last time was in 2015 on the next Coding Serbia in Novi Sad. One
 evening, it was much too loud on the official afterparty so we went from one bar
