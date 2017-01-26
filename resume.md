@@ -24,7 +24,7 @@ layout: resume
 
 ## Get in touch!
 
-  * __E-mail / Jabber__ <a href="mailto:oleksandr.petrov@gmail.com">oleksandr.petrov@gmail.com</a>
+  * __E-mail / Jabber__ <a href="mailto:alexp+cnc@coffeenco.de">alexp@coffeenco.de</a>
   * __Skype__: ifesdjeen
   * __Twitter__: [ifesdjeen](http://twitter.com/ifesdjeen)
   
